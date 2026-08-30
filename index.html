@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>CloudCash - Modern Fintech Suite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Floating Collapsible Viewport Dock (Bottom-Right) -->
+  <div class="viewport-floating-dock" id="viewport-floating-dock">
+    <!-- Collapsed Trigger Button -->
+    <button class="btn-dock-trigger tactile-btn" id="btn-dock-trigger" title="Switch Viewport Mode">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+      <span class="dock-trigger-badge" id="dock-active-mode-badge">Desktop</span>
+    </button>
+
+    <!-- Expanded Floating Panel -->
+    <div class="dock-expanded-panel" id="dock-expanded-panel">
+      <div class="dock-panel-header">
+        <span class="dock-label">Viewport Mode</span>
+        <button class="btn-dock-collapse tactile-btn" id="btn-dock-collapse" title="Minimize switcher">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="device-btn-group">
+        <button class="btn-device active tactile-btn" id="btn-device-desktop">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span>Desktop</span>
+        </button>
+        <button class="btn-device tactile-btn" id="btn-device-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+          <span>Mobile View</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App Shell -->
+  <div class="app-container" id="app-container">
+
+    <!-- Desktop Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-brand-menu">
+        <!-- Brand Logo (Exact Figma / Uploaded Asset Match) -->
+        <a href="#overview" class="brand-logo" id="brand-logo-btn">
+          <div class="logo-icon-svg-wrap">
+            <svg width="38" height="28" viewBox="0 0 46 34" fill="none">
+              <!-- Blue Cloud Silhouette -->
+              <path d="M12 32C5.92487 32 1 27.0751 1 21C1 15.6179 4.88219 11.1444 10.0573 10.187C11.5173 4.19539 16.9463 0 23.5 0C30.2285 0 35.7877 4.41245 37.0782 10.5966C41.6033 11.7588 45 15.8272 45 20.6667C45 26.3736 40.3736 31 34.6667 31L12 32Z" fill="#1F78D1"/>
+              <!-- Yellow Coin Overlap -->
+              <circle cx="34" cy="10" r="9" fill="#FFC145"/>
+              <text x="34" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#1F2C3F" text-anchor="middle">$</text>
+            </svg>
+          </div>
+          <span class="brand-text">cloudcash</span>
+        </a>
+
+        <!-- Menu Navigation -->
+        <ul class="nav-menu">
+          <li>
+            <a class="nav-item active tactile-btn" data-view="overview">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-item tactile-btn" data-view="transactions">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+              <span>Transactions</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-item tactile-btn" data-view="cards">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+              </svg>
+              <span>Cards</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-item tactile-btn" data-view="invoices">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path>
+                <line x1="8" y1="8" x2="16" y2="8"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+              <span>Invoices</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-item tactile-btn" data-view="goals">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"></circle>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+              </svg>
+              <span>Goals</span>
+            </a>
+          </li>
+          <li>
+            <a class="nav-item tactile-btn" data-view="settings">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Upgrade Promo Box (Matches Uploaded Illustration Exact) -->
+      <div class="sidebar-upgrade-card">
+        <div class="sidebar-illustration-wrap">
+          <svg width="84" height="70" viewBox="0 0 84 70" fill="none">
+            <!-- Moon -->
+            <path d="M54 12C54 18 58 22 64 22C64.6 22 65.2 21.9 65.8 21.8C64.5 25.4 61 28 57 28C51.5 28 47 23.5 47 18C47 14.5 48.8 11.5 51.5 9.8C52.3 10.8 53.3 11.5 54 12Z" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Coin behind cloud -->
+            <circle cx="28" cy="16" r="10" stroke="#1F78D1" stroke-width="1.8"/>
+            <text x="28" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#1F78D1" text-anchor="middle">$</text>
+            <!-- Cloud -->
+            <path d="M22 38C17 38 13 34 13 29C13 24.5 16.3 20.8 20.6 20.1C21.8 14.8 26.5 11 32 11C38 11 42.8 15 44 20.5C48 21.5 51 25 51 29C51 34 47 38 42 38H22Z" fill="white" stroke="#1F78D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Upward Arrow 1 -->
+            <path d="M34 40V34M34 34L31 37M34 34L37 37" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Upward Arrow 2 -->
+            <path d="M42 46V41M42 41L39 44M42 41L45 44" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Credit Card Floating Up -->
+            <g transform="translate(25, 46) rotate(-28)">
+              <rect width="22" height="15" rx="3" stroke="#1F78D1" stroke-width="1.8" fill="white"/>
+              <line x1="0" y1="4" x2="22" y2="4" stroke="#1F78D1" stroke-width="1.5"/>
+              <rect x="3" y="8" width="4" height="3" rx="0.5" fill="#1F78D1"/>
+            </g>
+          </svg>
+        </div>
+        <p class="upgrade-title">Give your money<br>awesome space in cloud</p>
+        <button class="btn-upgrade tactile-btn" id="btn-upgrade-modal-trigger">Upgrade to premium</button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+
+      <!-- iOS Mobile Status Bar -->
+      <div class="mobile-status-bar">
+        <span class="status-time">9:41</span>
+        <div class="status-notch"></div>
+        <div class="status-icons">
+          <svg width="15" height="11" viewBox="0 0 17 11" fill="none">
+            <rect x="0" y="7" width="2.5" height="4" rx="0.8" fill="currentColor"/>
+            <rect x="4.5" y="5" width="2.5" height="6" rx="0.8" fill="currentColor"/>
+            <rect x="9" y="2.5" width="2.5" height="8.5" rx="0.8" fill="currentColor"/>
+            <rect x="13.5" y="0" width="2.5" height="11" rx="0.8" fill="currentColor"/>
+          </svg>
+          <svg width="15" height="12" viewBox="0 0 16 12" fill="none">
+            <path d="M8 11.5C8.8 11.5 9.5 10.8 9.5 10C9.5 9.2 8.8 8.5 8 8.5C7.2 8.5 6.5 9.2 6.5 10C6.5 10.8 7.2 11.5 8 11.5ZM4.2 6.2C6.3 4.1 9.7 4.1 11.8 6.2L13.2 4.8C10.3 1.9 5.7 1.9 2.8 4.8L4.2 6.2ZM1.4 3.4C5 0.2 11 0.2 14.6 3.4L16 2C11.6 -1.9 4.4 -1.9 0 2L1.4 3.4Z" fill="currentColor"/>
+          </svg>
+          <svg width="22" height="11" viewBox="0 0 25 12" fill="none">
+            <rect x="0.5" y="0.5" width="20.5" height="10" rx="3" stroke="currentColor"/>
+            <rect x="2" y="2" width="16" height="7" rx="1.5" fill="currentColor"/>
+            <path d="M23 4C23.6 4.5 24 5.2 24 6C24 6.8 23.6 7.5 23 8V4Z" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mobile Top Bar with Exact Logo & Avatar -->
+      <div class="mobile-top-bar">
+        <a href="#overview" class="brand-logo" id="mobile-brand-logo-btn">
+          <div class="logo-icon-svg-wrap">
+            <svg width="34" height="26" viewBox="0 0 46 34" fill="none">
+              <path d="M12 32C5.92487 32 1 27.0751 1 21C1 15.6179 4.88219 11.1444 10.0573 10.187C11.5173 4.19539 16.9463 0 23.5 0C30.2285 0 35.7877 4.41245 37.0782 10.5966C41.6033 11.7588 45 15.8272 45 20.6667C45 26.3736 40.3736 31 34.6667 31L12 32Z" fill="#1F78D1"/>
+              <circle cx="34" cy="10" r="9" fill="#FFC145"/>
+              <text x="34" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#1F2C3F" text-anchor="middle">$</text>
+            </svg>
+          </div>
+          <span class="brand-text">cloudcash</span>
+        </a>
+
+        <div class="mobile-user-avatar tactile-btn" id="mobile-user-avatar-btn">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+        </div>
+      </div>
+
+      <!-- Mobile Dynamic Page Title & Subtitle Header -->
+      <div class="mobile-page-header">
+        <h1 class="mobile-page-title" id="mobile-page-title">Weekly sumup</h1>
+        <p class="mobile-page-subtitle" id="mobile-page-subtitle">Get summary of your weekly transactions</p>
+      </div>
+
+      <!-- Desktop Universal Header Bar -->
+      <header class="main-header">
+        <div class="header-titles">
+          <h1 class="page-title" id="page-main-title">Weekly sumup</h1>
+          <p class="page-subtitle" id="page-main-subtitle">Get summary of your weekly online transactions here.</p>
+        </div>
+
+        <div class="header-right">
+          <!-- Dynamic Header Action for Invoices View -->
+          <button class="header-action-btn tactile-btn" id="header-action-btn" style="display: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>Create New Invoice</span>
+          </button>
+
+          <!-- Notification Badges -->
+          <div class="notif-cluster">
+            <button class="notif-btn tactile-btn" title="Messages" id="notif-mail-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </button>
+            <button class="notif-btn tactile-btn" title="Notifications" id="notif-bell-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+              </svg>
+              <span class="notif-badge-dot"></span>
+            </button>
+          </div>
+
+          <!-- User Profile -->
+          <div class="user-profile tactile-btn" id="user-profile-btn">
+            <div class="avatar-wrapper">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+            </div>
+            <div class="user-info">
+              <span class="user-name">Andrew Smith</span>
+              <span class="user-role">Premium Account</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ====================================================================
+           VIEW 1: OVERVIEW SCREEN ("Weekly sumup")
+           ==================================================================== -->
+      <section class="screen-view active-view" id="view-overview">
+        
+        <!-- Mobile Specific Viewport Layout -->
+        <div class="mobile-overview-wrapper mobile-only">
+          
+          <!-- Refined 3D Card Deck Stage with Live Drag / Swipe & Parallax Glare -->
+          <div class="card-3d-stage" id="overview-card-stage">
+            <div class="card-deck-stack" id="overview-deck-stack">
+              <!-- Card 0: Premium Blue (Full High-Fidelity Instance) -->
+              <div class="virtual-card-flipper-wrap card-slot-active" id="overview-card-0" data-card-idx="0">
+                <div class="virtual-card-inner">
+                  <!-- Front Face -->
+                  <div class="virtual-credit-card card-blue card-face-front">
+                    <div class="card-sheen-glare"></div>
+                    <div class="card-vector-bg"></div>
+                    <div class="card-vector-bg-2"></div>
+                    
+                    <div class="card-top-row">
+                      <span class="card-brand-logo">cloudcash</span>
+                      <div class="card-top-right-group">
+                        <span class="card-type-badge">PREMIUM</span>
+                        <button class="btn-card-flip-badge" title="Flip to see CVV code">
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <span>CVV</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- EMV Chip & Contactless Row -->
+                    <div class="card-chip-contactless-row">
+                      <div class="card-chip-svg">
+                        <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                          <rect width="34" height="26" rx="4" fill="#E2C974"/>
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/>
+                        </svg>
+                      </div>
+                      <div class="card-contactless-svg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="card-number-row">
+                      <span>5749</span>
+                      <span>••••</span>
+                      <span>••••</span>
+                      <span>2847</span>
+                    </div>
+
+                    <div class="card-bottom-row">
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">CARD HOLDER</span>
+                        <span class="card-meta-value">Mike Smith</span>
+                      </div>
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">EXPIRE DATE</span>
+                        <span class="card-meta-value">06/25</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Back Face (CVV & Magnetic Strip) -->
+                  <div class="virtual-credit-card card-face-back card-blue">
+                    <div class="card-back-header">
+                      <span class="card-brand-logo-small">cloudcash</span>
+                      <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <span>Front</span>
+                      </button>
+                    </div>
+                    <div class="card-mag-strip"></div>
+                    <div class="card-signature-bar">
+                      <div class="sig-lines">AUTHORIZED SIGNATURE</div>
+                      <div class="card-cvv-box">
+                        <span class="cvv-label">CVV</span>
+                        <span class="cvv-val">847</span>
+                      </div>
+                    </div>
+                    <div class="card-back-footer">
+                      <span>cloudcash.com • Support: +1 (800) 555-0199</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 1: Black Metal (Full High-Fidelity Instance) -->
+              <div class="virtual-card-flipper-wrap card-slot-rear" id="overview-card-1" data-card-idx="1">
+                <div class="virtual-card-inner">
+                  <!-- Front Face -->
+                  <div class="virtual-credit-card card-metal card-face-front">
+                    <div class="card-sheen-glare"></div>
+                    <div class="card-vector-bg"></div>
+                    
+                    <div class="card-top-row">
+                      <span class="card-brand-logo">cloudcash</span>
+                      <div class="card-top-right-group">
+                        <span class="card-type-badge">METAL</span>
+                        <button class="btn-card-flip-badge" title="Flip to see CVV code">
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <span>CVV</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- EMV Chip & Contactless Row -->
+                    <div class="card-chip-contactless-row">
+                      <div class="card-chip-svg">
+                        <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                          <rect width="34" height="26" rx="4" fill="#A0AEC0"/>
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568" stroke-width="1.2"/>
+                        </svg>
+                      </div>
+                      <div class="card-contactless-svg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="card-number-row">
+                      <span>4321</span>
+                      <span>••••</span>
+                      <span>••••</span>
+                      <span>8990</span>
+                    </div>
+
+                    <div class="card-bottom-row">
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">CARD HOLDER</span>
+                        <span class="card-meta-value">Andrew Smith</span>
+                      </div>
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">EXPIRE DATE</span>
+                        <span class="card-meta-value">12/29</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Back Face (CVV & Magnetic Strip) -->
+                  <div class="virtual-credit-card card-face-back card-metal">
+                    <div class="card-back-header">
+                      <span class="card-brand-logo-small">cloudcash</span>
+                      <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <span>Front</span>
+                      </button>
+                    </div>
+                    <div class="card-mag-strip"></div>
+                    <div class="card-signature-bar">
+                      <div class="sig-lines">AUTHORIZED SIGNATURE</div>
+                      <div class="card-cvv-box">
+                        <span class="cvv-label">CVV</span>
+                        <span class="cvv-val">990</span>
+                      </div>
+                    </div>
+                    <div class="card-back-footer">
+                      <span>cloudcash.com • Support: +1 (800) 555-0199</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sleek Morphing Card Pagination Indicator -->
+            <div class="card-deck-indicator">
+              <div class="card-dot-pill active" id="card-dot-0"></div>
+              <div class="card-dot-pill" id="card-dot-1"></div>
+              <span class="card-swipe-hint">Swipe or tap card to switch</span>
+            </div>
+          </div>
+
+          <!-- Current Balance Card -->
+          <div class="mobile-balance-card tactile-card">
+            <div class="mobile-balance-top">
+              <span class="mobile-balance-label">CURRENT BALANCE</span>
+              <span class="mobile-balance-val" id="mobile-overview-balance-val">$2,850.75</span>
+            </div>
+            <div class="mobile-balance-stats">
+              <div class="mobile-stat-pill">
+                <span class="pill-label">Income</span>
+                <span class="pill-val text-green" id="mobile-overview-income-val">+$1,500.50</span>
+              </div>
+              <div class="mobile-stat-pill">
+                <span class="pill-label">Outcome</span>
+                <span class="pill-val text-red" id="mobile-overview-outcome-val">-$350.60</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Goals Section with Drag Scroll -->
+          <div class="mobile-section-block">
+            <div class="section-header-row">
+              <h2 class="section-title">Active Goals</h2>
+              <a href="#goals" class="view-all-link tactile-btn" data-nav-target="goals">View All</a>
+            </div>
+            <div class="mobile-goals-scroll-row drag-scrollable">
+              <div class="mobile-mini-goal-chip tactile-card">
+                <div class="chip-top">
+                  <span class="chip-name">Dream Vacation</span>
+                  <span class="chip-pct text-blue">70%</span>
+                </div>
+                <div class="chip-progress-track">
+                  <div class="chip-progress-fill fill-blue" style="width: 70%;"></div>
+                </div>
+              </div>
+              <div class="mobile-mini-goal-chip tactile-card">
+                <div class="chip-top">
+                  <span class="chip-name">Renovation</span>
+                  <span class="chip-pct text-orange">48%</span>
+                </div>
+                <div class="chip-progress-track">
+                  <div class="chip-progress-fill fill-orange" style="width: 48%;"></div>
+                </div>
+              </div>
+              <div class="mobile-mini-goal-chip tactile-card">
+                <div class="chip-top">
+                  <span class="chip-name">New Bike</span>
+                  <span class="chip-pct text-cyan">41%</span>
+                </div>
+                <div class="chip-progress-track">
+                  <div class="chip-progress-fill fill-cyan" style="width: 41%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Transfer Section with Yellow Solid Add Button -->
+          <div class="mobile-section-block">
+            <div class="section-header-row">
+              <h2 class="section-title">Quick Transfer</h2>
+            </div>
+            <div class="avatars-scroll-row drag-scrollable">
+              <div class="contact-avatar-pill selected tactile-btn" data-contact="Ann">
+                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <span class="contact-name">Ann</span>
+              </div>
+              <div class="contact-avatar-pill tactile-btn" data-contact="Monica">
+                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <span class="contact-name">Monica</span>
+              </div>
+              <div class="contact-avatar-pill tactile-btn" data-contact="John">
+                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <span class="contact-name">John</span>
+              </div>
+              <div class="contact-avatar-pill tactile-btn" data-contact="Mike">
+                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <span class="contact-name">Mike</span>
+              </div>
+              <!-- Solid Golden Circle with Bold Plus -->
+              <div class="contact-avatar-pill tactile-btn" id="mobile-btn-add-contact">
+                <button class="btn-add-contact-solid" title="Add New Recipient">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F2C3F" stroke-width="3.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+                <span class="contact-name">Add New</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Transactions Section with Pure SVG Icons -->
+          <div class="mobile-section-block">
+            <div class="section-header-row">
+              <h2 class="section-title">Recent Transactions</h2>
+            </div>
+            <div class="mobile-tx-card-list tactile-card">
+              <!-- Tesco Market -->
+              <div class="mobile-tx-item-row tactile-btn">
+                <div class="mobile-tx-icon-box bg-orange-light text-orange">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="8" cy="21" r="1"></circle>
+                    <circle cx="19" cy="21" r="1"></circle>
+                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                  </svg>
+                </div>
+                <div class="mobile-tx-info">
+                  <span class="mobile-tx-merchant">Tesco Market</span>
+                  <span class="mobile-tx-meta">Shopping • 13 Dec 2020</span>
+                </div>
+                <span class="mobile-tx-amount">-$75.67</span>
+              </div>
+
+              <!-- ElectroMen -->
+              <div class="mobile-tx-item-row tactile-btn">
+                <div class="mobile-tx-icon-box bg-blue-light text-blue">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div class="mobile-tx-info">
+                  <span class="mobile-tx-merchant">ElectroMen</span>
+                  <span class="mobile-tx-meta">Shopping • 14 Dec 2020</span>
+                </div>
+                <span class="mobile-tx-amount">-$250.00</span>
+              </div>
+
+              <!-- Fiorgio -->
+              <div class="mobile-tx-item-row tactile-btn">
+                <div class="mobile-tx-icon-box bg-amber-light text-amber">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                  </svg>
+                </div>
+                <div class="mobile-tx-info">
+                  <span class="mobile-tx-merchant">Fiorgio</span>
+                  <span class="mobile-tx-meta">Food • 07 Dec 2020</span>
+                </div>
+                <span class="mobile-tx-amount">-$19.50</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Desktop Specific Layout -->
+        <div class="overview-grid desktop-only">
+
+          <!-- Left Column -->
+          <div class="overview-left">
+
+            <!-- Cards Container -->
+            <div class="overview-card-container tactile-card">
+              <div class="section-header-row">
+                <h2 class="section-title">Cards</h2>
+              </div>
+
+              <div class="card-and-stats-wrapper">
+                <!-- Interactive Credit Card Carousel with 3D Drag -->
+                <div class="card-carousel-wrapper" id="desktop-overview-carousel">
+                  <button class="carousel-arrow tactile-btn" id="btn-card-prev" title="Previous Card">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                  </button>
+
+                  <div class="virtual-credit-card card-blue draggable-card" id="overview-virtual-card">
+                    <div class="card-sheen-glare"></div>
+                    <div class="card-vector-bg"></div>
+                    <div class="card-vector-bg-2"></div>
+
+                    <div class="card-top-row">
+                      <span class="card-brand-logo">cloudcash</span>
+                      <span class="card-type-badge" id="overview-card-type-badge">PREMIUM ACCOUNT</span>
+                    </div>
+
+                    <!-- EMV Chip & Contactless -->
+                    <div class="card-chip-contactless-row">
+                      <div class="card-chip-svg">
+                        <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                          <rect width="34" height="26" rx="4" fill="#E2C974"/>
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/>
+                        </svg>
+                      </div>
+                      <div class="card-contactless-svg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="card-number-row" id="overview-card-number">
+                      <span>5789</span>
+                      <span>••••</span>
+                      <span>••••</span>
+                      <span>2847</span>
+                    </div>
+
+                    <div class="card-bottom-row">
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">Card holder</span>
+                        <span class="card-meta-value" id="overview-card-holder">Mike Smith</span>
+                      </div>
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">Expire date</span>
+                        <span class="card-meta-value" id="overview-card-expire">06/21</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="carousel-arrow tactile-btn" id="btn-card-next" title="Next Card">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </button>
+                </div>
+
+                <!-- Balance Stats Stack -->
+                <div class="card-stats-stack">
+                  <div class="stat-item-row stat-primary tactile-card">
+                    <span class="stat-amount" id="desktop-overview-balance">$ 2,850.75</span>
+                    <span class="stat-label">Current balance</span>
+                  </div>
+                  <div class="stat-item-row stat-income tactile-card">
+                    <span class="stat-amount" id="desktop-overview-income">+$1,500.50</span>
+                    <span class="stat-label">Income</span>
+                  </div>
+                  <div class="stat-item-row stat-outcome tactile-card">
+                    <span class="stat-amount" id="desktop-overview-outcome">-$350.60</span>
+                    <span class="stat-label">Outcome</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Limit & Deactivate Controls -->
+              <div class="card-controls-bar">
+                <div class="limit-progress-group">
+                  <div class="progress-track">
+                    <div class="progress-fill fill-primary" id="desktop-limit-progress-fill" style="width: 22%;"></div>
+                  </div>
+                  <div class="limit-meta-row">
+                    <span class="limit-label">Weekly payment limit</span>
+                    <span class="limit-value" id="desktop-limit-text">$350.60 / $4000</span>
+                  </div>
+                </div>
+
+                <div class="toggle-group">
+                  <span class="toggle-label">Deactivate card</span>
+                  <label class="switch tactile-switch">
+                    <input type="checkbox" id="toggle-deactivate-card" />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Desktop Overview Card Quick Actions -->
+              <div class="card-actions-strip" style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+                <button class="btn-card-action tactile-btn" data-action="freeze" data-card="2847" title="Freeze or unfreeze card">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>Freeze</span>
+                </button>
+                <button class="btn-card-action tactile-btn" data-action="limits" data-card="2847" title="Set spending limits">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+                  <span>Limits</span>
+                </button>
+                <button class="btn-card-action tactile-btn" data-action="pin" data-card="2847" title="Change PIN code">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+                  <span>PIN Code</span>
+                </button>
+                <button class="btn-card-action tactile-btn" data-action="block" data-card="2847" title="Block card permanently">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                  <span>Block</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Transaction History Table with Pure SVG Icons -->
+            <div class="overview-transactions-card tactile-card">
+              <div class="section-header-row">
+                <h2 class="section-title">Transaction history</h2>
+              </div>
+
+              <div class="table-responsive">
+                <table class="custom-table">
+                  <thead>
+                    <tr>
+                      <th>Receiver</th>
+                      <th>Type</th>
+                      <th>Date</th>
+                      <th class="text-right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="receiver-cell">
+                          <div class="receiver-icon-box text-orange bg-orange-light">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+                          </div>
+                          <span>Tesco Market</span>
+                        </div>
+                      </td>
+                      <td><span class="table-cat-text">Shopping</span></td>
+                      <td><span class="table-date-text">13 Dec 2020</span></td>
+                      <td class="text-right"><span class="table-amount-text">$75.67</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="receiver-cell">
+                          <div class="receiver-icon-box text-blue bg-blue-light">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                          </div>
+                          <span>ElectroMen Market</span>
+                        </div>
+                      </td>
+                      <td><span class="table-cat-text">Shopping</span></td>
+                      <td><span class="table-date-text">14 Dec 2020</span></td>
+                      <td class="text-right"><span class="table-amount-text">$250.00</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="receiver-cell">
+                          <div class="receiver-icon-box text-amber bg-amber-light">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                          </div>
+                          <span>Fiorgio Restaurant</span>
+                        </div>
+                      </td>
+                      <td><span class="table-cat-text">Food</span></td>
+                      <td><span class="table-date-text">07 Dec 2020</span></td>
+                      <td class="text-right"><span class="table-amount-text">$19.50</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="receiver-cell">
+                          <div class="receiver-icon-box text-green bg-green-light">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                          </div>
+                          <span>John Mathew Kayne</span>
+                        </div>
+                      </td>
+                      <td><span class="table-cat-text">Sport</span></td>
+                      <td><span class="table-date-text">06 Dec 2020</span></td>
+                      <td class="text-right"><span class="table-amount-text">$350.00</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="receiver-cell">
+                          <div class="receiver-icon-box text-purple bg-purple-light">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                          </div>
+                          <span>Ann Marlin</span>
+                        </div>
+                      </td>
+                      <td><span class="table-cat-text">Shopping</span></td>
+                      <td><span class="table-date-text">31 Nov 2020</span></td>
+                      <td class="text-right"><span class="table-amount-text">$430.00</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
+          <div class="overview-right">
+
+            <!-- Goals Mini Section with Drag -->
+            <div class="overview-goals-section">
+              <div class="section-header-row" style="margin-bottom: 14px;">
+                <div class="goals-preview-header">
+                  <h2 class="section-title">Active Goals</h2>
+                  <button class="btn-add-circle tactile-btn" id="btn-quick-add-goal" title="Add Goal">+</button>
+                </div>
+                <a href="#goals" class="session-link-row tactile-btn" style="font-size: 12px;" onclick="document.querySelector('[data-view=goals]').click()">View All</a>
+              </div>
+
+              <div class="goals-cards-row drag-scrollable">
+                <!-- Goal 1: Holidays -->
+                <div class="mini-goal-card tactile-card">
+                  <div class="mini-goal-top">
+                    <span class="mini-goal-amount">$550</span>
+                    <span class="mini-goal-date">70%</span>
+                  </div>
+                  <div class="mini-goal-center-icon">
+                    <div class="icon-gradient-badge badge-blue-grad">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                    </div>
+                  </div>
+                  <span class="mini-goal-title">Holidays</span>
+                </div>
+
+                <!-- Goal 2: Renovation -->
+                <div class="mini-goal-card tactile-card">
+                  <div class="mini-goal-top">
+                    <span class="mini-goal-amount">$200</span>
+                    <span class="mini-goal-date">48%</span>
+                  </div>
+                  <div class="mini-goal-center-icon">
+                    <div class="icon-gradient-badge badge-orange-grad">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                  </div>
+                  <span class="mini-goal-title">Renovation</span>
+                </div>
+
+                <!-- Goal 3: Xbox -->
+                <div class="mini-goal-card tactile-card">
+                  <div class="mini-goal-top">
+                    <span class="mini-goal-amount">$820</span>
+                    <span class="mini-goal-date">41%</span>
+                  </div>
+                  <div class="mini-goal-center-icon">
+                    <div class="icon-gradient-badge badge-green-grad">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect width="20" height="12" x="2" y="6" rx="6"></rect></svg>
+                    </div>
+                  </div>
+                  <span class="mini-goal-title">Xbox</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Outcome Statistics -->
+            <div class="overview-outcome-section">
+              <div class="section-header-row" style="margin-bottom: 14px;">
+                <h2 class="section-title">Outcome Statistics</h2>
+              </div>
+
+              <div class="outcome-stats-card tactile-card">
+                <div class="outcome-stat-row">
+                  <div class="outcome-icon-box icon-box-orange">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+                  </div>
+                  <div class="outcome-bar-wrapper">
+                    <div class="progress-track">
+                      <div class="progress-fill fill-orange" style="width: 52%;"></div>
+                    </div>
+                    <span class="outcome-label">Shopping</span>
+                  </div>
+                  <span class="outcome-pct-value">52%</span>
+                </div>
+
+                <div class="outcome-stat-row">
+                  <div class="outcome-icon-box icon-box-green">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line></svg>
+                  </div>
+                  <div class="outcome-bar-wrapper">
+                    <div class="progress-track">
+                      <div class="progress-fill fill-green" style="width: 21%;"></div>
+                    </div>
+                    <span class="outcome-label">Electronics</span>
+                  </div>
+                  <span class="outcome-pct-value">21%</span>
+                </div>
+
+                <div class="outcome-stat-row">
+                  <div class="outcome-icon-box icon-box-blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
+                  </div>
+                  <div class="outcome-bar-wrapper">
+                    <div class="progress-track">
+                      <div class="progress-fill fill-blue-soft" style="width: 74%;"></div>
+                    </div>
+                    <span class="outcome-label">Travels</span>
+                  </div>
+                  <span class="outcome-pct-value">74%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- New Transaction + Loan Banner -->
+            <div class="new-transfer-and-promo-row">
+              <div class="new-transfer-card tactile-card">
+                <h2 class="section-title">Quick Transfer</h2>
+
+                <div class="avatars-scroll-row drag-scrollable">
+                  <div class="contact-avatar-pill selected tactile-btn" data-contact="Ann">
+                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <span class="contact-name">Ann</span>
+                  </div>
+                  <div class="contact-avatar-pill tactile-btn" data-contact="Monica">
+                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <span class="contact-name">Monica</span>
+                  </div>
+                  <div class="contact-avatar-pill tactile-btn" data-contact="John">
+                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <span class="contact-name">John</span>
+                  </div>
+                  <div class="contact-avatar-pill tactile-btn" data-contact="Mike">
+                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <span class="contact-name">Mike</span>
+                  </div>
+                  <!-- Golden Solid Plus Button -->
+                  <div class="contact-avatar-pill tactile-btn">
+                    <button class="btn-add-contact-solid" id="btn-add-recipient" title="Add New Recipient">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F2C3F" stroke-width="3.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <span class="contact-name">Add New</span>
+                  </div>
+                </div>
+
+                <div class="transfer-action-row">
+                  <div class="transfer-input-box">
+                    <input type="number" id="quick-transfer-amount" placeholder="0" value="0" />
+                    <span>$</span>
+                  </div>
+                  <button class="btn-send-transfer tactile-btn" id="btn-send-transfer">Send the transfer &gt;</button>
+                </div>
+              </div>
+
+              <div class="loan-promo-card tactile-btn" id="btn-loan-promo">
+                <!-- Exact 1:1 Vector Illustration for Clouds & Floating Coins -->
+                <div class="loan-vector-bg">
+                  <svg width="100%" height="100%" viewBox="0 0 150 190" fill="none" preserveAspectRatio="none">
+                    <!-- Top-Left Cloud Silhouette -->
+                    <path d="M-12 36 C-12 20, 6 8, 22 8 C25 2, 32 0, 40 0 C50 0, 58 6, 61 14 C67 13, 74 17, 76 23 C82 25, 86 31, 85 38 C85 46, 78 52, 70 52 L-12 52 Z" fill="#C44832" />
+                    <!-- Top-Right Cloud Silhouette -->
+                    <path d="M82 28 C82 18, 93 9, 104 9 C106 4, 111 1, 118 1 C126 1, 132 6, 134 12 C138 11, 144 14, 145 19 C150 20, 154 25, 153 31 C153 37, 148 42, 142 42 L82 42 Z" fill="#C44832" />
+                    <!-- Floating Translucent Coin 1 (Upper Right) -->
+                    <g transform="translate(68, 76) rotate(12)">
+                      <circle cx="16" cy="16" r="15" fill="rgba(255, 255, 255, 0.15)" />
+                      <text x="16" y="21.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="rgba(255, 255, 255, 0.4)" text-anchor="middle">$</text>
+                    </g>
+                    <!-- Floating Translucent Coin 2 (Lower Left) -->
+                    <g transform="translate(28, 108) rotate(-8)">
+                      <circle cx="13" cy="13" r="13" fill="rgba(255, 255, 255, 0.13)" />
+                      <text x="13" y="17.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="rgba(255, 255, 255, 0.35)" text-anchor="middle">$</text>
+                    </g>
+                  </svg>
+                </div>
+                <div class="loan-content">
+                  <span class="loan-title-text">Get great<br>loan! &gt;</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 2: TRANSACTIONS SCREEN
+           ==================================================================== -->
+      <section class="screen-view" id="view-transactions">
+        
+        <!-- Mobile Specific Viewport Layout -->
+        <div class="mobile-transactions-wrapper mobile-only">
+          
+          <!-- Search Bar -->
+          <div class="mobile-search-bar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" class="search-input" id="mobile-tx-search-input" placeholder="Search merchants, tags or accounts..." />
+          </div>
+
+          <!-- Filter Dropdowns Row -->
+          <div class="mobile-filters-row">
+            <div class="mobile-filter-select">
+              <select id="mobile-tx-date-filter" class="tactile-btn">
+                <option value="Dec 2024">Dec 2024</option>
+                <option value="Nov 2024">Nov 2024</option>
+                <option value="Oct 2024">Oct 2024</option>
+              </select>
+            </div>
+            <div class="mobile-filter-select">
+              <select id="mobile-tx-cat-filter" class="tactile-btn">
+                <option value="All">Categories</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Food & Drinks">Food & Drinks</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Transport">Transport</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Sport">Sport</option>
+                <option value="Work">Work</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Monthly Summary Card -->
+          <div class="mobile-monthly-summary-card tactile-card">
+            <h3 class="summary-card-heading">Monthly Summary</h3>
+            
+            <div class="mobile-summary-kpi-row">
+              <div class="mobile-summary-kpi-col">
+                <span class="kpi-label">Total Spent</span>
+                <span class="kpi-val text-red">$1,452.88</span>
+              </div>
+              <div class="mobile-summary-kpi-col">
+                <span class="kpi-label">Total Received</span>
+                <span class="kpi-val text-green">$4,250.00</span>
+              </div>
+            </div>
+
+            <!-- Net Cash Flow with Donut -->
+            <div class="mobile-net-cash-row">
+              <div class="mini-donut-wrapper">
+                <svg viewBox="0 0 36 36">
+                  <path stroke="#E8EEF3" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path stroke="#1F78D1" stroke-dasharray="65, 100" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+              </div>
+              <div class="net-cash-meta">
+                <span class="net-cash-label">Net Cash Flow</span>
+                <span class="net-cash-val text-blue">+$2,797.12</span>
+                <span class="net-cash-sub">Net cashflow is positive. Good job!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- History Rows Section -->
+          <div class="mobile-section-block">
+            <h3 class="section-title">History Rows</h3>
+            <div class="mobile-history-card-list tactile-card" id="mobile-history-list">
+              <!-- Dynamically rendered with pure SVG icons -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Desktop Specific Layout -->
+        <div class="transactions-layout desktop-only">
+
+          <!-- Left Column -->
+          <div class="transactions-main-col">
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+              <div class="search-input-wrapper">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" class="search-input" id="tx-search-input" placeholder="Search merchants, tags or accounts..." />
+              </div>
+
+              <div class="filter-dropdown">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <select id="tx-date-filter">
+                  <option value="Dec 2024">Dec 2024</option>
+                  <option value="Nov 2024">Nov 2024</option>
+                  <option value="Oct 2024">Oct 2024</option>
+                </select>
+              </div>
+
+              <div class="filter-dropdown">
+                <select id="tx-category-filter">
+                  <option value="All">All Categories</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="Food & Drinks">Food & Drinks</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Groceries">Groceries</option>
+                  <option value="Electronics">Electronics</option>
+                </select>
+              </div>
+
+              <div class="filter-dropdown">
+                <select id="tx-status-filter">
+                  <option value="All">Status</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Failed">Failed</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Transactions Data Table Card -->
+            <div class="transactions-table-card tactile-card">
+              <div class="table-responsive">
+                <table class="data-table" id="transactions-master-table">
+                  <thead>
+                    <tr>
+                      <th>Transaction</th>
+                      <th>Category</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th class="text-right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody id="transactions-tbody"></tbody>
+                </table>
+              </div>
+
+              <!-- Pagination Footer -->
+              <div class="pagination-bar">
+                <span id="tx-pagination-info">Showing 1-8 of 42 transactions</span>
+                <div class="page-controls">
+                  <button class="page-btn tactile-btn" id="btn-tx-prev">&lt;</button>
+                  <button class="page-btn active tactile-btn">1</button>
+                  <button class="page-btn tactile-btn">2</button>
+                  <button class="page-btn tactile-btn">3</button>
+                  <button class="page-btn tactile-btn" id="btn-tx-next">&gt;</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Monthly Summary Sidebar -->
+          <aside class="summary-card-sidebar tactile-card">
+            <h3 class="summary-sidebar-title">Monthly Summary</h3>
+
+            <div class="stat-block">
+              <span class="stat-block-title">Total Spent</span>
+              <span class="stat-block-val text-red">$1,452.88</span>
+            </div>
+
+            <!-- Spending Categories Donut -->
+            <div class="donut-card-widget">
+              <div class="donut-header-row">
+                <span>Spending categories</span>
+                <span class="donut-header-val text-red">$1,452.88</span>
+              </div>
+              <div class="donut-content-row">
+                <div class="donut-svg-wrapper">
+                  <svg viewBox="0 0 36 36">
+                    <path stroke="#E8EEF3" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#BB4430" stroke-dasharray="40, 100" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#F59E0B" stroke-dasharray="25, 100" stroke-dashoffset="-40" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#F97316" stroke-dasharray="20, 100" stroke-dashoffset="-65" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#EF4444" stroke-dasharray="10, 100" stroke-dashoffset="-85" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#DC2626" stroke-dasharray="5, 100" stroke-dashoffset="-95" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <div class="donut-center-text">
+                    <span class="donut-center-label">Spent</span>
+                    <span class="donut-center-amount">$1,452.88</span>
+                  </div>
+                </div>
+
+                <div class="donut-legend">
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#BB4430"></span><span>Housing</span></div>
+                    <span class="legend-pct">40%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#F59E0B"></span><span>Food</span></div>
+                    <span class="legend-pct">25%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#F97316"></span><span>Transport</span></div>
+                    <span class="legend-pct">20%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#EF4444"></span><span>Entertainment</span></div>
+                    <span class="legend-pct">10%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#DC2626"></span><span>Utilities</span></div>
+                    <span class="legend-pct">5%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-block">
+              <span class="stat-block-title">Total Received</span>
+              <span class="stat-block-val text-green">$4,250.00</span>
+            </div>
+
+            <!-- Income Sources Donut -->
+            <div class="donut-card-widget">
+              <div class="donut-header-row">
+                <span>Income sources</span>
+                <span class="donut-header-val text-green">$4,250.00</span>
+              </div>
+              <div class="donut-content-row">
+                <div class="donut-svg-wrapper">
+                  <svg viewBox="0 0 36 36">
+                    <path stroke="#E8EEF3" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#439A86" stroke-dasharray="60, 100" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#10B981" stroke-dasharray="30, 100" stroke-dashoffset="-60" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#22C55E" stroke-dasharray="10, 100" stroke-dashoffset="-90" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  </svg>
+                  <div class="donut-center-text">
+                    <span class="donut-center-label">Received</span>
+                    <span class="donut-center-amount">$4,250.00</span>
+                  </div>
+                </div>
+
+                <div class="donut-legend">
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#439A86"></span><span>Salary</span></div>
+                    <span class="legend-pct">60%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#10B981"></span><span>Freelance</span></div>
+                    <span class="legend-pct">30%</span>
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-left"><span class="legend-color-dot" style="background:#22C55E"></span><span>Investments</span></div>
+                    <span class="legend-pct">10%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Net Cash Flow Card -->
+            <div class="stat-block stat-block-highlight">
+              <span class="stat-block-title">Net Cash Flow</span>
+              <span class="stat-block-val text-blue">+$2,797.12</span>
+            </div>
+
+            <div class="disclaimer-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span>Net cashflow is positive this month. Good job!</span>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 3: CARDS SCREEN ("My Cards")
+           ==================================================================== -->
+      <section class="screen-view" id="view-cards">
+        
+        <!-- Mobile Specific Viewport Layout -->
+        <div class="mobile-cards-wrapper mobile-only">
+          
+          <!-- 3D Card Deck Stage in Cards Screen -->
+          <div class="card-3d-stage" id="cards-view-stage">
+            <div class="card-deck-stack" id="cards-deck-stack">
+              <!-- Card 0: Premium Blue (Full High-Fidelity Instance) -->
+              <div class="virtual-card-flipper-wrap card-slot-active" id="cards-card-0" data-card-idx="0">
+                <div class="virtual-card-inner">
+                  <!-- Front Face -->
+                  <div class="virtual-credit-card card-blue card-face-front">
+                    <div class="card-sheen-glare"></div>
+                    <div class="card-vector-bg"></div>
+                    <div class="card-vector-bg-2"></div>
+                    <div class="card-top-row">
+                      <span class="card-brand-logo">cloudcash</span>
+                      <div class="card-top-right-group">
+                        <span class="card-type-badge">PREMIUM</span>
+                        <button class="btn-card-flip-badge" title="Flip to see CVV code">
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <span>CVV</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="card-chip-contactless-row">
+                      <div class="card-chip-svg">
+                        <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                          <rect width="34" height="26" rx="4" fill="#E2C974"/>
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/>
+                        </svg>
+                      </div>
+                      <div class="card-contactless-svg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="card-number-row">
+                      <span>5749</span>
+                      <span>••••</span>
+                      <span>••••</span>
+                      <span>2847</span>
+                    </div>
+
+                    <div class="card-bottom-row">
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">CARD HOLDER</span>
+                        <span class="card-meta-value">Mike Smith</span>
+                      </div>
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">EXPIRE DATE</span>
+                        <span class="card-meta-value">06/25</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Back Face (CVV & Magnetic Strip) -->
+                  <div class="virtual-credit-card card-face-back card-blue">
+                    <div class="card-back-header">
+                      <span class="card-brand-logo-small">cloudcash</span>
+                      <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <span>Front</span>
+                      </button>
+                    </div>
+                    <div class="card-mag-strip"></div>
+                    <div class="card-signature-bar">
+                      <div class="sig-lines">AUTHORIZED SIGNATURE</div>
+                      <div class="card-cvv-box">
+                        <span class="cvv-label">CVV</span>
+                        <span class="cvv-val">847</span>
+                      </div>
+                    </div>
+                    <div class="card-back-footer">
+                      <span>cloudcash.com • Support: +1 (800) 555-0199</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 1: Black Metal (Full High-Fidelity Instance) -->
+              <div class="virtual-card-flipper-wrap card-slot-rear" id="cards-card-1" data-card-idx="1">
+                <div class="virtual-card-inner">
+                  <!-- Front Face -->
+                  <div class="virtual-credit-card card-metal card-face-front">
+                    <div class="card-sheen-glare"></div>
+                    <div class="card-vector-bg"></div>
+                    <div class="card-top-row">
+                      <span class="card-brand-logo">cloudcash</span>
+                      <div class="card-top-right-group">
+                        <span class="card-type-badge">METAL</span>
+                        <button class="btn-card-flip-badge" title="Flip to see CVV code">
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <span>CVV</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="card-chip-contactless-row">
+                      <div class="card-chip-svg">
+                        <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                          <rect width="34" height="26" rx="4" fill="#A0AEC0"/>
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568" stroke-width="1.2"/>
+                        </svg>
+                      </div>
+                      <div class="card-contactless-svg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="card-number-row">
+                      <span>4321</span>
+                      <span>••••</span>
+                      <span>••••</span>
+                      <span>8990</span>
+                    </div>
+
+                    <div class="card-bottom-row">
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">CARD HOLDER</span>
+                        <span class="card-meta-value">Andrew Smith</span>
+                      </div>
+                      <div class="card-meta-group">
+                        <span class="card-meta-label">EXPIRE DATE</span>
+                        <span class="card-meta-value">12/29</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Back Face (CVV & Magnetic Strip) -->
+                  <div class="virtual-credit-card card-face-back card-metal">
+                    <div class="card-back-header">
+                      <span class="card-brand-logo-small">cloudcash</span>
+                      <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <span>Front</span>
+                      </button>
+                    </div>
+                    <div class="card-mag-strip"></div>
+                    <div class="card-signature-bar">
+                      <div class="sig-lines">AUTHORIZED SIGNATURE</div>
+                      <div class="card-cvv-box">
+                        <span class="cvv-label">CVV</span>
+                        <span class="cvv-val">990</span>
+                      </div>
+                    </div>
+                    <div class="card-back-footer">
+                      <span>cloudcash.com • Support: +1 (800) 555-0199</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Pagination Indicator -->
+            <div class="card-deck-indicator">
+              <div class="card-dot-pill active" id="cards-dot-0"></div>
+              <div class="card-dot-pill" id="cards-dot-1"></div>
+              <span class="card-swipe-hint">Swipe or tap card to switch</span>
+            </div>
+          </div>
+
+          <!-- 4 Card Action Buttons -->
+          <div class="mobile-card-actions-grid">
+            <button class="btn-card-action tactile-btn" data-action="freeze" data-card="1234">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <span>Freeze</span>
+            </button>
+            <button class="btn-card-action tactile-btn" data-action="limits" data-card="1234">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+              <span>Limits</span>
+            </button>
+            <button class="btn-card-action tactile-btn" data-action="pin" data-card="1234">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+              <span>PIN Code</span>
+            </button>
+            <button class="btn-card-action tactile-btn" data-action="block" data-card="1234">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+              <span>Block</span>
+            </button>
+          </div>
+
+          <!-- Spending by Category Card -->
+          <div class="spending-category-card tactile-card">
+            <div class="spending-category-header">
+              <h3 class="summary-sidebar-title">Spending by Category</h3>
+            </div>
+
+            <div class="spending-bars-stack">
+              <div class="spending-progress-row">
+                <span class="spending-cat-name">Shopping</span>
+                <div class="spending-bar-track">
+                  <div class="spending-bar-fill fill-orange" style="width: 75%;"></div>
+                </div>
+                <span class="spending-amount-val">$430.00</span>
+              </div>
+
+              <div class="spending-progress-row">
+                <span class="spending-cat-name">Electronics</span>
+                <div class="spending-bar-track">
+                  <div class="spending-bar-fill fill-green" style="width: 45%;"></div>
+                </div>
+                <span class="spending-amount-val">$250.00</span>
+              </div>
+
+              <div class="spending-progress-row">
+                <span class="spending-cat-name">Travels</span>
+                <div class="spending-bar-track">
+                  <div class="spending-bar-fill" style="background: var(--primary-accent); width: 85%;"></div>
+                </div>
+                <span class="spending-amount-val">$550.00</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Desktop Specific Layout -->
+        <div class="cards-layout-grid desktop-only">
+
+          <div class="cards-main-column">
+            <!-- Cards Deck Row with Drag -->
+            <div class="cards-deck-row drag-scrollable">
+              <!-- Blue Premium Card -->
+              <div class="card-deck-item tactile-card">
+                <div class="virtual-credit-card card-blue draggable-card">
+                  <div class="card-sheen-glare"></div>
+                  <div class="card-vector-bg"></div>
+                  <div class="card-vector-bg-2"></div>
+
+                  <div class="card-top-row">
+                    <span class="card-brand-logo">cloudcash</span>
+                    <span class="card-type-badge">PREMIUM</span>
+                  </div>
+
+                  <div class="card-chip-contactless-row">
+                    <div class="card-chip-svg">
+                      <svg width="34" height="26" viewBox="0 0 34 26" fill="none"><rect width="34" height="26" rx="4" fill="#E2C974"/><path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/></svg>
+                    </div>
+                    <div class="card-contactless-svg">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round"><path d="M8.5 16.5a5 5 0 0 1 0-9"/><path d="M12 19a8.5 8.5 0 0 1 0-14"/><path d="M15.5 21.5a12 12 0 0 1 0-19"/></svg>
+                    </div>
+                  </div>
+
+                  <div class="card-number-row">
+                    <span>5789</span>
+                    <span>••••</span>
+                    <span>••••</span>
+                    <span>2847</span>
+                  </div>
+
+                  <div class="card-bottom-row">
+                    <div class="card-meta-group">
+                      <span class="card-meta-label">CARD HOLDER</span>
+                      <span class="card-meta-value">Mike Smith</span>
+                    </div>
+                    <div class="card-meta-group">
+                      <span class="card-meta-label">EXPIRE DATE</span>
+                      <span class="card-meta-value">06/27</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-actions-strip">
+                  <button class="btn-card-action tactile-btn" data-action="freeze" data-card="5789">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>Freeze</span>
+                  </button>
+                  <button class="btn-card-action tactile-btn" data-action="limits" data-card="5789">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+                    <span>Limits</span>
+                  </button>
+                  <button class="btn-card-action tactile-btn" data-action="pin" data-card="5789">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+                    <span>PIN Code</span>
+                  </button>
+                  <button class="btn-card-action tactile-btn" data-action="block" data-card="5789">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                    <span>Block</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Black Metal Card -->
+              <div class="card-deck-item tactile-card">
+                <div class="virtual-credit-card card-metal draggable-card">
+                  <div class="card-vector-bg"></div>
+
+                  <div class="card-top-row">
+                    <span class="card-brand-logo">cloudcash</span>
+                    <span class="card-type-badge">METAL</span>
+                  </div>
+
+                  <div class="card-chip-contactless-row">
+                    <div class="card-chip-svg" style="opacity: 0.8;">
+                      <svg width="28" height="22" viewBox="0 0 34 26" fill="none"><rect width="34" height="26" rx="4" fill="#A0AEC0"/><path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568" stroke-width="1.2"/></svg>
+                    </div>
+                  </div>
+
+                  <div class="card-number-row">
+                    <span>9012</span>
+                    <span>••••</span>
+                    <span>••••</span>
+                    <span>1104</span>
+                  </div>
+
+                  <div class="card-bottom-row">
+                    <div class="card-meta-group">
+                      <span class="card-meta-label">CARD HOLDER</span>
+                      <span class="card-meta-value">Mike Smith</span>
+                    </div>
+                    <div class="card-meta-group">
+                      <span class="card-meta-label">EXPIRE DATE</span>
+                      <span class="card-meta-value">12/29</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-actions-strip">
+                  <button class="btn-card-action tactile-btn" data-action="freeze" data-card="9012">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>Freeze</span>
+                  </button>
+                  <button class="btn-card-action tactile-btn" data-action="limits" data-card="9012">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+                    <span>Limits</span>
+                  </button>
+                  <button class="btn-card-action tactile-btn" data-action="pin" data-card="9012">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+                    <span>PIN Code</span>
+                  </button>
+                  <button class="btn-card-action tactile-btn" data-action="block" data-card="9012">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                    <span>Block</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spending by Category Card -->
+            <div class="spending-category-card tactile-card">
+              <div class="spending-category-header">
+                <h3 class="summary-sidebar-title">Spending by Category</h3>
+                <span style="font-size: 13px; color: var(--text-secondary);">This month</span>
+              </div>
+
+              <div class="spending-bars-stack">
+                <div class="spending-progress-row">
+                  <span class="spending-cat-name">Shopping</span>
+                  <div class="spending-bar-track">
+                    <div class="spending-bar-fill fill-orange" style="width: 75%;"></div>
+                  </div>
+                  <span class="spending-amount-val">$480.00</span>
+                </div>
+
+                <div class="spending-progress-row">
+                  <span class="spending-cat-name">Electronics</span>
+                  <div class="spending-bar-track">
+                    <div class="spending-bar-fill fill-green" style="width: 40%;"></div>
+                  </div>
+                  <span class="spending-amount-val">$250.00</span>
+                </div>
+
+                <div class="spending-progress-row">
+                  <span class="spending-cat-name">Travels</span>
+                  <div class="spending-bar-track">
+                    <div class="spending-bar-fill" style="background: var(--primary-accent); width: 30%;"></div>
+                  </div>
+                  <span class="spending-amount-val">$150.00</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Recent Card Transactions with SVG Icons -->
+          <aside class="recent-card-tx-sidebar tactile-card">
+            <div>
+              <h3 class="summary-sidebar-title" style="margin-bottom: 20px;">Recent Card Transactions</h3>
+
+              <div class="mini-tx-list">
+                <div class="mini-tx-item tactile-btn">
+                  <div class="mini-tx-left">
+                    <div class="mini-tx-icon-bg text-orange">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+                    </div>
+                    <div class="mini-tx-meta">
+                      <span class="mini-tx-merchant">Tesco Market</span>
+                      <span class="mini-tx-date">13 Dec 2024</span>
+                    </div>
+                  </div>
+                  <span class="mini-tx-amount">-$75.67</span>
+                </div>
+
+                <div class="mini-tx-item tactile-btn">
+                  <div class="mini-tx-left">
+                    <div class="mini-tx-icon-bg text-red">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="15" x="2" y="5" rx="2"></rect><polygon points="10 9 15 12 10 15 10 9" fill="currentColor"></polygon></svg>
+                    </div>
+                    <div class="mini-tx-meta">
+                      <span class="mini-tx-merchant">Netflix Premium</span>
+                      <span class="mini-tx-date">12 Dec 2024</span>
+                    </div>
+                  </div>
+                  <span class="mini-tx-amount">-$15.99</span>
+                </div>
+
+                <div class="mini-tx-item tactile-btn">
+                  <div class="mini-tx-left">
+                    <div class="mini-tx-icon-bg text-blue">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11 2 11.2 2 11.5V16c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+                    </div>
+                    <div class="mini-tx-meta">
+                      <span class="mini-tx-merchant">Uber Ride</span>
+                      <span class="mini-tx-date">11 Dec 2024</span>
+                    </div>
+                  </div>
+                  <span class="mini-tx-amount">-$24.50</span>
+                </div>
+
+                <div class="mini-tx-item tactile-btn">
+                  <div class="mini-tx-left">
+                    <div class="mini-tx-icon-bg text-green">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    </div>
+                    <div class="mini-tx-meta">
+                      <span class="mini-tx-merchant">Starbucks Store</span>
+                      <span class="mini-tx-date">10 Dec 2024</span>
+                    </div>
+                  </div>
+                  <span class="mini-tx-amount">-$6.80</span>
+                </div>
+
+                <div class="mini-tx-item tactile-btn">
+                  <div class="mini-tx-left">
+                    <div class="mini-tx-icon-bg text-amber">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5v1h1a4 4 0 0 1 4 4v7a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-7a4 4 0 0 1 4-4h1V7a5 5 0 0 1 5-5z"></path></svg>
+                    </div>
+                    <div class="mini-tx-meta">
+                      <span class="mini-tx-merchant">Whole Foods</span>
+                      <span class="mini-tx-date">09 Dec 2024</span>
+                    </div>
+                  </div>
+                  <span class="mini-tx-amount">-$42.30</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-view-all-outline tactile-btn" id="btn-view-all-card-history">View All Card History</button>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           VIEW 4: INVOICES SCREEN
+           ==================================================================== -->
+      <section class="screen-view" id="view-invoices">
+
+        <!-- Mobile Specific Viewport Layout -->
+        <div class="mobile-invoices-wrapper mobile-only">
+          
+          <!-- 3 Top Metric Tiles -->
+          <div class="invoices-metrics-grid">
+            <div class="invoice-kpi-card tactile-card">
+              <div class="invoice-kpi-top">
+                <span>Total</span>
+                <span class="invoice-kpi-count">24 bills</span>
+              </div>
+              <span class="invoice-kpi-val">$12.45K</span>
+            </div>
+
+            <div class="invoice-kpi-card tactile-card">
+              <div class="invoice-kpi-top">
+                <span>Paid</span>
+                <span class="invoice-kpi-count text-green">18 bills</span>
+              </div>
+              <span class="invoice-kpi-val">$9.25K</span>
+            </div>
+
+            <div class="invoice-kpi-card tactile-card">
+              <div class="invoice-kpi-top">
+                <span>Pending</span>
+                <span class="invoice-kpi-count text-orange">4 bills</span>
+              </div>
+              <span class="invoice-kpi-val">$2.10K</span>
+            </div>
+          </div>
+
+          <!-- Active Invoices Card -->
+          <div class="mobile-invoices-card tactile-card">
+            <div class="section-header-row" style="margin-bottom: 12px;">
+              <h3 class="summary-sidebar-title">Active Invoices</h3>
+              <button class="btn-mobile-new-invoice tactile-btn" id="btn-mobile-new-invoice">New Invoice</button>
+            </div>
+
+            <div class="mobile-invoices-list" id="mobile-invoices-list">
+              <!-- Rendered invoice items -->
+              <div class="mobile-invoice-item tactile-btn" data-inv-id="1">
+                <div class="mobile-inv-left">
+                  <span class="mobile-inv-client">Acme Corp</span>
+                  <span class="mobile-inv-num">INV-2024-001</span>
+                </div>
+                <div class="mobile-inv-right">
+                  <span class="mobile-inv-amount">$1,200.00</span>
+                  <span class="badge-status status-paid">Paid</span>
+                </div>
+              </div>
+
+              <div class="mobile-invoice-item tactile-btn" data-inv-id="2">
+                <div class="mobile-inv-left">
+                  <span class="mobile-inv-client">Globex Inc</span>
+                  <span class="mobile-inv-num">INV-2024-002</span>
+                </div>
+                <div class="mobile-inv-right">
+                  <span class="mobile-inv-amount">$450.00</span>
+                  <span class="badge-status status-pending">Pending</span>
+                </div>
+              </div>
+
+              <div class="mobile-invoice-item selected-invoice-item tactile-btn" data-inv-id="3">
+                <div class="mobile-inv-left">
+                  <span class="mobile-inv-client">Initech LLC</span>
+                  <span class="mobile-inv-num">INV-2024-003</span>
+                </div>
+                <div class="mobile-inv-right">
+                  <span class="mobile-inv-amount">$3,100.00</span>
+                  <span class="badge-status status-overdue">Overdue</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selected Invoice Card -->
+          <div class="selected-invoice-drawer tactile-card">
+            <div class="section-header-row">
+              <h3 class="summary-sidebar-title">Selected Invoice</h3>
+              <span class="badge-status status-overdue" id="mobile-drawer-invoice-status">Overdue</span>
+            </div>
+
+            <div class="client-meta-card">
+              <span class="client-label">CLIENT</span>
+              <span class="client-company" id="mobile-drawer-client-name">Initech LLC</span>
+              <span class="client-email" id="mobile-drawer-client-email">billing@initech.us</span>
+            </div>
+
+            <div class="invoice-details-list">
+              <div class="invoice-detail-row">
+                <span class="invoice-detail-label">Due Date</span>
+                <span class="invoice-detail-value" id="mobile-drawer-due-date">24 Dec 2024</span>
+              </div>
+              <div class="invoice-total-row">
+                <span class="total-due-label">Total Due</span>
+                <span class="total-due-val" id="mobile-drawer-total-amount">$3,100.00</span>
+              </div>
+            </div>
+
+            <div class="mobile-drawer-actions-row">
+              <button class="btn-send-reminder tactile-btn" id="mobile-btn-send-invoice-reminder">Send Reminder</button>
+              <button class="btn-download-pdf tactile-btn" id="mobile-btn-download-invoice-pdf">Download PDF</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Desktop Specific Layout -->
+        <div class="desktop-only">
+          <!-- 3/4 Metric Tiles -->
+          <div class="invoices-metrics-grid">
+            <div class="invoice-kpi-card tactile-card">
+              <div class="invoice-kpi-top">
+                <span>Total</span>
+                <span class="invoice-kpi-count">24 bills</span>
+              </div>
+              <span class="invoice-kpi-val">$12.45K</span>
+            </div>
+
+            <div class="invoice-kpi-card tactile-card">
+              <div class="invoice-kpi-top">
+                <span>Paid</span>
+                <span class="invoice-kpi-count" style="color: var(--color-green);">18 bills</span>
+              </div>
+              <span class="invoice-kpi-val">$9.25K</span>
+            </div>
+
+            <div class="invoice-kpi-card tactile-card">
+              <div class="invoice-kpi-top">
+                <span>Pending</span>
+                <span class="invoice-kpi-count" style="color: var(--color-orange);">4 bills</span>
+              </div>
+              <span class="invoice-kpi-val">$2.10K</span>
+            </div>
+          </div>
+
+          <div class="invoices-body-grid">
+            <!-- Invoices List Table -->
+            <div class="invoices-table-card tactile-card">
+              <div class="section-header-row" style="margin-bottom: 16px;">
+                <h3 class="summary-sidebar-title">Active Invoices</h3>
+                <button class="btn-primary tactile-btn" style="padding: 6px 14px; font-size: 12px;" onclick="document.getElementById('header-action-btn').click()">+ New Invoice</button>
+              </div>
+              <div class="table-responsive">
+                <table class="data-table" id="invoices-table">
+                  <thead>
+                    <tr>
+                      <th>Invoice #</th>
+                      <th>Client Name</th>
+                      <th>Amount</th>
+                      <th>Issue Date</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="invoices-tbody"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Selected Invoice Drawer Inspector -->
+            <aside class="selected-invoice-drawer tactile-card">
+              <div class="section-header-row">
+                <h3 class="summary-sidebar-title">Selected Invoice</h3>
+                <span class="badge-status status-pending" id="drawer-invoice-status">Pending</span>
+              </div>
+
+              <div class="client-meta-card">
+                <span class="client-label">CLIENT</span>
+                <span class="client-company" id="drawer-client-name">Initech LLC</span>
+                <span class="client-email" id="drawer-client-email">billing@initech.co</span>
+              </div>
+
+              <div class="invoice-details-list">
+                <div class="invoice-detail-row">
+                  <span class="invoice-detail-label">Invoice Number</span>
+                  <span class="invoice-detail-value" id="drawer-invoice-num">INV-2024-003</span>
+                </div>
+                <div class="invoice-detail-row">
+                  <span class="invoice-detail-label">Issued On</span>
+                  <span class="invoice-detail-value" id="drawer-issue-date">10 Dec 2024</span>
+                </div>
+                <div class="invoice-detail-row">
+                  <span class="invoice-detail-label">Due Date</span>
+                  <span class="invoice-detail-value" id="drawer-due-date">24 Dec 2024</span>
+                </div>
+              </div>
+
+              <div class="invoice-total-row">
+                <span class="total-due-label">Total Due</span>
+                <span class="total-due-val" id="drawer-total-amount">$3,100.00</span>
+              </div>
+
+              <div class="drawer-actions-stack">
+                <button class="btn-send-reminder tactile-btn" id="btn-send-invoice-reminder">Send Reminder</button>
+                <button class="btn-download-pdf tactile-btn" id="btn-download-invoice-pdf">Download PDF</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           VIEW 5: GOALS SCREEN ("My Goals")
+           ==================================================================== -->
+      <section class="screen-view" id="view-goals">
+
+        <!-- Mobile Specific Viewport Layout -->
+        <div class="mobile-goals-wrapper mobile-only">
+          
+          <!-- Top 2 KPI Metric Cards -->
+          <div class="mobile-goals-kpi-grid">
+            <div class="mobile-goal-kpi-card tactile-card">
+              <span class="mobile-kpi-title">Total Saved</span>
+              <span class="mobile-kpi-amount text-blue">$49,600</span>
+              <span class="mobile-kpi-sub">Across all goals</span>
+            </div>
+
+            <div class="mobile-goal-kpi-card tactile-card">
+              <span class="mobile-kpi-title">Monthly Target</span>
+              <span class="mobile-kpi-amount">$2,450</span>
+              <span class="mobile-kpi-sub">76.8% achieved</span>
+            </div>
+          </div>
+
+          <!-- Stacked Goal Cards List with Pure Vector SVGs -->
+          <div class="mobile-goals-stacked-list">
+            
+            <!-- Goal 1 (Palm Tree SVG) -->
+            <div class="mobile-goal-card tactile-card">
+              <div class="mobile-goal-header">
+                <div class="mobile-goal-icon-badge goal-badge-blue">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                </div>
+                <div class="mobile-goal-meta">
+                  <span class="mobile-goal-title">Dream Vacation</span>
+                  <span class="mobile-goal-amounts">$2,800 / $4,000</span>
+                </div>
+                <span class="mobile-goal-pct text-blue">70%</span>
+              </div>
+              <div class="chip-progress-track">
+                <div class="chip-progress-fill fill-blue" style="width: 70%;"></div>
+              </div>
+            </div>
+
+            <!-- Goal 2 (House / Renovation SVG) -->
+            <div class="mobile-goal-card tactile-card">
+              <div class="mobile-goal-header">
+                <div class="mobile-goal-icon-badge goal-badge-amber">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <div class="mobile-goal-meta">
+                  <span class="mobile-goal-title">Home Renovation</span>
+                  <span class="mobile-goal-amounts">$4,800 / $10,000</span>
+                </div>
+                <span class="mobile-goal-pct text-orange">48%</span>
+              </div>
+              <div class="chip-progress-track">
+                <div class="chip-progress-fill fill-orange" style="width: 48%;"></div>
+              </div>
+            </div>
+
+            <!-- Goal 3 (Car SVG) -->
+            <div class="mobile-goal-card tactile-card">
+              <div class="mobile-goal-header">
+                <div class="mobile-goal-icon-badge goal-badge-red">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="10" x="3" y="10" rx="2"></rect><circle cx="7.5" cy="20.5" r="1.5"></circle><circle cx="16.5" cy="20.5" r="1.5"></circle><path d="m5 10 2-5h10l2 5"></path></svg>
+                </div>
+                <div class="mobile-goal-meta">
+                  <span class="mobile-goal-title">New Sports Car</span>
+                  <span class="mobile-goal-amounts">$16,400 / $40,000</span>
+                </div>
+                <span class="mobile-goal-pct text-red">41%</span>
+              </div>
+              <div class="chip-progress-track">
+                <div class="chip-progress-fill fill-red" style="width: 41%;"></div>
+              </div>
+            </div>
+
+            <!-- Goal 4 (Shield SVG) -->
+            <div class="mobile-goal-card tactile-card">
+              <div class="mobile-goal-header">
+                <div class="mobile-goal-icon-badge goal-badge-teal">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="mobile-goal-meta">
+                  <span class="mobile-goal-title">Emergency Fund</span>
+                  <span class="mobile-goal-amounts">$9,200 / $10,000</span>
+                </div>
+                <span class="mobile-goal-pct text-green">92%</span>
+              </div>
+              <div class="chip-progress-track">
+                <div class="chip-progress-fill fill-green" style="width: 92%;"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- + Add New Goal Outline Button -->
+          <button class="btn-mobile-add-goal-outline tactile-btn" id="mobile-btn-add-goal">
+            <span>+ Add New Goal</span>
+          </button>
+
+          <!-- 6-Month Savings Progress Chart -->
+          <div class="savings-chart-card tactile-card">
+            <div class="chart-header-row">
+              <h3 class="summary-sidebar-title" style="margin-bottom: 4px;">6-Month Savings Progress</h3>
+              <div class="chart-legend-indicator">
+                <span class="chart-dot-primary"></span>
+                <span>Monthly Savings ($)</span>
+              </div>
+            </div>
+            <div class="chart-canvas-wrapper" id="mobile-savings-chart-wrapper">
+              <canvas id="mobile-savings-chart-canvas"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Desktop Specific Layout -->
+        <div class="desktop-only">
+          <!-- Top 4 Metric Cards -->
+          <div class="goals-hero-grid">
+            <div class="goal-hero-card hero-solid-blue tactile-card">
+              <span class="hero-card-title">Total Saved</span>
+              <span class="hero-card-amount">$49,600</span>
+              <span class="hero-card-sub">Across all goals</span>
+            </div>
+
+            <div class="goal-hero-card hero-white tactile-card">
+              <span class="hero-card-title">Monthly Target</span>
+              <span class="hero-card-amount" style="color: var(--text-heading);">$2,450</span>
+              <span class="hero-card-sub">78% accomplished this month</span>
+            </div>
+
+            <div class="goal-hero-card hero-white tactile-card">
+              <span class="hero-card-title">Goals Completed</span>
+              <span class="hero-card-amount" style="color: var(--text-heading);">8 Milestones</span>
+              <span class="hero-card-sub">3 completed in last 90 days</span>
+            </div>
+
+            <div class="goal-hero-card hero-white tactile-card">
+              <span class="hero-card-title">Active Goals</span>
+              <span class="hero-card-amount" style="color: var(--text-heading);">5 Active</span>
+              <span class="hero-card-sub">Average 64% completed</span>
+            </div>
+          </div>
+
+          <!-- Active Goals 2x3 Grid with Pure SVG Icons -->
+          <h3 class="active-goals-section-title">Active Goals</h3>
+          <div class="active-goals-grid">
+
+            <div class="active-goal-card tactile-card">
+              <div>
+                <div class="active-goal-top-row">
+                  <div class="goal-icon-badge goal-badge-blue">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                  </div>
+                  <span class="goal-pct-badge" style="color: var(--primary-accent);">70%</span>
+                </div>
+                <h4 class="active-goal-name">Dream Vacation</h4>
+                <span class="active-goal-target-date">Target date: Aug 2026</span>
+              </div>
+              <div class="active-goal-progress-wrap">
+                <div class="progress-track">
+                  <div class="progress-fill" style="background: var(--primary-accent); width: 70%;"></div>
+                </div>
+                <div class="active-goal-amounts-row">
+                  <span class="current-saved-val">$3,500</span>
+                  <span class="target-saved-val">of $5,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="active-goal-card tactile-card">
+              <div>
+                <div class="active-goal-top-row">
+                  <div class="goal-icon-badge goal-badge-amber">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  </div>
+                  <span class="goal-pct-badge" style="color: var(--color-orange);">48%</span>
+                </div>
+                <h4 class="active-goal-name">Home Renovation</h4>
+                <span class="active-goal-target-date">Target date: Dec 2026</span>
+              </div>
+              <div class="active-goal-progress-wrap">
+                <div class="progress-track">
+                  <div class="progress-fill fill-orange" style="width: 48%;"></div>
+                </div>
+                <div class="active-goal-amounts-row">
+                  <span class="current-saved-val">$12,000</span>
+                  <span class="target-saved-val">of $25,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="active-goal-card tactile-card">
+              <div>
+                <div class="active-goal-top-row">
+                  <div class="goal-icon-badge goal-badge-red">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="10" x="3" y="10" rx="2"></rect><circle cx="7.5" cy="20.5" r="1.5"></circle><circle cx="16.5" cy="20.5" r="1.5"></circle><path d="m5 10 2-5h10l2 5"></path></svg>
+                  </div>
+                  <span class="goal-pct-badge" style="color: var(--color-red);">41%</span>
+                </div>
+                <h4 class="active-goal-name">New Sports Car</h4>
+                <span class="active-goal-target-date">Target date: Oct 2027</span>
+              </div>
+              <div class="active-goal-progress-wrap">
+                <div class="progress-track">
+                  <div class="progress-fill" style="background: var(--color-red); width: 41%;"></div>
+                </div>
+                <div class="active-goal-amounts-row">
+                  <span class="current-saved-val">$18,500</span>
+                  <span class="target-saved-val">of $45,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="active-goal-card tactile-card">
+              <div>
+                <div class="active-goal-top-row">
+                  <div class="goal-icon-badge goal-badge-teal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  </div>
+                  <span class="goal-pct-badge" style="color: var(--color-green);">92%</span>
+                </div>
+                <h4 class="active-goal-name">Emergency Fund</h4>
+                <span class="active-goal-target-date">Target date: Ongoing</span>
+              </div>
+              <div class="active-goal-progress-wrap">
+                <div class="progress-track">
+                  <div class="progress-fill" style="background: var(--color-green); width: 92%;"></div>
+                </div>
+                <div class="active-goal-amounts-row">
+                  <span class="current-saved-val">$9,200</span>
+                  <span class="target-saved-val">of $10,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="active-goal-card tactile-card">
+              <div>
+                <div class="active-goal-top-row">
+                  <div class="goal-icon-badge goal-badge-purple">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                  </div>
+                  <span class="goal-pct-badge" style="color: var(--color-purple);">43%</span>
+                </div>
+                <h4 class="active-goal-name">Executive MBA</h4>
+                <span class="active-goal-target-date">Target date: Jun 2027</span>
+              </div>
+              <div class="active-goal-progress-wrap">
+                <div class="progress-track">
+                  <div class="progress-fill" style="background: var(--color-purple); width: 43%;"></div>
+                </div>
+                <div class="active-goal-amounts-row">
+                  <span class="current-saved-val">$6,400</span>
+                  <span class="target-saved-val">of $15,000</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add New Goal Interactive Card -->
+            <div class="add-goal-dashed-card tactile-btn" id="btn-add-new-goal-card">
+              <div class="add-goal-plus-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </div>
+              <span class="add-goal-title">Add New Goal</span>
+              <span class="add-goal-subtitle">Set a fresh milestone and track your savings</span>
+            </div>
+
+          </div>
+
+          <!-- 6-Month Savings Progress Chart -->
+          <div class="savings-chart-card tactile-card">
+            <div class="chart-header-row">
+              <h3 class="summary-sidebar-title">6-Month Savings Progress</h3>
+              <div class="chart-legend-indicator">
+                <span class="chart-dot-primary"></span>
+                <span>Monthly Savings ($)</span>
+              </div>
+            </div>
+
+            <div class="chart-canvas-wrapper" id="desktop-savings-chart-wrapper">
+              <canvas id="desktop-savings-chart-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           VIEW 6: SETTINGS SCREEN
+           ==================================================================== -->
+      <section class="screen-view" id="view-settings">
+        
+        <!-- Mobile Specific Viewport Layout -->
+        <div class="mobile-settings-wrapper mobile-only">
+          
+          <!-- Profile Information Card -->
+          <div class="settings-card tactile-card">
+            <h3 class="settings-card-title">Profile Information</h3>
+
+            <div class="profile-header-meta">
+              <div class="profile-avatar-large">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+              </div>
+              <div class="profile-text-group">
+                <span class="profile-name-text">Andrew Smith</span>
+                <span class="profile-subtitle">andrew.smith@cloudcash.com</span>
+              </div>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="settings-field-row">
+              <div class="settings-field-content">
+                <span class="settings-field-label">PHONE NUMBER</span>
+                <span class="settings-field-val" id="mobile-profile-phone">+1 (555) 019-2834</span>
+              </div>
+              <button class="btn-edit-pill tactile-btn" data-edit-field="phone">Edit</button>
+            </div>
+
+            <!-- Billing Address Field -->
+            <div class="settings-field-row">
+              <div class="settings-field-content">
+                <span class="settings-field-label">BILLING ADDRESS</span>
+                <span class="settings-field-val" id="mobile-profile-address">Orchard St. NY</span>
+              </div>
+              <button class="btn-edit-pill tactile-btn" data-edit-field="address">Edit</button>
+            </div>
+          </div>
+
+          <!-- Notification Preferences Card -->
+          <div class="settings-card tactile-card">
+            <h3 class="settings-card-title">Notification Preferences</h3>
+
+            <div class="settings-toggle-row">
+              <div class="toggle-info">
+                <span class="toggle-title">Email Alerts</span>
+                <span class="toggle-desc">Monthly summaries and major updates</span>
+              </div>
+              <label class="switch tactile-switch">
+                <input type="checkbox" checked id="mobile-toggle-email-alerts" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="settings-toggle-row">
+              <div class="toggle-info">
+                <span class="toggle-title">Push Transactions</span>
+                <span class="toggle-desc">Instant payment alerts on your phone</span>
+              </div>
+              <label class="switch tactile-switch">
+                <input type="checkbox" id="mobile-toggle-push" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Localization & Theme Card -->
+          <div class="settings-card tactile-card">
+            <h3 class="settings-card-title">Localization & Theme</h3>
+
+            <div class="settings-select-group">
+              <span class="settings-select-label">Currency: USD ($)</span>
+              <select class="settings-select-control tactile-btn" id="mobile-select-currency">
+                <option selected>USD ($)</option>
+                <option>EUR (€)</option>
+                <option>GBP (£)</option>
+                <option>CAD ($)</option>
+              </select>
+            </div>
+
+            <div class="settings-select-group">
+              <span class="settings-select-label">Language: English (US)</span>
+              <select class="settings-select-control tactile-btn" id="mobile-select-language">
+                <option selected>English (US)</option>
+                <option>Spanish (ES)</option>
+                <option>French (FR)</option>
+                <option>German (DE)</option>
+              </select>
+            </div>
+
+            <div class="settings-toggle-row">
+              <div class="toggle-info">
+                <span class="toggle-title">Dark Theme</span>
+              </div>
+              <label class="switch tactile-switch">
+                <input type="checkbox" id="mobile-toggle-dark-theme" />
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Desktop Specific Layout -->
+        <div class="settings-layout-grid desktop-only">
+
+          <!-- Left Column -->
+          <div class="settings-left-col">
+
+            <!-- Profile Information Card -->
+            <div class="settings-card tactile-card">
+              <h3 class="settings-card-title">Profile Information</h3>
+
+              <div class="profile-header-meta">
+                <div class="profile-avatar-large">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div class="profile-name-badge-row">
+                    <span class="profile-name-text">Andrew Smith</span>
+                    <span class="badge-pro">PRO</span>
+                  </div>
+                  <span class="profile-subtitle">Update your photo and personal profile</span>
+                </div>
+              </div>
+
+              <!-- Email Field -->
+              <div class="settings-field-row">
+                <div class="settings-field-content">
+                  <span class="settings-field-label">Email Address</span>
+                  <span class="settings-field-val" id="profile-display-email">andrew.smith@cloudcash.com</span>
+                </div>
+                <button class="btn-edit-pill tactile-btn" data-edit-field="email">Edit</button>
+              </div>
+
+              <!-- Phone Number Field -->
+              <div class="settings-field-row">
+                <div class="settings-field-content">
+                  <span class="settings-field-label">Phone Number</span>
+                  <span class="settings-field-val" id="profile-display-phone">+1 (555) 019-2834</span>
+                </div>
+                <button class="btn-edit-pill tactile-btn" data-edit-field="phone">Edit</button>
+              </div>
+
+              <!-- Billing Address Field -->
+              <div class="settings-field-row">
+                <div class="settings-field-content">
+                  <span class="settings-field-label">Billing Address</span>
+                  <span class="settings-field-val" id="profile-display-address">Orchard St. NY</span>
+                </div>
+                <button class="btn-edit-pill tactile-btn" data-edit-field="address">Edit</button>
+              </div>
+            </div>
+
+            <!-- Notifications Preferences Card -->
+            <div class="settings-card tactile-card">
+              <h3 class="settings-card-title">Notifications Preferences</h3>
+
+              <!-- Email alerts for transactions -->
+              <div class="settings-toggle-row">
+                <div class="toggle-info">
+                  <span class="toggle-title">Email alerts for transactions</span>
+                  <span class="toggle-desc">Get instant receipts and notifications for every card charge.</span>
+                </div>
+                <label class="switch tactile-switch">
+                  <input type="checkbox" checked id="toggle-email-alerts" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <!-- Weekly sumup reports -->
+              <div class="settings-toggle-row">
+                <div class="toggle-info">
+                  <span class="toggle-title">Weekly sumup reports</span>
+                  <span class="toggle-desc">Receive a clean visual digest of your spend categories.</span>
+                </div>
+                <label class="switch tactile-switch">
+                  <input type="checkbox" checked id="toggle-weekly-reports" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <!-- Goal milestone celebrations -->
+              <div class="settings-toggle-row">
+                <div class="toggle-info">
+                  <span class="toggle-title">Goal milestone celebrations</span>
+                  <span class="toggle-desc">Get notified when you hit 50%, 80% and 100% of your targets.</span>
+                </div>
+                <label class="switch tactile-switch">
+                  <input type="checkbox" id="toggle-milestone-notifs" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
+          <div class="settings-right-col">
+
+            <!-- Security & Login Card -->
+            <div class="settings-card tactile-card">
+              <h3 class="settings-card-title">Security & Login</h3>
+
+              <div class="settings-field-row">
+                <div class="settings-field-content">
+                  <span class="settings-field-label">Password</span>
+                  <span class="settings-field-val">••••••••••••••</span>
+                </div>
+                <button class="btn-edit-pill tactile-btn" id="btn-change-password">Change</button>
+              </div>
+
+              <!-- 2-Factor Auth -->
+              <div class="settings-toggle-row">
+                <div class="toggle-info">
+                  <span class="toggle-title">2-Factor Auth</span>
+                  <span class="toggle-desc">Sign in securely using secondary validation.</span>
+                </div>
+                <label class="switch tactile-switch">
+                  <input type="checkbox" checked id="toggle-2fa" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <!-- Active Session History Link -->
+              <a class="session-link-row tactile-btn" id="btn-session-history">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>View active session history</span>
+              </a>
+            </div>
+
+            <!-- Payment & Localization Card -->
+            <div class="settings-card tactile-card">
+              <h3 class="settings-card-title">Payment & Localization</h3>
+
+              <div class="settings-select-group">
+                <span class="settings-select-label">Default Currency</span>
+                <select class="settings-select-control tactile-btn" id="select-currency">
+                  <option selected>USD ($) - US Dollar</option>
+                  <option>EUR (€) - Euro</option>
+                  <option>GBP (£) - British Pound</option>
+                  <option>CAD ($) - Canadian Dollar</option>
+                  <option>AUD ($) - Australian Dollar</option>
+                </select>
+              </div>
+
+              <div class="settings-select-group">
+                <span class="settings-select-label">Interface Language</span>
+                <select class="settings-select-control tactile-btn" id="select-language">
+                  <option selected>English (US)</option>
+                  <option>Spanish (Español)</option>
+                  <option>French (Français)</option>
+                  <option>German (Deutsch)</option>
+                </select>
+              </div>
+
+              <div class="settings-toggle-row">
+                <div class="toggle-info">
+                  <span class="toggle-title">Auto-pay bills</span>
+                  <span class="toggle-desc">Automatically pay pre-verified monthly invoices.</span>
+                </div>
+                <label class="switch tactile-switch">
+                  <input type="checkbox" id="toggle-autopay" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Theme Segmented Control Card -->
+            <div class="settings-card tactile-card">
+              <h3 class="settings-card-title">Theme</h3>
+
+              <div class="theme-segmented-control">
+                <button class="btn-theme-tab active tactile-btn" id="btn-theme-light">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                  <span>Light</span>
+                </button>
+                <button class="btn-theme-tab tactile-btn" id="btn-theme-dark">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                  <span>Dark</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FIXED MOBILE BOTTOM NAVIGATION (6 Screens with Clean SVGs and Labels) -->
+    <nav class="mobile-bottom-nav">
+      <a class="mobile-nav-item active tactile-btn" data-view="overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Overview</span>
+      </a>
+      <a class="mobile-nav-item tactile-btn" data-view="transactions">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        <span>Transactions</span>
+      </a>
+      <a class="mobile-nav-item tactile-btn" data-view="cards">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+          <line x1="2" y1="10" x2="22" y2="10"></line>
+        </svg>
+        <span>Cards</span>
+      </a>
+      <a class="mobile-nav-item tactile-btn" data-view="invoices">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path>
+          <line x1="8" y1="8" x2="16" y2="8"></line>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg>
+        <span>Invoices</span>
+      </a>
+      <a class="mobile-nav-item tactile-btn" data-view="goals">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="6"></circle>
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+        </svg>
+        <span>Goals</span>
+      </a>
+      <a class="mobile-nav-item tactile-btn" data-view="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- ====================================================================
+       INTERACTIVE MODALS
+       ==================================================================== -->
+
+  <!-- Modal: Create New Invoice -->
+  <div class="modal-overlay" id="modal-new-invoice">
+    <div class="modal-card tactile-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Create New Invoice</h3>
+        <button class="btn-close-modal tactile-btn" data-close-modal>&times;</button>
+      </div>
+      <form class="modal-form" id="form-new-invoice">
+        <div class="form-group">
+          <label>Client Name</label>
+          <input type="text" class="form-control" id="input-client-name" placeholder="e.g. Initech LLC" required />
+        </div>
+        <div class="form-group">
+          <label>Client Email</label>
+          <input type="email" class="form-control" id="input-client-email" placeholder="billing@client.com" required />
+        </div>
+        <div class="form-group">
+          <label>Amount ($)</label>
+          <input type="number" step="0.01" class="form-control" id="input-invoice-amount" placeholder="1500.00" required />
+        </div>
+        <div class="form-group">
+          <label>Due Date</label>
+          <input type="date" class="form-control" id="input-invoice-due" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary tactile-btn" data-close-modal>Cancel</button>
+          <button type="submit" class="btn-primary tactile-btn">Generate Invoice</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Add New Goal -->
+  <div class="modal-overlay" id="modal-new-goal">
+    <div class="modal-card tactile-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Create Saving Goal</h3>
+        <button class="btn-close-modal tactile-btn" data-close-modal>&times;</button>
+      </div>
+      <form class="modal-form" id="form-new-goal">
+        <div class="form-group">
+          <label>Goal Name</label>
+          <input type="text" class="form-control" id="input-goal-name" placeholder="e.g. New Gaming Setup" required />
+        </div>
+        <div class="form-group">
+          <label>Target Amount ($)</label>
+          <input type="number" class="form-control" id="input-goal-target" placeholder="2500" required />
+        </div>
+        <div class="form-group">
+          <label>Initial Deposit ($)</label>
+          <input type="number" class="form-control" id="input-goal-initial" placeholder="500" />
+        </div>
+        <div class="form-group">
+          <label>Target Date</label>
+          <input type="text" class="form-control" id="input-goal-date" placeholder="e.g. Dec 2026" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary tactile-btn" data-close-modal>Cancel</button>
+          <button type="submit" class="btn-primary tactile-btn">Create Goal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Card Controls (Freeze / PIN / Limits / Block) -->
+  <div class="modal-overlay" id="modal-card-control">
+    <div class="modal-card tactile-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="card-modal-title">Card Security Control</h3>
+        <button class="btn-close-modal tactile-btn" data-close-modal>&times;</button>
+      </div>
+      <div id="card-modal-body">
+        <p style="color: var(--text-secondary); font-size: 14px;">Updating settings for card ending in <strong id="modal-card-num-label">2847</strong>.</p>
+        <div class="form-group" style="margin-top: 16px;">
+          <label id="card-modal-input-label">New PIN Code</label>
+          <input type="password" maxlength="4" class="form-control" id="card-modal-input-field" placeholder="••••" />
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary tactile-btn" data-close-modal>Cancel</button>
+        <button type="button" class="btn-primary tactile-btn" id="btn-save-card-control">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Edit Profile Field -->
+  <div class="modal-overlay" id="modal-edit-profile">
+    <div class="modal-card tactile-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="edit-profile-title">Edit Profile Information</h3>
+        <button class="btn-close-modal tactile-btn" data-close-modal>&times;</button>
+      </div>
+      <form class="modal-form" id="form-edit-profile">
+        <div class="form-group">
+          <label id="edit-profile-input-label">Value</label>
+          <input type="text" class="form-control" id="input-edit-profile-val" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary tactile-btn" data-close-modal>Cancel</button>
+          <button type="submit" class="btn-primary tactile-btn">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Change Password -->
+  <div class="modal-overlay" id="modal-change-password">
+    <div class="modal-card tactile-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Change Account Password</h3>
+        <button class="btn-close-modal tactile-btn" data-close-modal>&times;</button>
+      </div>
+      <form class="modal-form" id="form-change-password">
+        <div class="form-group">
+          <label>Current Password</label>
+          <input type="password" class="form-control" placeholder="••••••••••••" required />
+        </div>
+        <div class="form-group">
+          <label>New Password</label>
+          <input type="password" class="form-control" placeholder="Minimum 8 characters" required />
+        </div>
+        <div class="form-group">
+          <label>Confirm New Password</label>
+          <input type="password" class="form-control" placeholder="Re-enter password" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary tactile-btn" data-close-modal>Cancel</button>
+          <button type="submit" class="btn-primary tactile-btn">Update Password</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Chart.js Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- JavaScript Controller -->
+  <script src="app.js"></script>
+</body>
+</html>
