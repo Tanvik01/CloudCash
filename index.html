@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>CloudCash - Modern Fintech Suite</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <!-- Floating Collapsible Viewport Dock (Bottom-Right) -->
   <div class="viewport-floating-dock" id="viewport-floating-dock">
     <!-- Collapsed Trigger Button -->
     <button class="btn-dock-trigger tactile-btn" id="btn-dock-trigger" title="Switch Viewport Mode">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
         <rect width="20" height="14" x="2" y="3" rx="2"></rect>
         <line x1="8" y1="21" x2="16" y2="21"></line>
         <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -25,7 +28,8 @@
       <div class="dock-panel-header">
         <span class="dock-label">Viewport Mode</span>
         <button class="btn-dock-collapse tactile-btn" id="btn-dock-collapse" title="Minimize switcher">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -33,11 +37,18 @@
       </div>
       <div class="device-btn-group">
         <button class="btn-device active tactile-btn" id="btn-device-desktop">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
           <span>Desktop</span>
         </button>
         <button class="btn-device tactile-btn" id="btn-device-mobile">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+            <path d="M12 18h.01"></path>
+          </svg>
           <span>Mobile View</span>
         </button>
       </div>
@@ -55,10 +66,13 @@
           <div class="logo-icon-svg-wrap">
             <svg width="38" height="28" viewBox="0 0 46 34" fill="none">
               <!-- Blue Cloud Silhouette -->
-              <path d="M12 32C5.92487 32 1 27.0751 1 21C1 15.6179 4.88219 11.1444 10.0573 10.187C11.5173 4.19539 16.9463 0 23.5 0C30.2285 0 35.7877 4.41245 37.0782 10.5966C41.6033 11.7588 45 15.8272 45 20.6667C45 26.3736 40.3736 31 34.6667 31L12 32Z" fill="#1F78D1"/>
+              <path
+                d="M12 32C5.92487 32 1 27.0751 1 21C1 15.6179 4.88219 11.1444 10.0573 10.187C11.5173 4.19539 16.9463 0 23.5 0C30.2285 0 35.7877 4.41245 37.0782 10.5966C41.6033 11.7588 45 15.8272 45 20.6667C45 26.3736 40.3736 31 34.6667 31L12 32Z"
+                fill="#1F78D1" />
               <!-- Yellow Coin Overlap -->
-              <circle cx="34" cy="10" r="9" fill="#FFC145"/>
-              <text x="34" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#1F2C3F" text-anchor="middle">$</text>
+              <circle cx="34" cy="10" r="9" fill="#FFC145" />
+              <text x="34" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800"
+                fill="#1F2C3F" text-anchor="middle">$</text>
             </svg>
           </div>
           <span class="brand-text">cloudcash</span>
@@ -121,7 +135,9 @@
           <li>
             <a class="nav-item tactile-btn" data-view="settings">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                <path
+                  d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                </path>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
               <span>Settings</span>
@@ -135,21 +151,28 @@
         <div class="sidebar-illustration-wrap">
           <svg width="84" height="70" viewBox="0 0 84 70" fill="none">
             <!-- Moon -->
-            <path d="M54 12C54 18 58 22 64 22C64.6 22 65.2 21.9 65.8 21.8C64.5 25.4 61 28 57 28C51.5 28 47 23.5 47 18C47 14.5 48.8 11.5 51.5 9.8C52.3 10.8 53.3 11.5 54 12Z" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M54 12C54 18 58 22 64 22C64.6 22 65.2 21.9 65.8 21.8C64.5 25.4 61 28 57 28C51.5 28 47 23.5 47 18C47 14.5 48.8 11.5 51.5 9.8C52.3 10.8 53.3 11.5 54 12Z"
+              stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
             <!-- Coin behind cloud -->
-            <circle cx="28" cy="16" r="10" stroke="#1F78D1" stroke-width="1.8"/>
-            <text x="28" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#1F78D1" text-anchor="middle">$</text>
+            <circle cx="28" cy="16" r="10" stroke="#1F78D1" stroke-width="1.8" />
+            <text x="28" y="20" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700"
+              fill="#1F78D1" text-anchor="middle">$</text>
             <!-- Cloud -->
-            <path d="M22 38C17 38 13 34 13 29C13 24.5 16.3 20.8 20.6 20.1C21.8 14.8 26.5 11 32 11C38 11 42.8 15 44 20.5C48 21.5 51 25 51 29C51 34 47 38 42 38H22Z" fill="white" stroke="#1F78D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path
+              d="M22 38C17 38 13 34 13 29C13 24.5 16.3 20.8 20.6 20.1C21.8 14.8 26.5 11 32 11C38 11 42.8 15 44 20.5C48 21.5 51 25 51 29C51 34 47 38 42 38H22Z"
+              fill="white" stroke="#1F78D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             <!-- Upward Arrow 1 -->
-            <path d="M34 40V34M34 34L31 37M34 34L37 37" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M34 40V34M34 34L31 37M34 34L37 37" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
             <!-- Upward Arrow 2 -->
-            <path d="M42 46V41M42 41L39 44M42 41L45 44" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M42 46V41M42 41L39 44M42 41L45 44" stroke="#1F78D1" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
             <!-- Credit Card Floating Up -->
             <g transform="translate(25, 46) rotate(-28)">
-              <rect width="22" height="15" rx="3" stroke="#1F78D1" stroke-width="1.8" fill="white"/>
-              <line x1="0" y1="4" x2="22" y2="4" stroke="#1F78D1" stroke-width="1.5"/>
-              <rect x="3" y="8" width="4" height="3" rx="0.5" fill="#1F78D1"/>
+              <rect width="22" height="15" rx="3" stroke="#1F78D1" stroke-width="1.8" fill="white" />
+              <line x1="0" y1="4" x2="22" y2="4" stroke="#1F78D1" stroke-width="1.5" />
+              <rect x="3" y="8" width="4" height="3" rx="0.5" fill="#1F78D1" />
             </g>
           </svg>
         </div>
@@ -167,18 +190,20 @@
         <div class="status-notch"></div>
         <div class="status-icons">
           <svg width="15" height="11" viewBox="0 0 17 11" fill="none">
-            <rect x="0" y="7" width="2.5" height="4" rx="0.8" fill="currentColor"/>
-            <rect x="4.5" y="5" width="2.5" height="6" rx="0.8" fill="currentColor"/>
-            <rect x="9" y="2.5" width="2.5" height="8.5" rx="0.8" fill="currentColor"/>
-            <rect x="13.5" y="0" width="2.5" height="11" rx="0.8" fill="currentColor"/>
+            <rect x="0" y="7" width="2.5" height="4" rx="0.8" fill="currentColor" />
+            <rect x="4.5" y="5" width="2.5" height="6" rx="0.8" fill="currentColor" />
+            <rect x="9" y="2.5" width="2.5" height="8.5" rx="0.8" fill="currentColor" />
+            <rect x="13.5" y="0" width="2.5" height="11" rx="0.8" fill="currentColor" />
           </svg>
           <svg width="15" height="12" viewBox="0 0 16 12" fill="none">
-            <path d="M8 11.5C8.8 11.5 9.5 10.8 9.5 10C9.5 9.2 8.8 8.5 8 8.5C7.2 8.5 6.5 9.2 6.5 10C6.5 10.8 7.2 11.5 8 11.5ZM4.2 6.2C6.3 4.1 9.7 4.1 11.8 6.2L13.2 4.8C10.3 1.9 5.7 1.9 2.8 4.8L4.2 6.2ZM1.4 3.4C5 0.2 11 0.2 14.6 3.4L16 2C11.6 -1.9 4.4 -1.9 0 2L1.4 3.4Z" fill="currentColor"/>
+            <path
+              d="M8 11.5C8.8 11.5 9.5 10.8 9.5 10C9.5 9.2 8.8 8.5 8 8.5C7.2 8.5 6.5 9.2 6.5 10C6.5 10.8 7.2 11.5 8 11.5ZM4.2 6.2C6.3 4.1 9.7 4.1 11.8 6.2L13.2 4.8C10.3 1.9 5.7 1.9 2.8 4.8L4.2 6.2ZM1.4 3.4C5 0.2 11 0.2 14.6 3.4L16 2C11.6 -1.9 4.4 -1.9 0 2L1.4 3.4Z"
+              fill="currentColor" />
           </svg>
           <svg width="22" height="11" viewBox="0 0 25 12" fill="none">
-            <rect x="0.5" y="0.5" width="20.5" height="10" rx="3" stroke="currentColor"/>
-            <rect x="2" y="2" width="16" height="7" rx="1.5" fill="currentColor"/>
-            <path d="M23 4C23.6 4.5 24 5.2 24 6C24 6.8 23.6 7.5 23 8V4Z" fill="currentColor"/>
+            <rect x="0.5" y="0.5" width="20.5" height="10" rx="3" stroke="currentColor" />
+            <rect x="2" y="2" width="16" height="7" rx="1.5" fill="currentColor" />
+            <path d="M23 4C23.6 4.5 24 5.2 24 6C24 6.8 23.6 7.5 23 8V4Z" fill="currentColor" />
           </svg>
         </div>
       </div>
@@ -188,16 +213,20 @@
         <a href="#overview" class="brand-logo" id="mobile-brand-logo-btn">
           <div class="logo-icon-svg-wrap">
             <svg width="34" height="26" viewBox="0 0 46 34" fill="none">
-              <path d="M12 32C5.92487 32 1 27.0751 1 21C1 15.6179 4.88219 11.1444 10.0573 10.187C11.5173 4.19539 16.9463 0 23.5 0C30.2285 0 35.7877 4.41245 37.0782 10.5966C41.6033 11.7588 45 15.8272 45 20.6667C45 26.3736 40.3736 31 34.6667 31L12 32Z" fill="#1F78D1"/>
-              <circle cx="34" cy="10" r="9" fill="#FFC145"/>
-              <text x="34" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#1F2C3F" text-anchor="middle">$</text>
+              <path
+                d="M12 32C5.92487 32 1 27.0751 1 21C1 15.6179 4.88219 11.1444 10.0573 10.187C11.5173 4.19539 16.9463 0 23.5 0C30.2285 0 35.7877 4.41245 37.0782 10.5966C41.6033 11.7588 45 15.8272 45 20.6667C45 26.3736 40.3736 31 34.6667 31L12 32Z"
+                fill="#1F78D1" />
+              <circle cx="34" cy="10" r="9" fill="#FFC145" />
+              <text x="34" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800"
+                fill="#1F2C3F" text-anchor="middle">$</text>
             </svg>
           </div>
           <span class="brand-text">cloudcash</span>
         </a>
 
         <div class="mobile-user-avatar tactile-btn" id="mobile-user-avatar-btn">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+            alt="Andrew Smith" />
         </div>
       </div>
 
@@ -217,20 +246,25 @@
         <div class="header-right">
           <!-- Dynamic Header Action for Invoices View -->
           <button class="header-action-btn tactile-btn" id="header-action-btn" style="display: none;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
             <span>Create New Invoice</span>
           </button>
 
           <!-- Notification Badges -->
           <div class="notif-cluster">
             <button class="notif-btn tactile-btn" title="Messages" id="notif-mail-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </svg>
             </button>
             <button class="notif-btn tactile-btn" title="Notifications" id="notif-bell-btn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
                 <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
               </svg>
@@ -241,7 +275,8 @@
           <!-- User Profile -->
           <div class="user-profile tactile-btn" id="user-profile-btn">
             <div class="avatar-wrapper">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                alt="Andrew Smith" />
             </div>
             <div class="user-info">
               <span class="user-name">Andrew Smith</span>
@@ -255,10 +290,10 @@
            VIEW 1: OVERVIEW SCREEN ("Weekly sumup")
            ==================================================================== -->
       <section class="screen-view active-view" id="view-overview">
-        
+
         <!-- Mobile Specific Viewport Layout -->
         <div class="mobile-overview-wrapper mobile-only">
-          
+
           <!-- Refined 3D Card Deck Stage with Live Drag / Swipe & Parallax Glare -->
           <div class="card-3d-stage" id="overview-card-stage">
             <div class="card-deck-stack" id="overview-deck-stack">
@@ -270,13 +305,17 @@
                     <div class="card-sheen-glare"></div>
                     <div class="card-vector-bg"></div>
                     <div class="card-vector-bg-2"></div>
-                    
+
                     <div class="card-top-row">
                       <span class="card-brand-logo">cloudcash</span>
                       <div class="card-top-right-group">
                         <span class="card-type-badge">PREMIUM</span>
                         <button class="btn-card-flip-badge" title="Flip to see CVV code">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path
+                              d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                          </svg>
                           <span>CVV</span>
                         </button>
                       </div>
@@ -286,15 +325,17 @@
                     <div class="card-chip-contactless-row">
                       <div class="card-chip-svg">
                         <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
-                          <rect width="34" height="26" rx="4" fill="#E2C974"/>
-                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/>
+                          <rect width="34" height="26" rx="4" fill="#E2C974" />
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F"
+                            stroke-width="1.2" />
                         </svg>
                       </div>
                       <div class="card-contactless-svg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
-                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
-                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
-                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)"
+                          stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9" />
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14" />
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19" />
                         </svg>
                       </div>
                     </div>
@@ -323,7 +364,10 @@
                     <div class="card-back-header">
                       <span class="card-brand-logo-small">cloudcash</span>
                       <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                        </svg>
                         <span>Front</span>
                       </button>
                     </div>
@@ -349,13 +393,17 @@
                   <div class="virtual-credit-card card-metal card-face-front">
                     <div class="card-sheen-glare"></div>
                     <div class="card-vector-bg"></div>
-                    
+
                     <div class="card-top-row">
                       <span class="card-brand-logo">cloudcash</span>
                       <div class="card-top-right-group">
                         <span class="card-type-badge">METAL</span>
                         <button class="btn-card-flip-badge" title="Flip to see CVV code">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path
+                              d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                          </svg>
                           <span>CVV</span>
                         </button>
                       </div>
@@ -365,15 +413,17 @@
                     <div class="card-chip-contactless-row">
                       <div class="card-chip-svg">
                         <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
-                          <rect width="34" height="26" rx="4" fill="#A0AEC0"/>
-                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568" stroke-width="1.2"/>
+                          <rect width="34" height="26" rx="4" fill="#A0AEC0" />
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568"
+                            stroke-width="1.2" />
                         </svg>
                       </div>
                       <div class="card-contactless-svg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
-                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
-                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
-                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)"
+                          stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9" />
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14" />
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19" />
                         </svg>
                       </div>
                     </div>
@@ -402,7 +452,10 @@
                     <div class="card-back-header">
                       <span class="card-brand-logo-small">cloudcash</span>
                       <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                        </svg>
                         <span>Front</span>
                       </button>
                     </div>
@@ -492,25 +545,37 @@
             </div>
             <div class="avatars-scroll-row drag-scrollable">
               <div class="contact-avatar-pill selected tactile-btn" data-contact="Ann">
-                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <div class="contact-avatar"
+                  style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                </div>
                 <span class="contact-name">Ann</span>
               </div>
               <div class="contact-avatar-pill tactile-btn" data-contact="Monica">
-                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <div class="contact-avatar"
+                  style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                </div>
                 <span class="contact-name">Monica</span>
               </div>
               <div class="contact-avatar-pill tactile-btn" data-contact="John">
-                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <div class="contact-avatar"
+                  style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                </div>
                 <span class="contact-name">John</span>
               </div>
               <div class="contact-avatar-pill tactile-btn" data-contact="Mike">
-                <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                <div class="contact-avatar"
+                  style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                </div>
                 <span class="contact-name">Mike</span>
               </div>
               <!-- Solid Golden Circle with Bold Plus -->
               <div class="contact-avatar-pill tactile-btn" id="mobile-btn-add-contact">
                 <button class="btn-add-contact-solid" title="Add New Recipient">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F2C3F" stroke-width="3.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F2C3F" stroke-width="3.5"
+                    stroke-linecap="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
                 </button>
                 <span class="contact-name">Add New</span>
               </div>
@@ -526,7 +591,8 @@
               <!-- Tesco Market -->
               <div class="mobile-tx-item-row tactile-btn">
                 <div class="mobile-tx-icon-box bg-orange-light text-orange">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="8" cy="21" r="1"></circle>
                     <circle cx="19" cy="21" r="1"></circle>
                     <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
@@ -542,7 +608,8 @@
               <!-- ElectroMen -->
               <div class="mobile-tx-item-row tactile-btn">
                 <div class="mobile-tx-icon-box bg-blue-light text-blue">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                   </svg>
                 </div>
@@ -556,7 +623,8 @@
               <!-- Fiorgio -->
               <div class="mobile-tx-item-row tactile-btn">
                 <div class="mobile-tx-icon-box bg-amber-light text-amber">
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                     <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
                     <line x1="6" y1="1" x2="6" y2="4"></line>
@@ -591,7 +659,10 @@
                 <!-- Interactive Credit Card Carousel with 3D Drag -->
                 <div class="card-carousel-wrapper" id="desktop-overview-carousel">
                   <button class="carousel-arrow tactile-btn" id="btn-card-prev" title="Previous Card">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
                   </button>
 
                   <div class="virtual-credit-card card-blue draggable-card" id="overview-virtual-card">
@@ -608,15 +679,17 @@
                     <div class="card-chip-contactless-row">
                       <div class="card-chip-svg">
                         <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
-                          <rect width="34" height="26" rx="4" fill="#E2C974"/>
-                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/>
+                          <rect width="34" height="26" rx="4" fill="#E2C974" />
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F"
+                            stroke-width="1.2" />
                         </svg>
                       </div>
                       <div class="card-contactless-svg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
-                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
-                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
-                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)"
+                          stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9" />
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14" />
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19" />
                         </svg>
                       </div>
                     </div>
@@ -641,7 +714,10 @@
                   </div>
 
                   <button class="carousel-arrow tactile-btn" id="btn-card-next" title="Next Card">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
                   </button>
                 </div>
 
@@ -684,21 +760,42 @@
               </div>
 
               <!-- Desktop Overview Card Quick Actions -->
-              <div class="card-actions-strip" style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
-                <button class="btn-card-action tactile-btn" data-action="freeze" data-card="2847" title="Freeze or unfreeze card">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <div class="card-actions-strip"
+                style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+                <button class="btn-card-action tactile-btn" data-action="freeze" data-card="2847"
+                  title="Freeze or unfreeze card">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
                   <span>Freeze</span>
                 </button>
-                <button class="btn-card-action tactile-btn" data-action="limits" data-card="2847" title="Set spending limits">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+                <button class="btn-card-action tactile-btn" data-action="limits" data-card="2847"
+                  title="Set spending limits">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" y1="21" x2="4" y2="14"></line>
+                    <line x1="4" y1="10" x2="4" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="3"></line>
+                    <line x1="20" y1="21" x2="20" y2="16"></line>
+                    <line x1="20" y1="12" x2="20" y2="3"></line>
+                  </svg>
                   <span>Limits</span>
                 </button>
                 <button class="btn-card-action tactile-btn" data-action="pin" data-card="2847" title="Change PIN code">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                    <path d="m21 2-9.6 9.6"></path>
+                    <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+                  </svg>
                   <span>PIN Code</span>
                 </button>
-                <button class="btn-card-action tactile-btn" data-action="block" data-card="2847" title="Block card permanently">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                <button class="btn-card-action tactile-btn" data-action="block" data-card="2847"
+                  title="Block card permanently">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                  </svg>
                   <span>Block</span>
                 </button>
               </div>
@@ -725,7 +822,14 @@
                       <td>
                         <div class="receiver-cell">
                           <div class="receiver-icon-box text-orange bg-orange-light">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2">
+                              <circle cx="8" cy="21" r="1"></circle>
+                              <circle cx="19" cy="21" r="1"></circle>
+                              <path
+                                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                              </path>
+                            </svg>
                           </div>
                           <span>Tesco Market</span>
                         </div>
@@ -738,7 +842,10 @@
                       <td>
                         <div class="receiver-cell">
                           <div class="receiver-icon-box text-blue bg-blue-light">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2">
+                              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
                           </div>
                           <span>ElectroMen Market</span>
                         </div>
@@ -751,7 +858,14 @@
                       <td>
                         <div class="receiver-cell">
                           <div class="receiver-icon-box text-amber bg-amber-light">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2">
+                              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                              <line x1="6" y1="1" x2="6" y2="4"></line>
+                              <line x1="10" y1="1" x2="10" y2="4"></line>
+                              <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
                           </div>
                           <span>Fiorgio Restaurant</span>
                         </div>
@@ -764,7 +878,11 @@
                       <td>
                         <div class="receiver-cell">
                           <div class="receiver-icon-box text-green bg-green-light">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2">
+                              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                              <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
                           </div>
                           <span>John Mathew Kayne</span>
                         </div>
@@ -777,7 +895,12 @@
                       <td>
                         <div class="receiver-cell">
                           <div class="receiver-icon-box text-purple bg-purple-light">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2">
+                              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                              <line x1="3" y1="6" x2="21" y2="6"></line>
+                              <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
                           </div>
                           <span>Ann Marlin</span>
                         </div>
@@ -803,7 +926,8 @@
                   <h2 class="section-title">Active Goals</h2>
                   <button class="btn-add-circle tactile-btn" id="btn-quick-add-goal" title="Add Goal">+</button>
                 </div>
-                <a href="#goals" class="session-link-row tactile-btn" style="font-size: 12px;" onclick="document.querySelector('[data-view=goals]').click()">View All</a>
+                <a href="#goals" class="session-link-row tactile-btn" style="font-size: 12px;"
+                  onclick="document.querySelector('[data-view=goals]').click()">View All</a>
               </div>
 
               <div class="goals-cards-row drag-scrollable">
@@ -815,7 +939,10 @@
                   </div>
                   <div class="mini-goal-center-icon">
                     <div class="icon-gradient-badge badge-blue-grad">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                      </svg>
                     </div>
                   </div>
                   <span class="mini-goal-title">Holidays</span>
@@ -829,7 +956,11 @@
                   </div>
                   <div class="mini-goal-center-icon">
                     <div class="icon-gradient-badge badge-orange-grad">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </svg>
                     </div>
                   </div>
                   <span class="mini-goal-title">Renovation</span>
@@ -843,7 +974,14 @@
                   </div>
                   <div class="mini-goal-center-icon">
                     <div class="icon-gradient-badge badge-green-grad">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect width="20" height="12" x="2" y="6" rx="6"></rect></svg>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <line x1="6" y1="12" x2="10" y2="12"></line>
+                        <line x1="8" y1="10" x2="8" y2="14"></line>
+                        <line x1="15" y1="13" x2="15.01" y2="13"></line>
+                        <line x1="18" y1="11" x2="18.01" y2="11"></line>
+                        <rect width="20" height="12" x="2" y="6" rx="6"></rect>
+                      </svg>
                     </div>
                   </div>
                   <span class="mini-goal-title">Xbox</span>
@@ -860,7 +998,11 @@
               <div class="outcome-stats-card tactile-card">
                 <div class="outcome-stat-row">
                   <div class="outcome-icon-box icon-box-orange">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="8" cy="21" r="1"></circle>
+                      <circle cx="19" cy="21" r="1"></circle>
+                      <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                    </svg>
                   </div>
                   <div class="outcome-bar-wrapper">
                     <div class="progress-track">
@@ -873,7 +1015,11 @@
 
                 <div class="outcome-stat-row">
                   <div class="outcome-icon-box icon-box-green">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                      <line x1="8" y1="6" x2="16" y2="6"></line>
+                      <line x1="16" y1="14" x2="16" y2="18"></line>
+                    </svg>
                   </div>
                   <div class="outcome-bar-wrapper">
                     <div class="progress-track">
@@ -886,7 +1032,11 @@
 
                 <div class="outcome-stat-row">
                   <div class="outcome-icon-box icon-box-blue">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z">
+                      </path>
+                    </svg>
                   </div>
                   <div class="outcome-bar-wrapper">
                     <div class="progress-track">
@@ -906,25 +1056,37 @@
 
                 <div class="avatars-scroll-row drag-scrollable">
                   <div class="contact-avatar-pill selected tactile-btn" data-contact="Ann">
-                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <div class="contact-avatar"
+                      style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                    </div>
                     <span class="contact-name">Ann</span>
                   </div>
                   <div class="contact-avatar-pill tactile-btn" data-contact="Monica">
-                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <div class="contact-avatar"
+                      style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                    </div>
                     <span class="contact-name">Monica</span>
                   </div>
                   <div class="contact-avatar-pill tactile-btn" data-contact="John">
-                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <div class="contact-avatar"
+                      style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                    </div>
                     <span class="contact-name">John</span>
                   </div>
                   <div class="contact-avatar-pill tactile-btn" data-contact="Mike">
-                    <div class="contact-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80'); background-size: cover;"></div>
+                    <div class="contact-avatar"
+                      style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80'); background-size: cover;">
+                    </div>
                     <span class="contact-name">Mike</span>
                   </div>
                   <!-- Golden Solid Plus Button -->
                   <div class="contact-avatar-pill tactile-btn">
                     <button class="btn-add-contact-solid" id="btn-add-recipient" title="Add New Recipient">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F2C3F" stroke-width="3.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1F2C3F" stroke-width="3.5"
+                        stroke-linecap="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
                     </button>
                     <span class="contact-name">Add New</span>
                   </div>
@@ -944,18 +1106,24 @@
                 <div class="loan-vector-bg">
                   <svg width="100%" height="100%" viewBox="0 0 150 190" fill="none" preserveAspectRatio="none">
                     <!-- Top-Left Cloud Silhouette -->
-                    <path d="M-12 36 C-12 20, 6 8, 22 8 C25 2, 32 0, 40 0 C50 0, 58 6, 61 14 C67 13, 74 17, 76 23 C82 25, 86 31, 85 38 C85 46, 78 52, 70 52 L-12 52 Z" fill="#C44832" />
+                    <path
+                      d="M-12 36 C-12 20, 6 8, 22 8 C25 2, 32 0, 40 0 C50 0, 58 6, 61 14 C67 13, 74 17, 76 23 C82 25, 86 31, 85 38 C85 46, 78 52, 70 52 L-12 52 Z"
+                      fill="#C44832" />
                     <!-- Top-Right Cloud Silhouette -->
-                    <path d="M82 28 C82 18, 93 9, 104 9 C106 4, 111 1, 118 1 C126 1, 132 6, 134 12 C138 11, 144 14, 145 19 C150 20, 154 25, 153 31 C153 37, 148 42, 142 42 L82 42 Z" fill="#C44832" />
+                    <path
+                      d="M82 28 C82 18, 93 9, 104 9 C106 4, 111 1, 118 1 C126 1, 132 6, 134 12 C138 11, 144 14, 145 19 C150 20, 154 25, 153 31 C153 37, 148 42, 142 42 L82 42 Z"
+                      fill="#C44832" />
                     <!-- Floating Translucent Coin 1 (Upper Right) -->
                     <g transform="translate(68, 76) rotate(12)">
                       <circle cx="16" cy="16" r="15" fill="rgba(255, 255, 255, 0.15)" />
-                      <text x="16" y="21.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="rgba(255, 255, 255, 0.4)" text-anchor="middle">$</text>
+                      <text x="16" y="21.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="14"
+                        font-weight="700" fill="rgba(255, 255, 255, 0.4)" text-anchor="middle">$</text>
                     </g>
                     <!-- Floating Translucent Coin 2 (Lower Left) -->
                     <g transform="translate(28, 108) rotate(-8)">
                       <circle cx="13" cy="13" r="13" fill="rgba(255, 255, 255, 0.13)" />
-                      <text x="13" y="17.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="rgba(255, 255, 255, 0.35)" text-anchor="middle">$</text>
+                      <text x="13" y="17.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="12"
+                        font-weight="700" fill="rgba(255, 255, 255, 0.35)" text-anchor="middle">$</text>
                     </g>
                   </svg>
                 </div>
@@ -974,14 +1142,18 @@
            VIEW 2: TRANSACTIONS SCREEN
            ==================================================================== -->
       <section class="screen-view" id="view-transactions">
-        
+
         <!-- Mobile Specific Viewport Layout -->
         <div class="mobile-transactions-wrapper mobile-only">
-          
+
           <!-- Search Bar -->
           <div class="mobile-search-bar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" class="search-input" id="mobile-tx-search-input" placeholder="Search merchants, tags or accounts..." />
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="search-input" id="mobile-tx-search-input"
+              placeholder="Search merchants, tags or accounts..." />
           </div>
 
           <!-- Filter Dropdowns Row -->
@@ -1011,7 +1183,7 @@
           <!-- Monthly Summary Card -->
           <div class="mobile-monthly-summary-card tactile-card">
             <h3 class="summary-card-heading">Monthly Summary</h3>
-            
+
             <div class="mobile-summary-kpi-row">
               <div class="mobile-summary-kpi-col">
                 <span class="kpi-label">Total Spent</span>
@@ -1027,8 +1199,10 @@
             <div class="mobile-net-cash-row">
               <div class="mini-donut-wrapper">
                 <svg viewBox="0 0 36 36">
-                  <path stroke="#E8EEF3" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                  <path stroke="#1F78D1" stroke-dasharray="65, 100" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path stroke="#E8EEF3" stroke-width="3.8" fill="none"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path stroke="#1F78D1" stroke-dasharray="65, 100" stroke-width="3.8" fill="none"
+                    d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                 </svg>
               </div>
               <div class="net-cash-meta">
@@ -1058,12 +1232,21 @@
             <!-- Filter Bar -->
             <div class="filter-bar">
               <div class="search-input-wrapper">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" class="search-input" id="tx-search-input" placeholder="Search merchants, tags or accounts..." />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="tx-search-input"
+                  placeholder="Search merchants, tags or accounts..." />
               </div>
 
               <div class="filter-dropdown">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
                 <select id="tx-date-filter">
                   <option value="Dec 2024">Dec 2024</option>
                   <option value="Nov 2024">Nov 2024</option>
@@ -1143,12 +1326,18 @@
               <div class="donut-content-row">
                 <div class="donut-svg-wrapper">
                   <svg viewBox="0 0 36 36">
-                    <path stroke="#E8EEF3" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#BB4430" stroke-dasharray="40, 100" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#F59E0B" stroke-dasharray="25, 100" stroke-dashoffset="-40" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#F97316" stroke-dasharray="20, 100" stroke-dashoffset="-65" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#EF4444" stroke-dasharray="10, 100" stroke-dashoffset="-85" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#DC2626" stroke-dasharray="5, 100" stroke-dashoffset="-95" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#E8EEF3" stroke-width="3.8" fill="none"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#BB4430" stroke-dasharray="40, 100" stroke-width="3.8" fill="none"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#F59E0B" stroke-dasharray="25, 100" stroke-dashoffset="-40" stroke-width="3.8"
+                      fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#F97316" stroke-dasharray="20, 100" stroke-dashoffset="-65" stroke-width="3.8"
+                      fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#EF4444" stroke-dasharray="10, 100" stroke-dashoffset="-85" stroke-width="3.8"
+                      fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#DC2626" stroke-dasharray="5, 100" stroke-dashoffset="-95" stroke-width="3.8"
+                      fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                   </svg>
                   <div class="donut-center-text">
                     <span class="donut-center-label">Spent</span>
@@ -1158,23 +1347,28 @@
 
                 <div class="donut-legend">
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#BB4430"></span><span>Housing</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#BB4430"></span><span>Housing</span></div>
                     <span class="legend-pct">40%</span>
                   </div>
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#F59E0B"></span><span>Food</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#F59E0B"></span><span>Food</span></div>
                     <span class="legend-pct">25%</span>
                   </div>
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#F97316"></span><span>Transport</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#F97316"></span><span>Transport</span></div>
                     <span class="legend-pct">20%</span>
                   </div>
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#EF4444"></span><span>Entertainment</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#EF4444"></span><span>Entertainment</span></div>
                     <span class="legend-pct">10%</span>
                   </div>
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#DC2626"></span><span>Utilities</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#DC2626"></span><span>Utilities</span></div>
                     <span class="legend-pct">5%</span>
                   </div>
                 </div>
@@ -1195,10 +1389,14 @@
               <div class="donut-content-row">
                 <div class="donut-svg-wrapper">
                   <svg viewBox="0 0 36 36">
-                    <path stroke="#E8EEF3" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#439A86" stroke-dasharray="60, 100" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#10B981" stroke-dasharray="30, 100" stroke-dashoffset="-60" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    <path stroke="#22C55E" stroke-dasharray="10, 100" stroke-dashoffset="-90" stroke-width="3.8" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#E8EEF3" stroke-width="3.8" fill="none"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#439A86" stroke-dasharray="60, 100" stroke-width="3.8" fill="none"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#10B981" stroke-dasharray="30, 100" stroke-dashoffset="-60" stroke-width="3.8"
+                      fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path stroke="#22C55E" stroke-dasharray="10, 100" stroke-dashoffset="-90" stroke-width="3.8"
+                      fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
                   </svg>
                   <div class="donut-center-text">
                     <span class="donut-center-label">Received</span>
@@ -1208,15 +1406,18 @@
 
                 <div class="donut-legend">
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#439A86"></span><span>Salary</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#439A86"></span><span>Salary</span></div>
                     <span class="legend-pct">60%</span>
                   </div>
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#10B981"></span><span>Freelance</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#10B981"></span><span>Freelance</span></div>
                     <span class="legend-pct">30%</span>
                   </div>
                   <div class="legend-item">
-                    <div class="legend-left"><span class="legend-color-dot" style="background:#22C55E"></span><span>Investments</span></div>
+                    <div class="legend-left"><span class="legend-color-dot"
+                        style="background:#22C55E"></span><span>Investments</span></div>
                     <span class="legend-pct">10%</span>
                   </div>
                 </div>
@@ -1230,7 +1431,11 @@
             </div>
 
             <div class="disclaimer-box">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
               <span>Net cashflow is positive this month. Good job!</span>
             </div>
           </aside>
@@ -1242,10 +1447,10 @@
            VIEW 3: CARDS SCREEN ("My Cards")
            ==================================================================== -->
       <section class="screen-view" id="view-cards">
-        
+
         <!-- Mobile Specific Viewport Layout -->
         <div class="mobile-cards-wrapper mobile-only">
-          
+
           <!-- 3D Card Deck Stage in Cards Screen -->
           <div class="card-3d-stage" id="cards-view-stage">
             <div class="card-deck-stack" id="cards-deck-stack">
@@ -1262,7 +1467,11 @@
                       <div class="card-top-right-group">
                         <span class="card-type-badge">PREMIUM</span>
                         <button class="btn-card-flip-badge" title="Flip to see CVV code">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path
+                              d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                          </svg>
                           <span>CVV</span>
                         </button>
                       </div>
@@ -1271,15 +1480,17 @@
                     <div class="card-chip-contactless-row">
                       <div class="card-chip-svg">
                         <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
-                          <rect width="34" height="26" rx="4" fill="#E2C974"/>
-                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/>
+                          <rect width="34" height="26" rx="4" fill="#E2C974" />
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F"
+                            stroke-width="1.2" />
                         </svg>
                       </div>
                       <div class="card-contactless-svg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
-                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
-                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
-                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)"
+                          stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9" />
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14" />
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19" />
                         </svg>
                       </div>
                     </div>
@@ -1308,7 +1519,10 @@
                     <div class="card-back-header">
                       <span class="card-brand-logo-small">cloudcash</span>
                       <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                        </svg>
                         <span>Front</span>
                       </button>
                     </div>
@@ -1339,7 +1553,11 @@
                       <div class="card-top-right-group">
                         <span class="card-type-badge">METAL</span>
                         <button class="btn-card-flip-badge" title="Flip to see CVV code">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path
+                              d="M21 2l-2 2m-6-2v4m0 0l-3-3m3 3l3-3M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                          </svg>
                           <span>CVV</span>
                         </button>
                       </div>
@@ -1348,15 +1566,17 @@
                     <div class="card-chip-contactless-row">
                       <div class="card-chip-svg">
                         <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
-                          <rect width="34" height="26" rx="4" fill="#A0AEC0"/>
-                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568" stroke-width="1.2"/>
+                          <rect width="34" height="26" rx="4" fill="#A0AEC0" />
+                          <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568"
+                            stroke-width="1.2" />
                         </svg>
                       </div>
                       <div class="card-contactless-svg">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round">
-                          <path d="M8.5 16.5a5 5 0 0 1 0-9"/>
-                          <path d="M12 19a8.5 8.5 0 0 1 0-14"/>
-                          <path d="M15.5 21.5a12 12 0 0 1 0-19"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)"
+                          stroke-width="2.2" stroke-linecap="round">
+                          <path d="M8.5 16.5a5 5 0 0 1 0-9" />
+                          <path d="M12 19a8.5 8.5 0 0 1 0-14" />
+                          <path d="M15.5 21.5a12 12 0 0 1 0-19" />
                         </svg>
                       </div>
                     </div>
@@ -1385,7 +1605,10 @@
                     <div class="card-back-header">
                       <span class="card-brand-logo-small">cloudcash</span>
                       <button class="btn-card-flip-badge btn-card-flip-back" title="Flip to front">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4"/></svg>
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.5">
+                          <path d="M3 12a9 9 0 0 1 15-6.7L21 8M3 12a9 9 0 0 0 15 6.7L21 16m0 0v-4m0 4h-4" />
+                        </svg>
                         <span>Front</span>
                       </button>
                     </div>
@@ -1416,19 +1639,36 @@
           <!-- 4 Card Action Buttons -->
           <div class="mobile-card-actions-grid">
             <button class="btn-card-action tactile-btn" data-action="freeze" data-card="1234">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
               <span>Freeze</span>
             </button>
             <button class="btn-card-action tactile-btn" data-action="limits" data-card="1234">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="4" y1="21" x2="4" y2="14"></line>
+                <line x1="4" y1="10" x2="4" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="3"></line>
+                <line x1="20" y1="21" x2="20" y2="16"></line>
+                <line x1="20" y1="12" x2="20" y2="3"></line>
+              </svg>
               <span>Limits</span>
             </button>
             <button class="btn-card-action tactile-btn" data-action="pin" data-card="1234">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                <path d="m21 2-9.6 9.6"></path>
+                <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+              </svg>
               <span>PIN Code</span>
             </button>
             <button class="btn-card-action tactile-btn" data-action="block" data-card="1234">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+              </svg>
               <span>Block</span>
             </button>
           </div>
@@ -1488,10 +1728,19 @@
 
                   <div class="card-chip-contactless-row">
                     <div class="card-chip-svg">
-                      <svg width="34" height="26" viewBox="0 0 34 26" fill="none"><rect width="34" height="26" rx="4" fill="#E2C974"/><path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F" stroke-width="1.2"/></svg>
+                      <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                        <rect width="34" height="26" rx="4" fill="#E2C974" />
+                        <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#8C6D1F"
+                          stroke-width="1.2" />
+                      </svg>
                     </div>
                     <div class="card-contactless-svg">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2.2" stroke-linecap="round"><path d="M8.5 16.5a5 5 0 0 1 0-9"/><path d="M12 19a8.5 8.5 0 0 1 0-14"/><path d="M15.5 21.5a12 12 0 0 1 0-19"/></svg>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)"
+                        stroke-width="2.2" stroke-linecap="round">
+                        <path d="M8.5 16.5a5 5 0 0 1 0-9" />
+                        <path d="M12 19a8.5 8.5 0 0 1 0-14" />
+                        <path d="M15.5 21.5a12 12 0 0 1 0-19" />
+                      </svg>
                     </div>
                   </div>
 
@@ -1516,19 +1765,36 @@
 
                 <div class="card-actions-strip">
                   <button class="btn-card-action tactile-btn" data-action="freeze" data-card="5789">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
                     <span>Freeze</span>
                   </button>
                   <button class="btn-card-action tactile-btn" data-action="limits" data-card="5789">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="4" y1="21" x2="4" y2="14"></line>
+                      <line x1="4" y1="10" x2="4" y2="3"></line>
+                      <line x1="12" y1="21" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12" y2="3"></line>
+                      <line x1="20" y1="21" x2="20" y2="16"></line>
+                      <line x1="20" y1="12" x2="20" y2="3"></line>
+                    </svg>
                     <span>Limits</span>
                   </button>
                   <button class="btn-card-action tactile-btn" data-action="pin" data-card="5789">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                      <path d="m21 2-9.6 9.6"></path>
+                      <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+                    </svg>
                     <span>PIN Code</span>
                   </button>
                   <button class="btn-card-action tactile-btn" data-action="block" data-card="5789">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                    </svg>
                     <span>Block</span>
                   </button>
                 </div>
@@ -1546,7 +1812,11 @@
 
                   <div class="card-chip-contactless-row">
                     <div class="card-chip-svg" style="opacity: 0.8;">
-                      <svg width="28" height="22" viewBox="0 0 34 26" fill="none"><rect width="34" height="26" rx="4" fill="#A0AEC0"/><path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568" stroke-width="1.2"/></svg>
+                      <svg width="28" height="22" viewBox="0 0 34 26" fill="none">
+                        <rect width="34" height="26" rx="4" fill="#A0AEC0" />
+                        <path d="M0 8H12M0 18H12M22 8H34M22 18H34M12 0V26M22 0V26M12 13H22" stroke="#4A5568"
+                          stroke-width="1.2" />
+                      </svg>
                     </div>
                   </div>
 
@@ -1571,19 +1841,36 @@
 
                 <div class="card-actions-strip">
                   <button class="btn-card-action tactile-btn" data-action="freeze" data-card="9012">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
                     <span>Freeze</span>
                   </button>
                   <button class="btn-card-action tactile-btn" data-action="limits" data-card="9012">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="4" y1="21" x2="4" y2="14"></line>
+                      <line x1="4" y1="10" x2="4" y2="3"></line>
+                      <line x1="12" y1="21" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12" y2="3"></line>
+                      <line x1="20" y1="21" x2="20" y2="16"></line>
+                      <line x1="20" y1="12" x2="20" y2="3"></line>
+                    </svg>
                     <span>Limits</span>
                   </button>
                   <button class="btn-card-action tactile-btn" data-action="pin" data-card="9012">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                      <path d="m21 2-9.6 9.6"></path>
+                      <path d="m15.5 7.5 3 3L22 7l-3-3"></path>
+                    </svg>
                     <span>PIN Code</span>
                   </button>
                   <button class="btn-card-action tactile-btn" data-action="block" data-card="9012">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                    </svg>
                     <span>Block</span>
                   </button>
                 </div>
@@ -1635,7 +1922,13 @@
                 <div class="mini-tx-item tactile-btn">
                   <div class="mini-tx-left">
                     <div class="mini-tx-icon-bg text-orange">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="8" cy="21" r="1"></circle>
+                        <circle cx="19" cy="21" r="1"></circle>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                        </path>
+                      </svg>
                     </div>
                     <div class="mini-tx-meta">
                       <span class="mini-tx-merchant">Tesco Market</span>
@@ -1648,7 +1941,11 @@
                 <div class="mini-tx-item tactile-btn">
                   <div class="mini-tx-left">
                     <div class="mini-tx-icon-bg text-red">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="15" x="2" y="5" rx="2"></rect><polygon points="10 9 15 12 10 15 10 9" fill="currentColor"></polygon></svg>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <rect width="20" height="15" x="2" y="5" rx="2"></rect>
+                        <polygon points="10 9 15 12 10 15 10 9" fill="currentColor"></polygon>
+                      </svg>
                     </div>
                     <div class="mini-tx-meta">
                       <span class="mini-tx-merchant">Netflix Premium</span>
@@ -1661,7 +1958,15 @@
                 <div class="mini-tx-item tactile-btn">
                   <div class="mini-tx-left">
                     <div class="mini-tx-icon-bg text-blue">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11 2 11.2 2 11.5V16c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C2.1 11 2 11.2 2 11.5V16c0 .6.4 1 1 1h2">
+                        </path>
+                        <circle cx="7" cy="17" r="2"></circle>
+                        <path d="M9 17h6"></path>
+                        <circle cx="17" cy="17" r="2"></circle>
+                      </svg>
                     </div>
                     <div class="mini-tx-meta">
                       <span class="mini-tx-merchant">Uber Ride</span>
@@ -1674,7 +1979,14 @@
                 <div class="mini-tx-item tactile-btn">
                   <div class="mini-tx-left">
                     <div class="mini-tx-icon-bg text-green">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                      </svg>
                     </div>
                     <div class="mini-tx-meta">
                       <span class="mini-tx-merchant">Starbucks Store</span>
@@ -1687,7 +1999,12 @@
                 <div class="mini-tx-item tactile-btn">
                   <div class="mini-tx-left">
                     <div class="mini-tx-icon-bg text-amber">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5v1h1a4 4 0 0 1 4 4v7a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-7a4 4 0 0 1 4-4h1V7a5 5 0 0 1 5-5z"></path></svg>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M12 2a5 5 0 0 1 5 5v1h1a4 4 0 0 1 4 4v7a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-7a4 4 0 0 1 4-4h1V7a5 5 0 0 1 5-5z">
+                        </path>
+                      </svg>
                     </div>
                     <div class="mini-tx-meta">
                       <span class="mini-tx-merchant">Whole Foods</span>
@@ -1699,7 +2016,8 @@
               </div>
             </div>
 
-            <button class="btn-view-all-outline tactile-btn" id="btn-view-all-card-history">View All Card History</button>
+            <button class="btn-view-all-outline tactile-btn" id="btn-view-all-card-history">View All Card
+              History</button>
           </aside>
 
         </div>
@@ -1712,7 +2030,7 @@
 
         <!-- Mobile Specific Viewport Layout -->
         <div class="mobile-invoices-wrapper mobile-only">
-          
+
           <!-- 3 Top Metric Tiles -->
           <div class="invoices-metrics-grid">
             <div class="invoice-kpi-card tactile-card">
@@ -1850,7 +2168,8 @@
             <div class="invoices-table-card tactile-card">
               <div class="section-header-row" style="margin-bottom: 16px;">
                 <h3 class="summary-sidebar-title">Active Invoices</h3>
-                <button class="btn-primary tactile-btn" style="padding: 6px 14px; font-size: 12px;" onclick="document.getElementById('header-action-btn').click()">+ New Invoice</button>
+                <button class="btn-primary tactile-btn" style="padding: 6px 14px; font-size: 12px;"
+                  onclick="document.getElementById('header-action-btn').click()">+ New Invoice</button>
               </div>
               <div class="table-responsive">
                 <table class="data-table" id="invoices-table">
@@ -1919,7 +2238,7 @@
 
         <!-- Mobile Specific Viewport Layout -->
         <div class="mobile-goals-wrapper mobile-only">
-          
+
           <!-- Top 2 KPI Metric Cards -->
           <div class="mobile-goals-kpi-grid">
             <div class="mobile-goal-kpi-card tactile-card">
@@ -1937,12 +2256,14 @@
 
           <!-- Stacked Goal Cards List with Pure Vector SVGs -->
           <div class="mobile-goals-stacked-list">
-            
+
             <!-- Goal 1 (Palm Tree SVG) -->
             <div class="mobile-goal-card tactile-card">
               <div class="mobile-goal-header">
                 <div class="mobile-goal-icon-badge goal-badge-blue">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                  </svg>
                 </div>
                 <div class="mobile-goal-meta">
                   <span class="mobile-goal-title">Dream Vacation</span>
@@ -1959,7 +2280,10 @@
             <div class="mobile-goal-card tactile-card">
               <div class="mobile-goal-header">
                 <div class="mobile-goal-icon-badge goal-badge-amber">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                  </svg>
                 </div>
                 <div class="mobile-goal-meta">
                   <span class="mobile-goal-title">Home Renovation</span>
@@ -1976,7 +2300,12 @@
             <div class="mobile-goal-card tactile-card">
               <div class="mobile-goal-header">
                 <div class="mobile-goal-icon-badge goal-badge-red">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="10" x="3" y="10" rx="2"></rect><circle cx="7.5" cy="20.5" r="1.5"></circle><circle cx="16.5" cy="20.5" r="1.5"></circle><path d="m5 10 2-5h10l2 5"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="10" x="3" y="10" rx="2"></rect>
+                    <circle cx="7.5" cy="20.5" r="1.5"></circle>
+                    <circle cx="16.5" cy="20.5" r="1.5"></circle>
+                    <path d="m5 10 2-5h10l2 5"></path>
+                  </svg>
                 </div>
                 <div class="mobile-goal-meta">
                   <span class="mobile-goal-title">New Sports Car</span>
@@ -1993,7 +2322,9 @@
             <div class="mobile-goal-card tactile-card">
               <div class="mobile-goal-header">
                 <div class="mobile-goal-icon-badge goal-badge-teal">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
                 </div>
                 <div class="mobile-goal-meta">
                   <span class="mobile-goal-title">Emergency Fund</span>
@@ -2066,7 +2397,9 @@
               <div>
                 <div class="active-goal-top-row">
                   <div class="goal-icon-badge goal-badge-blue">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 5-5 5 15H2L8 3z"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                    </svg>
                   </div>
                   <span class="goal-pct-badge" style="color: var(--primary-accent);">70%</span>
                 </div>
@@ -2088,7 +2421,10 @@
               <div>
                 <div class="active-goal-top-row">
                   <div class="goal-icon-badge goal-badge-amber">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
                   </div>
                   <span class="goal-pct-badge" style="color: var(--color-orange);">48%</span>
                 </div>
@@ -2110,7 +2446,12 @@
               <div>
                 <div class="active-goal-top-row">
                   <div class="goal-icon-badge goal-badge-red">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="10" x="3" y="10" rx="2"></rect><circle cx="7.5" cy="20.5" r="1.5"></circle><circle cx="16.5" cy="20.5" r="1.5"></circle><path d="m5 10 2-5h10l2 5"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect width="18" height="10" x="3" y="10" rx="2"></rect>
+                      <circle cx="7.5" cy="20.5" r="1.5"></circle>
+                      <circle cx="16.5" cy="20.5" r="1.5"></circle>
+                      <path d="m5 10 2-5h10l2 5"></path>
+                    </svg>
                   </div>
                   <span class="goal-pct-badge" style="color: var(--color-red);">41%</span>
                 </div>
@@ -2132,7 +2473,9 @@
               <div>
                 <div class="active-goal-top-row">
                   <div class="goal-icon-badge goal-badge-teal">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
                   </div>
                   <span class="goal-pct-badge" style="color: var(--color-green);">92%</span>
                 </div>
@@ -2154,7 +2497,10 @@
               <div>
                 <div class="active-goal-top-row">
                   <div class="goal-icon-badge goal-badge-purple">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
                   </div>
                   <span class="goal-pct-badge" style="color: var(--color-purple);">43%</span>
                 </div>
@@ -2175,7 +2521,10 @@
             <!-- Add New Goal Interactive Card -->
             <div class="add-goal-dashed-card tactile-btn" id="btn-add-new-goal-card">
               <div class="add-goal-plus-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
               </div>
               <span class="add-goal-title">Add New Goal</span>
               <span class="add-goal-subtitle">Set a fresh milestone and track your savings</span>
@@ -2205,17 +2554,18 @@
            VIEW 6: SETTINGS SCREEN
            ==================================================================== -->
       <section class="screen-view" id="view-settings">
-        
+
         <!-- Mobile Specific Viewport Layout -->
         <div class="mobile-settings-wrapper mobile-only">
-          
+
           <!-- Profile Information Card -->
           <div class="settings-card tactile-card">
             <h3 class="settings-card-title">Profile Information</h3>
 
             <div class="profile-header-meta">
               <div class="profile-avatar-large">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
+                  alt="Andrew Smith" />
               </div>
               <div class="profile-text-group">
                 <span class="profile-name-text">Andrew Smith</span>
@@ -2318,7 +2668,9 @@
 
               <div class="profile-header-meta">
                 <div class="profile-avatar-large">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Andrew Smith" />
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
+                    alt="Andrew Smith" />
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                   <div class="profile-name-badge-row">
@@ -2429,7 +2781,10 @@
 
               <!-- Active Session History Link -->
               <a class="session-link-row tactile-btn" id="btn-session-history">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
                 <span>View active session history</span>
               </a>
             </div>
@@ -2477,11 +2832,23 @@
 
               <div class="theme-segmented-control">
                 <button class="btn-theme-tab active tactile-btn" id="btn-theme-light">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
                   <span>Light</span>
                 </button>
                 <button class="btn-theme-tab tactile-btn" id="btn-theme-dark">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
                   <span>Dark</span>
                 </button>
               </div>
@@ -2539,7 +2906,9 @@
       <a class="mobile-nav-item tactile-btn" data-view="settings">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+          </path>
         </svg>
         <span>Settings</span>
       </a>
@@ -2569,7 +2938,8 @@
         </div>
         <div class="form-group">
           <label>Amount ($)</label>
-          <input type="number" step="0.01" class="form-control" id="input-invoice-amount" placeholder="1500.00" required />
+          <input type="number" step="0.01" class="form-control" id="input-invoice-amount" placeholder="1500.00"
+            required />
         </div>
         <div class="form-group">
           <label>Due Date</label>
@@ -2623,7 +2993,8 @@
         <button class="btn-close-modal tactile-btn" data-close-modal>&times;</button>
       </div>
       <div id="card-modal-body">
-        <p style="color: var(--text-secondary); font-size: 14px;">Updating settings for card ending in <strong id="modal-card-num-label">2847</strong>.</p>
+        <p style="color: var(--text-secondary); font-size: 14px;">Updating settings for card ending in <strong
+            id="modal-card-num-label">2847</strong>.</p>
         <div class="form-group" style="margin-top: 16px;">
           <label id="card-modal-input-label">New PIN Code</label>
           <input type="password" maxlength="4" class="form-control" id="card-modal-input-field" placeholder="••••" />
@@ -2691,6 +3062,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
   <!-- JavaScript Controller -->
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
+
 </html>
