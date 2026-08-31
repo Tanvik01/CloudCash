@@ -81,24 +81,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const meta = screenMetadata[viewName] || screenMetadata.overview;
     if (pageMainTitle) {
       pageMainTitle.textContent = meta.title;
+      const isDark = document.body.classList.contains('dark-mode');
+      const titleColor = isDark ? '#FFFFFF' : '#1F2C3F';
       if (viewName === 'overview') {
         pageMainTitle.style.fontSize = '28px';
         pageMainTitle.style.fontFamily = "'Lato', sans-serif";
         pageMainTitle.style.fontWeight = '700';
         pageMainTitle.style.lineHeight = '100%';
         pageMainTitle.style.letterSpacing = '-0.5px';
-        pageMainTitle.style.color = '#1F2C3F';
+        pageMainTitle.style.color = titleColor;
       } else if (viewName === 'goals') {
         pageMainTitle.style.fontSize = '28px';
         pageMainTitle.style.fontFamily = "'Inter', sans-serif";
         pageMainTitle.style.fontWeight = '600';
         pageMainTitle.style.lineHeight = '100%';
         pageMainTitle.style.letterSpacing = '0%';
-        pageMainTitle.style.color = '#1F2C3F';
+        pageMainTitle.style.color = titleColor;
       } else {
         pageMainTitle.style.fontSize = '28px';
         pageMainTitle.style.fontFamily = "'Suprema', sans-serif";
-        pageMainTitle.style.color = '#1F2C3F';
+        pageMainTitle.style.color = titleColor;
       }
     }
     if (pageMainSubtitle) pageMainSubtitle.textContent = meta.subtitle;
@@ -219,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('dark-mode');
       btnThemeDark?.classList.add('active');
       btnThemeLight?.classList.remove('active');
+      if (pageMainTitle) pageMainTitle.style.color = '#FFFFFF';
       if (mobileToggleDarkTheme) mobileToggleDarkTheme.checked = true;
       localStorage.setItem('cloudcash-theme', 'dark');
       showToast('Dark Theme Activated');
@@ -226,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('dark-mode');
       btnThemeLight?.classList.add('active');
       btnThemeDark?.classList.remove('active');
+      if (pageMainTitle) pageMainTitle.style.color = '#1F2C3F';
       if (mobileToggleDarkTheme) mobileToggleDarkTheme.checked = false;
       localStorage.setItem('cloudcash-theme', 'light');
       showToast('Light Theme Activated');
@@ -328,8 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleCardFlip(cardInner) {
     if (!cardInner) return;
     cardInner.classList.toggle('is-flipped');
-    cardInner.classList.toggle('flipped');
-    const isFlipped = cardInner.classList.contains('is-flipped') || cardInner.classList.contains('flipped');
+    const isFlipped = cardInner.classList.contains('is-flipped');
     showToast(isFlipped ? 'Card flipped to reveal CVV code' : 'Card flipped back to front');
   }
 
@@ -392,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reset card flipped states back to front
     document.querySelectorAll('.virtual-card-inner').forEach(inner => {
-      inner.classList.remove('is-flipped', 'flipped');
+      inner.classList.remove('is-flipped');
     });
   }
 
@@ -418,7 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reset flips
     document.querySelectorAll('.virtual-card-inner').forEach(inner => {
-      inner.classList.remove('is-flipped', 'flipped');
+      inner.classList.remove('is-flipped');
     });
 
     stages.forEach(({ active, incoming }) => {
@@ -511,7 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const dx = currentX - startX;
       const dy = clientY - startY;
 
-      if (Math.abs(dx) > 6) hasMoved = true;
+      if (Math.abs(dx) > 15) hasMoved = true;
 
       const activeWrap = getActiveWrap();
       const rearWrap = getRearWrap();
@@ -557,8 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const direction = dx > 0 ? 1 : -1;
         const nextIdx = (currentCardIdx + 1) % cardsData.length;
         switchCardTo(nextIdx, direction);
-      } else if (hasMoved) {
-        // Snap back
+      } else if (hasMoved && Math.abs(dx) >= 15) {
+        // Snap back if it was an intentional drag that didn't meet switch threshold
         if (activeWrap) {
           activeWrap.style.transition = 'transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
           activeWrap.style.transform = 'translate3d(0, 0, 0) scale(1) rotateY(0deg)';
@@ -570,9 +573,9 @@ document.addEventListener('DOMContentLoaded', () => {
           rearWrap.style.filter = 'brightness(0.85)';
         }
       } else {
-        // Natural tap on active card body
-        const isClickOnBtn = e && e.target && e.target.closest('button, .btn-card-flip-badge');
-        if (!isClickOnBtn && activeWrap) {
+        // Natural tap / click on active card body
+        const isClickOnBadge = e && e.target && e.target.closest('.btn-card-flip-badge');
+        if (!isClickOnBadge && activeWrap) {
           const inner = activeWrap.querySelector('.virtual-card-inner');
           if (inner) toggleCardFlip(inner);
         }
@@ -580,6 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       startX = 0;
       currentX = 0;
+      hasMoved = false;
     }
 
     stack.addEventListener('touchstart', (e) => {
