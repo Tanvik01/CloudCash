@@ -214,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   const btnThemeLight = document.getElementById('btn-theme-light');
   const btnThemeDark = document.getElementById('btn-theme-dark');
+  const mobileToggleDarkTheme = document.getElementById('mobile-toggle-dark-theme');
 
   function setTheme(isDark) {
     if (isDark) {
@@ -221,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btnThemeDark?.classList.add('active');
       btnThemeLight?.classList.remove('active');
       if (pageMainTitle) pageMainTitle.style.color = '#FFFFFF';
+      if (mobileToggleDarkTheme) mobileToggleDarkTheme.checked = true;
       localStorage.setItem('cloudcash-theme', 'dark');
       showToast('Dark Theme Activated');
     } else {
@@ -228,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btnThemeLight?.classList.add('active');
       btnThemeDark?.classList.remove('active');
       if (pageMainTitle) pageMainTitle.style.color = '#1F2C3F';
+      if (mobileToggleDarkTheme) mobileToggleDarkTheme.checked = false;
       localStorage.setItem('cloudcash-theme', 'light');
       showToast('Light Theme Activated');
     }
@@ -236,6 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnThemeLight?.addEventListener('click', () => setTheme(false));
   btnThemeDark?.addEventListener('click', () => setTheme(true));
+  mobileToggleDarkTheme?.addEventListener('change', (e) => setTheme(e.target.checked));
 
   if (localStorage.getItem('cloudcash-theme') === 'dark') {
     setTheme(true);
