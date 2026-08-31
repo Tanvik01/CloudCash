@@ -3679,7 +3679,7 @@ body[data-current-view="goals"] .page-title,
 /* --------------------------------------------------------------------------
    13. Screen 6: Settings Desktop Layout (Exact Figma Dimensions: 1060px x 698px)
    -------------------------------------------------------------------------- */
-.settings-layout-grid.desktop-only {
+.settings-layout-grid {
   display: flex !important;
   flex-direction: row !important;
   width: 1060px !important;
@@ -3694,7 +3694,7 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* Left Column: 616px x 698px, gap: 24px */
-.settings-layout-grid.desktop-only .settings-left-col {
+.settings-layout-grid .settings-left-col {
   display: flex !important;
   flex-direction: column !important;
   width: 616px !important;
@@ -3708,7 +3708,7 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* Right Column: 420px x 698px, gap: 24px */
-.settings-layout-grid.desktop-only .settings-right-col {
+.settings-layout-grid .settings-right-col {
   display: flex !important;
   flex-direction: column !important;
   width: 420px !important;
@@ -3722,7 +3722,7 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* Left Column - Card 1: Profile Information (616px x 389px, padding 24px, gap 16px, radius 24px, 3-layer shadow) */
-.settings-layout-grid.desktop-only .settings-left-col > .settings-card:nth-child(1) {
+.settings-layout-grid .settings-left-col > .settings-card:nth-child(1) {
   width: 616px !important;
   max-width: 616px !important;
   min-width: 616px !important;
@@ -3742,7 +3742,7 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* Left Column - Card 2: Notification Preferences (616px x 281px, padding 24px, gap 20px, radius 24px) */
-.settings-layout-grid.desktop-only .settings-left-col > .settings-card:nth-child(2) {
+.settings-layout-grid .settings-left-col > .settings-card:nth-child(2) {
   width: 616px !important;
   max-width: 616px !important;
   min-width: 616px !important;
@@ -3762,7 +3762,7 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* Right Column - Card 1: Security & Login (420px x 240px, padding 24px, gap 16px, radius 24px) */
-.settings-layout-grid.desktop-only .settings-right-col > .settings-card:nth-child(1) {
+.settings-layout-grid .settings-right-col > .settings-card:nth-child(1) {
   width: 420px !important;
   max-width: 420px !important;
   min-width: 420px !important;
@@ -3782,7 +3782,7 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* Right Column - Card 2: Payment & Localization (420px x 283px, padding 24px, gap 16px, radius 24px) */
-.settings-layout-grid.desktop-only .settings-right-col > .settings-card:nth-child(2) {
+.settings-layout-grid .settings-right-col > .settings-card:nth-child(2) {
   width: 420px !important;
   max-width: 420px !important;
   min-width: 420px !important;
@@ -3802,7 +3802,7 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* Right Column - Card 3: Theme (420px x 127px, padding 24px, gap 16px, radius 24px) */
-.settings-layout-grid.desktop-only .settings-right-col > .settings-card:nth-child(3) {
+.settings-layout-grid .settings-right-col > .settings-card:nth-child(3) {
   width: 420px !important;
   max-width: 420px !important;
   min-width: 420px !important;
@@ -4252,7 +4252,8 @@ body[data-current-view="goals"] .page-title,
 
   .app-sidebar,
   .main-header,
-  .desktop-only {
+  .desktop-only,
+  .settings-layout-grid {
     display: none !important;
   }
 
@@ -4500,7 +4501,8 @@ body.mobile-preview-mode .app-container {
 
 body.mobile-preview-mode .app-sidebar,
 body.mobile-preview-mode .main-header,
-body.mobile-preview-mode .desktop-only {
+body.mobile-preview-mode .desktop-only,
+body.mobile-preview-mode .settings-layout-grid {
   display: none !important;
 }
 
