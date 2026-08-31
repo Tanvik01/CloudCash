@@ -1009,16 +1009,16 @@ body {
   }
 }
 
-/* Main App Shell Container (Figma Desktop Frame: Rounded Outer Frame) */
+/* Main App Shell Container (Fluid Desktop Shell with 1380px max cap) */
 .app-container {
   display: flex;
   flex-direction: row;
   width: 100%;
   max-width: 1380px;
-  min-height: 860px;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: var(--bg-card);
-  border-radius: 40px;
+  border-radius: clamp(0px, 2.5vw, 40px);
   box-shadow: var(--shadow-app);
   overflow: hidden;
   position: relative;
@@ -1026,31 +1026,30 @@ body {
   transition: all var(--transition-normal);
 }
 
-/* Desktop Sidebar Navigation (Figma Spec: 240px x 860px, Padding: 40px 24px 32px 24px) */
+/* Desktop & Tablet Sidebar Navigation (Flexible Width with 240px max cap) */
 .app-sidebar {
   width: 240px;
-  min-width: 240px;
+  min-width: 200px;
   max-width: 240px;
-  min-height: 860px;
   background-color: var(--bg-card);
   border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 24px 32px 24px;
+  padding: clamp(24px, 3vw, 40px) clamp(16px, 2vw, 24px) 32px;
   flex-shrink: 0;
   z-index: 20;
-  border-radius: 40px 0 0 40px;
+  border-radius: clamp(0px, 2.5vw, 40px) 0 0 clamp(0px, 2.5vw, 40px);
   box-sizing: border-box;
-  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+  transition: width var(--transition-normal), background-color var(--transition-normal), border-color var(--transition-normal);
 }
 
-/* Sidebar Menu Area (Figma Spec: Width: 192px, Height: 376px, Gap: 48px) */
+/* Sidebar Menu Area (Fluid Width, Flexible Gap) */
 .sidebar-brand-menu {
-  width: 192px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: clamp(32px, 4vh, 48px);
   box-sizing: border-box;
 }
 
@@ -1186,22 +1185,21 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   7. Main Content Area & Headers (Figma Spec: Width: 1140px, Height: 860px, Padding: 36px, Gap: 24px)
+   7. Main Content Area & Headers (Fluid Proportional Layout)
    -------------------------------------------------------------------------- */
 .app-main {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  width: 1140px;
-  max-width: 1140px;
-  min-height: 860px;
+  width: 100%;
+  max-width: 100%;
   background-color: var(--bg-card);
-  padding: 36px;
-  gap: 24px;
+  padding: clamp(16px, 2.5vw, 36px);
+  gap: clamp(16px, 2vw, 24px);
   overflow: visible;
   box-sizing: border-box;
-  border-radius: 0 40px 40px 0;
+  border-radius: 0 clamp(0px, 2.5vw, 40px) clamp(0px, 2.5vw, 40px) 0;
   transition: background-color var(--transition-normal);
 }
 
@@ -1259,17 +1257,18 @@ body {
   color: var(--text-secondary);
 }
 
-/* Desktop Header Bar (Figma Spec: Width: 1068px, Height: 55px, Right Cluster Width: 453px, Height: 40px, Gap: 24px) */
+/* Desktop Header Bar (Fluid Width & Flexible Actions) */
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: clamp(12px, 1.8vw, 24px);
   flex-shrink: 0;
   width: 100%;
-  max-width: 1068px;
-  height: 55px;
+  max-width: 100%;
+  min-height: 50px;
   box-sizing: border-box;
+  gap: 16px;
 }
 
 .header-titles {
@@ -1283,7 +1282,7 @@ body {
 .page-main-title {
   font-family: 'Lato', var(--font-heading), sans-serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: clamp(22px, 2.2vw, 28px);
   color: #1F2C3F;
   letter-spacing: -0.5px;
   line-height: 100%;
@@ -1299,9 +1298,8 @@ body {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 24px;
-  width: 453px;
-  height: 40px;
+  gap: clamp(12px, 1.8vw, 24px);
+  min-height: 40px;
   justify-content: flex-end;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -1434,12 +1432,12 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   8. Overview Screen: Desktop Styles
+   8. Overview Screen: Desktop Styles (Fluid Two-Column Grid)
    -------------------------------------------------------------------------- */
 .overview-grid {
   display: grid;
-  grid-template-columns: minmax(0, 596.66px) 506.9px;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 28px);
   width: 100%;
   justify-content: space-between;
   align-items: start;
@@ -1451,7 +1449,6 @@ body {
   gap: 20px;
   min-width: 0;
   width: 100%;
-  max-width: 596.66px;
 }
 
 .overview-right {
@@ -1459,7 +1456,6 @@ body {
   flex-direction: column;
   gap: 18px;
   width: 100%;
-  max-width: 506.9px;
   min-width: 0;
   box-sizing: border-box;
 }
@@ -1502,7 +1498,7 @@ body {
     0px 2px 6px 0px #0000000A,
     0px 16px 24px 0px #0000000F !important;
   width: 100%;
-  max-width: 597px;
+  max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
 }
@@ -2326,12 +2322,12 @@ input:checked+.slider:before {
 }
 
 /* --------------------------------------------------------------------------
-   9. Screen 2: Transactions Desktop Layout
+   9. Screen 2: Transactions Desktop Layout (Fluid Proportional Grid)
    -------------------------------------------------------------------------- */
 .transactions-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 310px);
-  gap: 22px;
+  gap: clamp(16px, 2vw, 24px);
   width: 100%;
 }
 
@@ -2556,12 +2552,12 @@ input:checked+.slider:before {
 }
 
 /* --------------------------------------------------------------------------
-   10. Screen 3: Cards Desktop Layout
+   10. Screen 3: Cards Desktop Layout (Fluid Grid & Flexible Deck)
    -------------------------------------------------------------------------- */
 .cards-layout-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 310px);
-  gap: 22px;
+  gap: clamp(16px, 2vw, 24px);
   width: 100%;
 }
 
@@ -2569,12 +2565,14 @@ input:checked+.slider:before {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-width: 0;
 }
 
 .cards-deck-row {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(14px, 1.8vw, 20px);
+  width: 100%;
 }
 
 .card-deck-item {
@@ -2582,7 +2580,7 @@ input:checked+.slider:before {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  max-width: 290px;
+  max-width: 100%;
 }
 
 .card-actions-strip {
@@ -2782,14 +2780,15 @@ input:checked+.slider:before {
 }
 
 /* --------------------------------------------------------------------------
-   11. Screen 4: Invoices Desktop Layout (Exact Figma Dimensions: 1068px Width)
+   11. Screen 4: Invoices Desktop Layout (Fluid Proportional Layout)
    -------------------------------------------------------------------------- */
 .invoices-metrics-grid {
-  display: flex;
-  gap: 16px;
-  width: 1068px;
-  max-width: 1068px;
-  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(12px, 1.6vw, 16px);
+  width: 100%;
+  max-width: 100%;
+  min-height: 80px;
   margin-bottom: 24px;
   box-sizing: border-box;
   background: transparent !important;
@@ -2799,10 +2798,10 @@ input:checked+.slider:before {
 }
 
 .invoice-kpi-card {
-  width: 255px;
-  min-width: 255px;
-  max-width: 255px;
-  height: 80px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 80px;
   padding: 16px;
   gap: 8px;
   border-radius: 16px;
@@ -2822,8 +2821,8 @@ input:checked+.slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 223px;
-  height: 16px;
+  width: 100%;
+  min-height: 16px;
   box-sizing: border-box;
 }
 
@@ -2858,47 +2857,42 @@ input:checked+.slider:before {
 
 .invoices-body-grid {
   display: grid;
-  grid-template-columns: 704px 340px;
-  gap: 24px;
-  width: 1068px;
-  max-width: 1068px;
-  min-height: 605px;
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  width: 100%;
+  max-width: 100%;
+  min-height: 500px;
   align-items: start;
   box-sizing: border-box;
 }
 
-/* Invoices Table Card (Figma Spec: Width 704px, Height 647px, SQUARE CORNERS) */
+/* Invoices Table Card */
 .invoices-table-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 0 !important;
-  /* Square outer corners matching Figma */
   padding: 0;
   box-shadow: var(--shadow-sm);
-  width: 704px;
-  min-width: 704px;
-  max-width: 704px;
-  height: 647px;
-  min-height: 647px;
-  max-height: 647px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 500px;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* Table Header (Figma Spec: Width 704px, Height 32px, Background #E8EEF3, Border-bottom 1px solid #E8EEF3, Padding-bottom 8px) */
+/* Table Header */
 .invoices-table-header {
   display: grid;
-  grid-template-columns: 130px 155px 90px 100px 100px 80px;
+  grid-template-columns: minmax(100px, 1.2fr) minmax(120px, 1.5fr) minmax(80px, 0.9fr) minmax(80px, 0.9fr) minmax(80px, 0.9fr) 80px;
   justify-content: space-between;
   align-items: center;
-  width: 704px;
-  min-width: 704px;
-  max-width: 704px;
-  height: 32px;
+  width: 100%;
+  min-width: 580px;
   min-height: 32px;
-  max-height: 32px;
   padding: 0 16px 8px 16px;
   background-color: #E8EEF3;
   border-bottom: 1px solid #E8EEF3;
@@ -2914,34 +2908,28 @@ input:checked+.slider:before {
   box-sizing: border-box;
 }
 
-/* Table Rows Container (Figma Spec: Width 704px, Height 604px, Gap 12px) */
+/* Table Rows Container */
 .invoices-rows-container {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 704px;
-  min-width: 704px;
-  max-width: 704px;
-  height: 604px;
-  min-height: 604px;
-  max-height: 604px;
+  width: 100%;
+  min-width: 580px;
+  min-height: 400px;
   padding: 12px 0;
   overflow-y: auto;
   box-sizing: border-box;
 }
 
-/* Individual Row (Figma Spec: Width 704px, Height 32px, Padding-top 6px, Padding-bottom 6px) */
+/* Individual Row */
 .invoice-table-row {
   display: grid;
-  grid-template-columns: 130px 155px 90px 100px 100px 80px;
+  grid-template-columns: minmax(100px, 1.2fr) minmax(120px, 1.5fr) minmax(80px, 0.9fr) minmax(80px, 0.9fr) minmax(80px, 0.9fr) 80px;
   justify-content: space-between;
   align-items: center;
-  width: 704px;
-  min-width: 704px;
-  max-width: 704px;
-  height: 32px;
+  width: 100%;
+  min-width: 580px;
   min-height: 32px;
-  max-height: 32px;
   padding: 6px 16px;
   box-sizing: border-box;
   transition: background-color var(--transition-fast);
@@ -2959,12 +2947,9 @@ input:checked+.slider:before {
 
 /* Columns */
 .cell-inv-id {
-  width: 130px;
-  min-width: 130px;
-  max-width: 130px;
-  height: 17px;
+  width: 100%;
+  min-width: 0;
   min-height: 17px;
-  max-height: 17px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -3028,14 +3013,12 @@ input:checked+.slider:before {
   box-sizing: border-box;
 }
 
-/* Status Badges (Figma Spec: Width: 80px, Height: 26px, Border-Radius: 12px, Padding: 5px 12px) */
+/* Status Badges */
 .invoices-table-card .badge-status {
   width: 80px;
   min-width: 80px;
   max-width: 80px;
-  height: 26px;
   min-height: 26px;
-  max-height: 26px;
   border-radius: 12px;
   padding: 5px 12px;
   box-sizing: border-box;
@@ -3066,7 +3049,7 @@ input:checked+.slider:before {
 }
 
 /* ==========================================================================
-   INVOICE PREVIEW / SELECTED INVOICE CARD (Figma Spec: 340px x 368px, Radius 20px)
+   INVOICE PREVIEW / SELECTED INVOICE CARD (Fluid Proportional Drawer)
    ========================================================================== */
 .selected-invoice-drawer {
   background-color: #FFFFFF;
@@ -3078,12 +3061,10 @@ input:checked+.slider:before {
   justify-content: space-between;
   gap: 20px;
   box-shadow: var(--shadow-sm);
-  width: 340px;
-  min-width: 340px;
-  max-width: 340px;
-  height: 368px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 368px;
-  max-height: 368px;
   box-sizing: border-box;
   opacity: 1;
 }
@@ -3093,8 +3074,8 @@ input:checked+.slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
-  height: 22px;
+  width: 100%;
+  min-height: 22px;
   box-sizing: border-box;
 }
 
@@ -3112,9 +3093,7 @@ input:checked+.slider:before {
   width: 80px;
   min-width: 80px;
   max-width: 80px;
-  height: 22px;
   min-height: 22px;
-  max-height: 22px;
   border-radius: 12px;
   padding: 3px 12px;
   box-sizing: border-box;
@@ -3148,8 +3127,8 @@ input:checked+.slider:before {
   background-color: #F8FAFC;
   border-radius: 12px;
   padding: 12px;
-  width: 300px;
-  height: 76px;
+  width: 100%;
+  min-height: 76px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3188,8 +3167,8 @@ input:checked+.slider:before {
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
-  width: 300px;
-  height: 72px;
+  width: 100%;
+  min-height: 72px;
   box-sizing: border-box;
 }
 
@@ -3197,8 +3176,8 @@ input:checked+.slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
-  height: 16px;
+  width: 100%;
+  min-height: 16px;
   box-sizing: border-box;
 }
 
@@ -3223,8 +3202,8 @@ input:checked+.slider:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
-  height: 24px;
+  width: 100%;
+  min-height: 24px;
   box-sizing: border-box;
   padding-top: 10px;
   border-top: 1px solid #E8EEF3;
@@ -3253,15 +3232,16 @@ input:checked+.slider:before {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
-  height: 34px;
+  width: 100%;
+  min-height: 34px;
   gap: 12px;
   box-sizing: border-box;
 }
 
 .btn-send-reminder {
-  width: 143px;
-  height: 34px;
+  flex: 1;
+  min-width: 0;
+  min-height: 34px;
   padding: 10px;
   border-radius: 8px;
   background-color: #1F78D1;
@@ -3280,8 +3260,9 @@ input:checked+.slider:before {
 }
 
 .btn-download-pdf {
-  width: 145px;
-  height: 34px;
+  flex: 1;
+  min-width: 0;
+  min-height: 34px;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #E8EEF3;
@@ -3324,10 +3305,10 @@ body[data-current-view="goals"] .page-title,
 /* Summary Row / Hero Metric Cards */
 .goals-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  width: 1060px;
-  max-width: 1060px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(12px, 1.6vw, 16px);
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -3394,17 +3375,14 @@ body[data-current-view="goals"] .page-title,
   color: var(--text-muted);
 }
 
-/* Active Goals Section (Figma Spec: Width 1060px, Height 434px, Gap 16px) */
+/* Active Goals Section (Fluid Width & Flexible Height) */
 .goals-active-section {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 1060px;
-  min-width: 1060px;
-  max-width: 1060px;
-  height: 434px;
-  min-height: 434px;
-  max-height: 434px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
@@ -3417,27 +3395,23 @@ body[data-current-view="goals"] .page-title,
   margin: 0;
 }
 
-/* Goals Frame (Figma Spec: Width 1060px, Height 396px, Gap 20px) */
+/* Goals Frame (Fluid Grid Layout) */
 .goals-cards-frame {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 1060px;
-  min-width: 1060px;
-  max-width: 1060px;
-  height: 396px;
-  min-height: 396px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: clamp(14px, 1.8vw, 20px);
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
-/* Individual Goal Card (Figma Spec: Width 340px, Height 186px, Padding 20px, Gap 12px, Border-radius 24px) */
+/* Individual Goal Card */
 .active-goal-card {
-  width: 340px;
-  min-width: 340px;
-  max-width: 340px;
-  height: 186px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 186px;
-  max-height: 186px;
   padding: 20px;
   border-radius: 24px;
   border: 1px solid #E8EEF3;
@@ -3453,15 +3427,13 @@ body[data-current-view="goals"] .page-title,
   box-sizing: border-box;
 }
 
-/* First Frame Inside Each Goal Card (Figma Spec: Width 300px, Height 48px) */
+/* First Frame Inside Each Goal Card */
 .goal-frame-1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
-  height: 48px;
+  width: 100%;
   min-height: 48px;
-  max-height: 48px;
   box-sizing: border-box;
 }
 
@@ -3506,16 +3478,14 @@ body[data-current-view="goals"] .page-title,
   line-height: 100%;
 }
 
-/* Second Frame Inside Each Goal Card (Figma Spec: Width 300px, Height 41px, Gap 4px) */
+/* Second Frame Inside Each Goal Card */
 .goal-frame-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  width: 300px;
-  height: 41px;
+  width: 100%;
   min-height: 41px;
-  max-height: 41px;
   box-sizing: border-box;
 }
 
@@ -3536,21 +3506,19 @@ body[data-current-view="goals"] .page-title,
   line-height: 100%;
 }
 
-/* Third Frame Inside Each Goal Card (Figma Spec: Width 300px, Height 33px, Gap 8px) */
+/* Third Frame Inside Each Goal Card */
 .goal-frame-3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 8px;
-  width: 300px;
-  height: 33px;
+  width: 100%;
   min-height: 33px;
-  max-height: 33px;
   box-sizing: border-box;
 }
 
 .goal-frame-3 .progress-track {
-  width: 300px;
+  width: 100%;
   height: 6px;
   background-color: var(--bg-track);
   border-radius: var(--radius-pill);
@@ -3566,7 +3534,7 @@ body[data-current-view="goals"] .page-title,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 100%;
   line-height: 100%;
 }
 
@@ -3586,12 +3554,10 @@ body[data-current-view="goals"] .page-title,
 
 /* Add Goal Card */
 .add-goal-dashed-card {
-  width: 340px;
-  min-width: 340px;
-  max-width: 340px;
-  height: 186px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 186px;
-  max-height: 186px;
   padding: 20px;
   border-radius: 24px;
   border: 2px dashed #B8D5E5;
@@ -3631,7 +3597,7 @@ body[data-current-view="goals"] .page-title,
   color: #8292A1;
 }
 
-/* Savings Trend Container (Figma Spec: Width 1060px, Height 245px, Padding 24px, Gap 20px, Border-radius 24px) */
+/* Savings Trend Container */
 .savings-trend-card,
 .savings-chart-card {
   background-color: #FFFFFF;
@@ -3642,12 +3608,10 @@ body[data-current-view="goals"] .page-title,
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  width: 1060px;
-  min-width: 1060px;
-  max-width: 1060px;
-  height: 245px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 245px;
-  max-height: 245px;
   box-shadow: 0px 0px 1px 0px #0000000A, 0px 2px 6px 0px #0000000A, 0px 16px 24px 0px #0000000F !important;
   box-sizing: border-box;
 }
@@ -3674,61 +3638,59 @@ body[data-current-view="goals"] .page-title,
 }
 
 /* --------------------------------------------------------------------------
-   13. Screen 6: Settings Desktop Layout
-   -------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------
-   13. Screen 6: Settings Desktop Layout (Exact Figma Dimensions: 1060px x 698px)
+   13. Screen 6: Settings Desktop Layout (Fluid Proportional Layout)
    -------------------------------------------------------------------------- */
 .settings-layout-grid {
-  display: flex !important;
-  flex-direction: row !important;
-  width: 1060px !important;
-  max-width: 1060px !important;
-  min-width: 1060px !important;
-  height: 698px !important;
-  min-height: 698px !important;
-  max-height: 698px !important;
-  gap: 24px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  gap: clamp(16px, 2vw, 24px) !important;
+  align-items: start !important;
   opacity: 1 !important;
   box-sizing: border-box !important;
 }
 
-/* Left Column: 616px x 698px, gap: 24px */
+/* Left Column */
 .settings-layout-grid .settings-left-col {
   display: flex !important;
   flex-direction: column !important;
-  width: 616px !important;
-  max-width: 616px !important;
-  min-width: 616px !important;
-  height: 698px !important;
-  min-height: 698px !important;
-  max-height: 698px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
   gap: 24px !important;
   box-sizing: border-box !important;
 }
 
-/* Right Column: 420px x 698px, gap: 24px */
+/* Right Column */
 .settings-layout-grid .settings-right-col {
   display: flex !important;
   flex-direction: column !important;
-  width: 420px !important;
-  max-width: 420px !important;
-  min-width: 420px !important;
-  height: 698px !important;
-  min-height: 698px !important;
-  max-height: 698px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
   gap: 24px !important;
   box-sizing: border-box !important;
 }
 
-/* Left Column - Card 1: Profile Information (616px x 389px, padding 24px, gap 16px, radius 24px, 3-layer shadow) */
+/* Left Column - Card 1: Profile Information */
 .settings-layout-grid .settings-left-col > .settings-card:nth-child(1) {
-  width: 616px !important;
-  max-width: 616px !important;
-  min-width: 616px !important;
-  height: 389px !important;
-  min-height: 389px !important;
-  max-height: 389px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
   padding: 24px !important;
   gap: 16px !important;
   border-radius: 24px !important;
@@ -3741,14 +3703,14 @@ body[data-current-view="goals"] .page-title,
     0px 16px 24px 0px #0000000F !important;
 }
 
-/* Left Column - Card 2: Notification Preferences (616px x 281px, padding 24px, gap 20px, radius 24px) */
+/* Left Column - Card 2: Notification Preferences */
 .settings-layout-grid .settings-left-col > .settings-card:nth-child(2) {
-  width: 616px !important;
-  max-width: 616px !important;
-  min-width: 616px !important;
-  height: 281px !important;
-  min-height: 281px !important;
-  max-height: 281px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
   padding: 24px !important;
   gap: 20px !important;
   border-radius: 24px !important;
@@ -3761,14 +3723,14 @@ body[data-current-view="goals"] .page-title,
     0px 16px 24px 0px #0000000F !important;
 }
 
-/* Right Column - Card 1: Security & Login (420px x 240px, padding 24px, gap 16px, radius 24px) */
+/* Right Column - Card 1: Security & Login */
 .settings-layout-grid .settings-right-col > .settings-card:nth-child(1) {
-  width: 420px !important;
-  max-width: 420px !important;
-  min-width: 420px !important;
-  height: 240px !important;
-  min-height: 240px !important;
-  max-height: 240px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
   padding: 24px !important;
   gap: 16px !important;
   border-radius: 24px !important;
@@ -3781,14 +3743,14 @@ body[data-current-view="goals"] .page-title,
     0px 16px 24px 0px #0000000F !important;
 }
 
-/* Right Column - Card 2: Payment & Localization (420px x 283px, padding 24px, gap 16px, radius 24px) */
+/* Right Column - Card 2: Payment & Localization */
 .settings-layout-grid .settings-right-col > .settings-card:nth-child(2) {
-  width: 420px !important;
-  max-width: 420px !important;
-  min-width: 420px !important;
-  height: 283px !important;
-  min-height: 283px !important;
-  max-height: 283px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
   padding: 24px !important;
   gap: 16px !important;
   border-radius: 24px !important;
@@ -3801,14 +3763,14 @@ body[data-current-view="goals"] .page-title,
     0px 16px 24px 0px #0000000F !important;
 }
 
-/* Right Column - Card 3: Theme (420px x 127px, padding 24px, gap 16px, radius 24px) */
+/* Right Column - Card 3: Theme */
 .settings-layout-grid .settings-right-col > .settings-card:nth-child(3) {
-  width: 420px !important;
-  max-width: 420px !important;
-  min-width: 420px !important;
-  height: 127px !important;
-  min-height: 127px !important;
-  max-height: 127px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
   padding: 24px !important;
   gap: 16px !important;
   border-radius: 24px !important;
@@ -4186,15 +4148,57 @@ body[data-current-view="goals"] .page-title,
   }
 }
 
-@media (max-width: 1200px) and (min-width: 861px) {
+/* --------------------------------------------------------------------------
+   14. TABLET & INTERMEDIATE BREAKPOINTS (861px – 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) and (min-width: 861px) {
+  .app-sidebar {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    padding: 32px 16px 24px 16px;
+  }
+
+  .app-main {
+    padding: 24px 20px;
+    gap: 20px;
+  }
+
   .overview-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 380px);
     gap: 18px;
+  }
+
+  .invoices-body-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .settings-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 861px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .transactions-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cards-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
 /* --------------------------------------------------------------------------
-   15. MOBILE FRAMEWORK & RESPONSIVE DESIGN (Matching Specification)
+   15. MOBILE FRAMEWORK & RESPONSIVE DESIGN (Fluid <= 860px)
    -------------------------------------------------------------------------- */
 @media (max-width: 860px) {
 
@@ -4243,7 +4247,7 @@ body[data-current-view="goals"] .page-title,
     min-height: 100vh !important;
     height: auto !important;
     box-shadow: none !important;
-    max-width: 390px !important;
+    max-width: 100% !important;
     width: 100% !important;
     overflow-x: hidden !important;
     background-color: #F2F5F8 !important;
@@ -4262,7 +4266,7 @@ body[data-current-view="goals"] .page-title,
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
-    max-width: 390px !important;
+    max-width: 100% !important;
     height: 44px !important;
     min-height: 44px !important;
     max-height: 44px !important;
@@ -4307,7 +4311,7 @@ body[data-current-view="goals"] .page-title,
     justify-content: space-between !important;
     align-items: flex-start !important;
     width: 100% !important;
-    max-width: 390px !important;
+    max-width: 100% !important;
     height: 30px !important;
     min-height: 30px !important;
     max-height: 30px !important;
@@ -4377,7 +4381,7 @@ body[data-current-view="goals"] .page-title,
     justify-content: flex-start !important;
     gap: 4px !important;
     width: 100% !important;
-    max-width: 390px !important;
+    max-width: 100% !important;
     height: 63px !important;
     min-height: 63px !important;
     max-height: 63px !important;
@@ -4395,7 +4399,7 @@ body[data-current-view="goals"] .page-title,
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100% !important;
-    max-width: 390px !important;
+    max-width: 100% !important;
     height: 73px !important;
     min-height: 73px !important;
     max-height: 73px !important;
@@ -4416,10 +4420,10 @@ body[data-current-view="goals"] .page-title,
     align-items: center !important;
     gap: 16px !important;
     width: 100% !important;
-    max-width: 390px !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     margin: 0 auto !important;
-    padding: 0 16px !important;
+    padding: 0 clamp(12px, 3vw, 20px) !important;
     box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
@@ -4433,7 +4437,7 @@ body[data-current-view="goals"] .page-title,
     gap: 0 !important;
     max-height: none !important;
     width: 100% !important;
-    max-width: 390px !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
@@ -4706,24 +4710,22 @@ body.mobile-preview-mode .app-main {
   font-size: 12px !important;
   color: var(--text-secondary) !important;
   line-height: 14px !important;
-  height: 14px !important;
   min-height: 14px !important;
-  max-height: 14px !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: 322px !important;
-  max-width: 322px !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-/* Mobile Balance Card & Metric Layouts (Exact Figma: 358px x 112px, 16px padding, 24px internal gap, 16px radius) */
+/* Mobile Balance Card & Metric Layouts (Fluid Width, Flexible Min-Height) */
 .mobile-only .mobile-balance-card,
 .mobile-balance-card {
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
-  height: 112px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
   min-height: 112px !important;
-  max-height: 112px !important;
+  max-height: none !important;
   background-color: #FFFFFF !important;
   border: 1px solid #E8EEF3 !important;
   border-radius: 16px !important;
@@ -4739,11 +4741,9 @@ body.mobile-preview-mode .app-main {
 }
 
 .mobile-balance-top {
-  width: 326px !important;
-  max-width: 326px !important;
-  height: 24px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 24px !important;
-  max-height: 24px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -4768,11 +4768,9 @@ body.mobile-preview-mode .app-main {
 }
 
 .mobile-balance-stats {
-  width: 326px !important;
-  max-width: 326px !important;
-  height: 32px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 32px !important;
-  max-height: 32px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -4809,11 +4807,11 @@ body.mobile-preview-mode .app-main {
   width: 100%;
 }
 
-/* Active Goals (Figma Spec: Outer section on page background, no outer card; Goals Track 358px x 79px) */
+/* Active Goals (Fluid Section with Horizontal Swipe Track) */
 .mobile-goals-section-block {
-  width: 358px !important;
-  min-width: 358px !important;
-  max-width: 358px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
   height: auto !important;
   min-height: auto !important;
   max-height: none !important;
@@ -4849,12 +4847,12 @@ body.mobile-preview-mode .app-main {
   margin: 0;
 }
 
-/* Goals Track (Width 358px, Height 79px, overflow-x: auto, overflow-y: hidden, Gap 12px) */
+/* Goals Track (Horizontal Swipe Rail Preserved) */
 .mobile-goals-scroll-row {
   display: flex !important;
   gap: 12px !important;
-  width: 358px !important;
-  max-width: 358px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-width: 0 !important;
   height: 79px !important;
   min-height: 79px !important;
@@ -4868,7 +4866,7 @@ body.mobile-preview-mode .app-main {
   flex-shrink: 0 !important;
 }
 
-/* Individual Goal Cards (flex: 0 0 138px, Width 138px, Height 79px, Padding 12px, Gap 8px, Radius 12px, Background #FFFFFF) */
+/* Individual Goal Cards inside Rail (Fixed flex-basis for smooth horizontal swiping) */
 .mobile-mini-goal-chip {
   flex: 0 0 138px !important;
   width: 138px !important;
@@ -4941,13 +4939,11 @@ body.mobile-preview-mode .app-main {
   background-color: var(--color-cyan, #22C4D0) !important;
 }
 
-/* Quick Transfer (Figma Spec: Width 358px, Height 113px, Padding 16px, Gap 12px, Opacity 1, Background #FFFFFF, Radius 16px) */
+/* Quick Transfer (Fluid Card) */
 .mobile-quick-transfer-card {
   width: 100% !important;
-  max-width: 358px !important;
-  height: 113px !important;
+  max-width: 100% !important;
   min-height: 113px !important;
-  max-height: 113px !important;
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
@@ -4981,10 +4977,8 @@ body.mobile-preview-mode .app-main {
 
 .mobile-quick-transfer-card .avatars-scroll-row {
   width: 100% !important;
-  max-width: 326px !important;
-  height: 52px !important;
+  max-width: 100% !important;
   min-height: 52px !important;
-  max-height: 52px !important;
   gap: 8px !important;
   display: flex !important;
   align-items: center !important;
@@ -5031,11 +5025,10 @@ body.mobile-preview-mode .app-main {
   line-height: 1;
 }
 
-/* Recent Transactions (Figma Spec: Outer 358px x 193px, Gap 12px, List Card 358px x 164px, Padding 12px, Gap 10px, Radius 16px, Row 334px x 40px) */
+/* Recent Transactions (Fluid Section) */
 .mobile-recent-tx-section {
   width: 100% !important;
-  max-width: 358px !important;
-  height: 193px !important;
+  max-width: 100% !important;
   min-height: 193px !important;
   gap: 12px !important;
   display: flex !important;
@@ -5061,10 +5054,8 @@ body.mobile-preview-mode .app-main {
 
 .mobile-tx-card-list {
   width: 100% !important;
-  max-width: 358px !important;
-  height: 164px !important;
+  max-width: 100% !important;
   min-height: 164px !important;
-  max-height: 164px !important;
   padding: 12px !important;
   gap: 10px !important;
   border-radius: 16px !important;
@@ -5080,10 +5071,8 @@ body.mobile-preview-mode .app-main {
 
 .mobile-tx-item-row {
   width: 100% !important;
-  max-width: 334px !important;
-  height: 40px !important;
+  max-width: 100% !important;
   min-height: 40px !important;
-  max-height: 40px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -5179,6 +5168,8 @@ body.mobile-preview-mode .app-main {
   flex-direction: column;
   gap: 12px;
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .summary-card-heading {
@@ -5261,6 +5252,8 @@ body.mobile-preview-mode .app-main {
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mobile-history-item {
@@ -5337,22 +5330,22 @@ body.mobile-preview-mode .app-main {
   color: var(--primary-accent);
 }
 
-/* Screen 4 Mobile Elements: Exact Figma Invoices Stats Cards */
+/* Screen 4 Mobile Elements: Fluid Invoices Stats Cards */
 .mobile-only .invoices-metrics-grid,
 .mobile-invoices-wrapper .invoices-metrics-grid {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   gap: 10px !important;
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   height: auto !important;
   min-height: 73px !important;
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
-  overflow: visible !important;
+  overflow-x: auto !important;
   padding: 0 !important;
   margin: 0 !important;
   box-sizing: border-box !important;
@@ -5361,13 +5354,11 @@ body.mobile-preview-mode .app-main {
 
 .mobile-only .invoices-metrics-grid .invoice-kpi-card,
 .mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-card {
-  flex: 0 0 112.6667px !important;
-  width: 112.6667px !important;
-  min-width: 112.6667px !important;
-  max-width: 112.6667px !important;
-  height: 73px !important;
+  flex: 1 1 0 !important;
+  min-width: 100px !important;
+  width: auto !important;
+  max-width: none !important;
   min-height: 73px !important;
-  max-height: 73px !important;
   padding: 12px !important;
   gap: 4px !important;
   border-radius: 12px !important;
@@ -5384,7 +5375,7 @@ body.mobile-preview-mode .app-main {
   flex-shrink: 0 !important;
 }
 
-/* Hide 4th card (Overdue) on mobile so only first 3 cards fit cleanly inside 358px */
+/* Hide 4th card on mobile so only first 3 cards fit cleanly */
 .mobile-only .invoices-metrics-grid .invoice-kpi-card:nth-child(n+4),
 .mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-card:nth-child(n+4) {
   display: none !important;
@@ -5426,7 +5417,7 @@ body.mobile-preview-mode .app-main {
   line-height: 1.1 !important;
 }
 
-/* Unified Figma Shadow for Mobile White Cards */
+/* Unified Shadow for Mobile White Cards */
 .mobile-only .mobile-invoices-card,
 .mobile-only .selected-invoice-drawer,
 .mobile-only .mobile-monthly-summary-card,
@@ -5446,7 +5437,7 @@ body.mobile-preview-mode .app-main {
 
 .mobile-invoices-card {
   width: 100% !important;
-  max-width: 358px !important;
+  max-width: 100% !important;
   height: auto !important;
   min-height: 0 !important;
   background-color: var(--bg-card);
@@ -5460,15 +5451,14 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-/* Exact Figma Mobile Selected Invoice Card (358px x 227px, 16px padding, 12px gap, 326px content width) */
+/* Fluid Mobile Selected Invoice Card */
 .mobile-only .selected-invoice-drawer,
 .mobile-invoices-wrapper .selected-invoice-drawer {
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
-  height: 227px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 227px !important;
-  max-height: 227px !important;
+  height: auto !important;
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
@@ -5485,15 +5475,13 @@ body.mobile-preview-mode .app-main {
   margin: 0 !important;
 }
 
-/* Heading Row: 326px x 20px */
+/* Heading Row */
 .mobile-only .selected-invoice-drawer .section-header-row,
 .mobile-invoices-wrapper .selected-invoice-drawer .section-header-row {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
-  height: 20px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 20px !important;
-  max-height: 20px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -5513,23 +5501,19 @@ body.mobile-preview-mode .app-main {
 
 .mobile-only .selected-invoice-drawer .badge-status,
 .mobile-invoices-wrapper .selected-invoice-drawer .badge-status {
-  height: 20px !important;
   min-height: 20px !important;
-  max-height: 20px !important;
   padding: 2px 8px !important;
   font-size: 11px !important;
   box-sizing: border-box !important;
 }
 
-/* Client Info Container: 326px x 69px, padding 10px, gap 4px, border-radius 10px */
+/* Client Info Container */
 .mobile-only .selected-invoice-drawer .client-meta-card,
 .mobile-invoices-wrapper .selected-invoice-drawer .client-meta-card {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
-  height: 69px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 69px !important;
-  max-height: 69px !important;
   padding: 10px !important;
   gap: 4px !important;
   border-radius: 10px !important;
@@ -5566,15 +5550,13 @@ body.mobile-preview-mode .app-main {
   line-height: 1 !important;
 }
 
-/* Due Date / Total Details Section: 326px x 36px, gap 6px */
+/* Due Date / Total Details Section */
 .mobile-only .selected-invoice-drawer .invoice-details-list,
 .mobile-invoices-wrapper .selected-invoice-drawer .invoice-details-list {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
-  height: 36px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 36px !important;
-  max-height: 36px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -5586,12 +5568,10 @@ body.mobile-preview-mode .app-main {
 
 .mobile-only .selected-invoice-drawer .invoice-detail-row,
 .mobile-invoices-wrapper .selected-invoice-drawer .invoice-detail-row {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
-  height: 14px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 14px !important;
-  max-height: 14px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -5615,12 +5595,10 @@ body.mobile-preview-mode .app-main {
 
 .mobile-only .selected-invoice-drawer .invoice-total-row,
 .mobile-invoices-wrapper .selected-invoice-drawer .invoice-total-row {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
-  height: 16px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 16px !important;
-  max-height: 16px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -5646,15 +5624,13 @@ body.mobile-preview-mode .app-main {
   line-height: 1 !important;
 }
 
-/* Action Button Row: 326px x 34px, gap 8px */
+/* Action Button Row */
 .mobile-only .selected-invoice-drawer .mobile-drawer-actions-row,
 .mobile-invoices-wrapper .selected-invoice-drawer .mobile-drawer-actions-row {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
-  height: 34px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 34px !important;
-  max-height: 34px !important;
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
@@ -5671,9 +5647,7 @@ body.mobile-preview-mode .app-main {
 .mobile-invoices-wrapper .selected-invoice-drawer .btn-download-pdf {
   flex: 1 1 0 !important;
   width: auto !important;
-  height: 34px !important;
   min-height: 34px !important;
-  max-height: 34px !important;
   padding: 0 8px !important;
   margin: 0 !important;
   border-radius: 8px !important;
@@ -5869,15 +5843,13 @@ body.mobile-preview-mode .app-main {
   background-color: var(--primary-light);
 }
 
-/* Mobile Savings Trend Card (Exact Figma: 358px x 184px, 16px padding, 12px gap, 16px radius) */
+/* Mobile Savings Trend Card */
 .mobile-only .savings-chart-card,
 .mobile-goals-wrapper .savings-chart-card {
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
-  height: 184px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 184px !important;
-  max-height: 184px !important;
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
@@ -5897,12 +5869,10 @@ body.mobile-preview-mode .app-main {
 
 .mobile-only .savings-chart-card .chart-header-row,
 .mobile-goals-wrapper .savings-chart-card .chart-header-row {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
-  height: 20px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 20px !important;
-  max-height: 20px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -5931,9 +5901,9 @@ body.mobile-preview-mode .app-main {
 
 .mobile-only .savings-chart-card .chart-canvas-wrapper,
 .mobile-goals-wrapper .savings-chart-card .chart-canvas-wrapper {
-  width: 326px !important;
-  max-width: 326px !important;
-  min-width: 326px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   height: 120px !important;
   min-height: 120px !important;
   max-height: 120px !important;
@@ -5948,7 +5918,7 @@ body.mobile-preview-mode .app-main {
 .mobile-goals-wrapper .savings-chart-card .chart-canvas-wrapper canvas {
   width: 100% !important;
   height: 100% !important;
-  max-width: 326px !important;
+  max-width: 100% !important;
   display: block !important;
 }
 
@@ -5959,15 +5929,13 @@ body.mobile-preview-mode .app-main {
   gap: 2px;
 }
 
-/* Mobile Transactions Monthly Summary Card (Exact Figma: 358px x 180px, padding 16px, gap 12px, radius 16px) */
+/* Mobile Transactions Monthly Summary Card */
 .mobile-only .mobile-monthly-summary-card,
 .mobile-transactions-wrapper .mobile-monthly-summary-card {
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
-  height: 180px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
   min-height: 180px !important;
-  max-height: 180px !important;
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
@@ -6004,12 +5972,12 @@ body.mobile-preview-mode .app-main {
    Mobile Settings Screen (Scoped strictly to Mobile / Mobile-Preview Mode)
    ========================================================================== */
 
-/* Settings Content Container: 390px wide, 607px height, 16px horizontal padding, 24px bottom padding, 16px gap */
+/* Settings Content Container: Fluid Width, Flexible Height */
 @media (max-width: 860px) {
   .mobile-settings-wrapper {
-    width: 390px !important;
-    max-width: 390px !important;
-    min-height: 607px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
     padding: 0 16px 24px 16px !important;
     gap: 16px !important;
     display: flex !important;
@@ -6021,9 +5989,9 @@ body.mobile-preview-mode .app-main {
 }
 
 body.mobile-preview-mode .mobile-settings-wrapper {
-  width: 390px !important;
-  max-width: 390px !important;
-  min-height: 607px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: auto !important;
   padding: 0 16px 24px 16px !important;
   gap: 16px !important;
   display: flex !important;
@@ -6033,15 +6001,14 @@ body.mobile-preview-mode .mobile-settings-wrapper {
   margin: 0 auto !important;
 }
 
-/* Card 1: Profile Info Card (Exact Figma: 358px x 205px, padding 16px, gap 12px, radius 16px) */
+/* Card 1: Profile Info Card */
 .mobile-only .mobile-settings-wrapper .settings-card:nth-of-type(1),
 .mobile-settings-wrapper .settings-card:nth-of-type(1) {
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
-  height: 205px !important;
-  min-height: 205px !important;
-  max-height: 205px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 180px !important;
+  height: auto !important;
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
@@ -6060,13 +6027,11 @@ body.mobile-preview-mode .mobile-settings-wrapper {
   overflow: hidden !important;
 }
 
-/* Profile Row: 326px x 48px, gap 12px */
+/* Profile Row */
 .mobile-settings-wrapper .profile-header-meta {
-  width: 326px !important;
-  max-width: 326px !important;
-  height: 48px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 48px !important;
-  max-height: 48px !important;
   gap: 12px !important;
   display: flex !important;
   align-items: center !important;
@@ -6102,13 +6067,11 @@ body.mobile-preview-mode .mobile-settings-wrapper {
   overflow: hidden !important;
 }
 
-/* Phone / Billing Info Rows: 326px width, 31px height, space-between */
+/* Phone / Billing Info Rows */
 .mobile-settings-wrapper .settings-field-row {
-  width: 326px !important;
-  max-width: 326px !important;
-  height: 31px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 31px !important;
-  max-height: 31px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -6117,15 +6080,14 @@ body.mobile-preview-mode .mobile-settings-wrapper {
   box-sizing: border-box !important;
 }
 
-/* Card 2: Notification Preferences Card (Exact Figma: 358px x 147px, padding 16px, gap 12px, radius 16px) */
+/* Card 2: Notification Preferences Card */
 .mobile-only .mobile-settings-wrapper .settings-card:nth-of-type(2),
 .mobile-settings-wrapper .settings-card:nth-of-type(2) {
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
-  height: 147px !important;
-  min-height: 147px !important;
-  max-height: 147px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 140px !important;
+  height: auto !important;
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
@@ -6145,8 +6107,8 @@ body.mobile-preview-mode .mobile-settings-wrapper {
 }
 
 .mobile-settings-wrapper .settings-toggle-row {
-  width: 326px !important;
-  max-width: 326px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
@@ -6155,15 +6117,14 @@ body.mobile-preview-mode .mobile-settings-wrapper {
   padding: 0 !important;
 }
 
-/* Card 3: Localization Card (Exact Figma: 358px x 199px, padding 16px, gap 12px, radius 16px) */
+/* Card 3: Localization Card */
 .mobile-only .mobile-settings-wrapper .settings-card:nth-of-type(3),
 .mobile-settings-wrapper .settings-card:nth-of-type(3) {
-  width: 358px !important;
-  max-width: 358px !important;
-  min-width: 358px !important;
-  height: 199px !important;
-  min-height: 199px !important;
-  max-height: 199px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 180px !important;
+  height: auto !important;
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
@@ -6182,21 +6143,19 @@ body.mobile-preview-mode .mobile-settings-wrapper {
   overflow: hidden !important;
 }
 
-/* Currency & Language Selectors: 326px x 40px, 12px radius, 12px padding, 1px border */
+/* Currency & Language Selectors */
 .mobile-settings-wrapper .settings-select-group {
-  width: 326px !important;
-  max-width: 326px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
 
 .mobile-settings-wrapper .settings-select-control {
-  width: 326px !important;
-  max-width: 326px !important;
-  height: 40px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   min-height: 40px !important;
-  max-height: 40px !important;
   border-radius: 12px !important;
   padding: 0 12px !important;
   border: 1px solid var(--border-subtle) !important;
