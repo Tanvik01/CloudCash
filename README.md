@@ -1,64 +1,109 @@
 # CloudCash — Figma to HTML
 
-A frontend implementation of the CloudCash fintech dashboard, recreated from the provided Figma design and extended with additional interactions and functionality.
+A frontend implementation of the **CloudCash fintech dashboard**, recreated from the provided Figma design and enhanced with additional interactions and functionality.
 
-🔗 **Live Demo**: [Live Link Placeholder](https://your-live-demo-link.com)
+🔗 **Live Demo:** https://cloudcash-tau.vercel.app/
 
 ---
 
 ## Project Overview
 
-The primary task was to convert the provided Figma design into a functional HTML-based frontend, with a strong focus on matching the visual design, layout, spacing, typography, cards, navigation, and responsive mobile experience.
+The primary task was to **convert the provided Figma design into a functional HTML-based frontend**, with a focus on accurately reproducing the visual design, layouts, spacing, typography, cards, navigation, and responsive experience.
 
-The Figma file was implemented without Dev Mode access, so the UI was recreated by carefully interpreting the design and its visual specifications.
+The implementation was created **without Figma Dev Mode access**, so the design was carefully analyzed and translated into HTML, CSS, and JavaScript based on the available visual references and specifications.
+
+The project includes both **desktop and mobile views**, with the ability to switch between them using the **Desktop/Mobile toggle at the bottom of the page**.
 
 ---
 
 ## What I Implemented
 
 ### 1. Figma → HTML — Core Requirement
+
 - Recreated the CloudCash dashboard from the provided Figma design.
 - Implemented the major screens and their layouts.
-- Matched the Figma design across desktop and mobile views.
-- Recreated the sidebar navigation, headers, cards, statistics, transactions, invoices, goals, savings trend, and mobile bottom navigation.
-- Paid close attention to dimensions, spacing, typography, colors, borders, shadows, and border radii.
+- Created both **desktop and mobile views**.
+- Added a Desktop/Mobile view toggle at the bottom of the page.
+- Recreated:
+  - Sidebar navigation
+  - Headers
+  - Cards
+  - Statistics sections
+  - Transactions
+  - Invoices
+  - Goals
+  - Savings trend
+  - Mobile bottom navigation
+- Paid close attention to:
+  - Dimensions
+  - Spacing
+  - Typography
+  - Colors
+  - Borders
+  - Shadows
+  - Border radii
+  - Responsive layouts
 
 ### 2. JavaScript Interactions — Bonus
-- Connected the different screens through navigation.
+
+Added interactive functionality beyond the original Figma-to-HTML requirement:
+
+- Connected all major screens through navigation.
 - Made navigation buttons and links functional.
-- Added working interactions to buttons throughout the dashboard.
-- Added dynamic UI behavior where appropriate.
+- Added functional interactions throughout the dashboard.
+- Added dynamic UI behavior using JavaScript.
 
 ### 3. Interactive Card Flip — Bonus
-- Added an additional interaction to the CloudCash cards:
-  - Cards can be flipped to reveal their details.
-  - The interaction provides another way to explore card information without leaving the screen.
+
+Added an interactive card experience:
+
+- Cards can be flipped to reveal additional card details.
+- The interaction allows users to explore card information without leaving the screen.
 
 ### 4. Mobile Card Swiping — Bonus
-- Added a mobile-specific card interaction:
-  - Users can swipe through the different cards on mobile.
-  - The interaction provides a more natural touch-friendly experience.
+
+Added a mobile-specific interaction:
+
+- Users can swipe through different cards on mobile.
+- Designed the interaction specifically for a touch-based experience.
 
 ### 5. Desktop Dark Theme — Bonus
-- Added a desktop dark theme as an additional feature beyond the Figma requirements.
-- Introduced a dark-themed dashboard experience.
-- Preserved the existing UI structure and interactions.
-- The dark theme is an optional enhancement and is not part of the original Figma specification.
+
+Added an optional **desktop dark theme** beyond the provided Figma specification.
+
+- Added a dark-themed dashboard experience.
+- Preserved the existing dashboard structure and interactions.
+- The dark theme is an additional enhancement and was not part of the original Figma design.
+
+---
+
+## Desktop & Mobile Views
+
+The project includes dedicated layouts for both:
+
+- **Desktop**
+- **Mobile**
+
+You can switch between the two views using the **Desktop/Mobile toggle at the bottom of the page**.
+
+The mobile layout was separately adapted to match the provided mobile Figma designs rather than simply scaling down the desktop interface.
 
 ---
 
 ## Scope
 
-The core requirement of the project was:
+The **core requirement** of the assignment was:
+
 > **Convert the provided Figma design into HTML.**
 
-Everything beyond the visual Figma implementation was treated as additional/bonus functionality.
+Everything beyond the visual implementation was added as **bonus functionality**.
 
 | Feature | Status |
 | :--- | :--- |
 | Figma → HTML implementation | Core requirement |
 | Desktop UI | Implemented |
-| Mobile responsive UI | Implemented |
+| Mobile UI | Implemented |
+| Desktop/Mobile view toggle | Bonus |
 | Screen-to-screen navigation | Bonus |
 | JavaScript interactions | Bonus |
 | Functional buttons | Bonus |
@@ -68,17 +113,25 @@ Everything beyond the visual Figma implementation was treated as additional/bonu
 
 ---
 
-## Tech Used
+## Tech Stack
 
 - **HTML**
 - **CSS**
 - **JavaScript**
 - **Vite**
-- **Responsive CSS / mobile layouts**
+- **Responsive CSS**
 
 ---
 
 ## Notes
 
-- The implementation was created from the provided Figma design without Figma Dev Mode access. Measurements and visual details were reproduced by analyzing the available design and translating those specifications into the frontend.
-- The additional interactions and dark theme were intentionally added as enhancements beyond the original Figma-to-HTML requirement.
+- The implementation was created from the provided Figma design **without Figma Dev Mode access**.
+- Measurements and visual details were reproduced by analyzing the available Figma references and translating them into the frontend.
+- The desktop and mobile layouts were implemented separately to preserve the intended responsive designs.
+- Additional interactions and the desktop dark theme were intentionally added beyond the original Figma-to-HTML requirement.
+
+---
+
+## Live Demo
+
+🔗 **https://cloudcash-tau.vercel.app/**
