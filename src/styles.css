@@ -1,11 +1,3 @@
-/* ==========================================================================
-   CLOUDCASH DESIGN SYSTEM & STYLESHEET
-   Zero-Overlap Responsive Framework with 3D Card Deck Physics & Tactile Animations
-   ========================================================================== */
-
-/* --------------------------------------------------------------------------
-   1. Google Fonts & CSS Custom Properties
-   -------------------------------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap');
 
 :root {
@@ -31,8 +23,8 @@
   /* Typography Colors */
   --text-primary: #404040;
   --text-heading: #404040;
-  --text-secondary: #AEAEAE;
-  --text-muted: #AEAEAE;
+  --text-secondary: #64748B;
+  --text-muted: #71809A;
   --text-disabled: #C7C7C7;
   --text-white: #FFFFFF;
 
@@ -66,6 +58,7 @@
   --shadow-card: 0px 14px 30px rgba(25, 123, 189, 0.28);
   --shadow-card-metal: 0px 14px 30px rgba(15, 23, 42, 0.4);
   --shadow-app: 0px 20px 60px rgba(15, 66, 100, 0.08);
+  --shadow-figma: 0px 0px 1px 0px #0000000A, 0px 2px 6px 0px #0000000A, 0px 16px 24px 0px #0000000F;
 
   /* Radii */
   --radius-xs: 4px;
@@ -78,9 +71,9 @@
   --radius-pill: 9999px;
 
   /* Typography font stacks */
-  --font-body: 'Suprema', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Suprema', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-brand: 'Suprema', 'Plus Jakarta Sans', 'Quicksand', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-brand: 'Plus Jakarta Sans', 'Quicksand', sans-serif;
 
   /* Tactile Spring Transitions */
   --transition-fast: 0.15s ease;
@@ -139,19 +132,19 @@ body.dark-mode .active-goal-card {
 }
 
 body.dark-mode .active-goal-card .active-goal-name {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 body.dark-mode .active-goal-card .active-goal-target-date {
-  color: var(--text-secondary) !important;
+  color: var(--text-secondary);
 }
 
 body.dark-mode .active-goal-card .current-saved-val {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 body.dark-mode .active-goal-card .target-saved-val {
-  color: var(--text-secondary) !important;
+  color: var(--text-secondary);
 }
 
 body.dark-mode .add-goal-dashed-card {
@@ -165,7 +158,7 @@ body.dark-mode .add-goal-dashed-card .add-goal-title {
 }
 
 body.dark-mode .add-goal-dashed-card .add-goal-subtitle {
-  color: var(--text-secondary) !important;
+  color: var(--text-secondary);
 }
 
 body.dark-mode .savings-trend-card,
@@ -176,12 +169,12 @@ body.dark-mode .savings-chart-card {
 
 body.dark-mode .savings-trend-card .summary-sidebar-title,
 body.dark-mode .savings-chart-card .summary-sidebar-title {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 body.dark-mode .savings-trend-card .chart-legend-indicator span,
 body.dark-mode .savings-chart-card .chart-legend-indicator span {
-  color: var(--text-secondary) !important;
+  color: var(--text-secondary);
 }
 
 /* 2. Invoices Screen Stats Cards (Dark Background -> White Normal Text) */
@@ -191,15 +184,15 @@ body.dark-mode .invoice-kpi-card {
 }
 
 body.dark-mode .invoice-kpi-card .invoice-kpi-val {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 body.dark-mode .invoice-kpi-card .invoice-kpi-label {
-  color: var(--text-secondary) !important;
+  color: var(--text-secondary);
 }
 
 body.dark-mode .invoice-kpi-card .invoice-kpi-count {
-  color: var(--text-secondary) !important;
+  color: var(--text-secondary);
 }
 
 /* 3. Invoices Screen Table (Dark Card -> Light Text) */
@@ -217,15 +210,15 @@ body.dark-mode .inv-id-text {
 }
 
 body.dark-mode .cell-client {
-  color: #F1F5F9 !important;
+  color: #F1F5F9;
 }
 
 body.dark-mode .cell-amount {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 body.dark-mode .cell-date {
-  color: #94A3B8 !important;
+  color: #94A3B8;
 }
 
 body.dark-mode .invoice-table-row:hover {
@@ -241,57 +234,77 @@ body.dark-mode .invoice-table-row.selected-row .cell-amount {
   color: #FFFFFF !important;
 }
 
-/* 4. Selected Invoice Drawer (MUST remain WHITE with existing dark text) */
-body.dark-mode .selected-invoice-drawer {
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
+/* 4. Selected Invoice Drawer (Dark Background -> Dark Card Colors) */
+body.dark-mode .selected-invoice-drawer,
+body.dark-mode .mobile-only .selected-invoice-drawer {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-subtle) !important;
 }
 
-body.dark-mode .selected-invoice-drawer .preview-title {
-  color: #404040 !important;
+body.dark-mode .selected-invoice-drawer .preview-title,
+body.dark-mode .selected-invoice-drawer .summary-sidebar-title,
+body.dark-mode .mobile-only .selected-invoice-drawer .summary-sidebar-title {
+  color: #FFFFFF !important;
 }
 
-body.dark-mode .selected-invoice-drawer .client-company {
-  color: #404040 !important;
+body.dark-mode .selected-invoice-drawer .client-meta-card,
+body.dark-mode .mobile-only .selected-invoice-drawer .client-meta-card {
+  background-color: var(--bg-subtle) !important;
 }
 
-body.dark-mode .selected-invoice-drawer .client-label {
-  color: #8292A1 !important;
+body.dark-mode .selected-invoice-drawer .client-company,
+body.dark-mode .mobile-only .selected-invoice-drawer .client-company {
+  color: #FFFFFF !important;
 }
 
-body.dark-mode .selected-invoice-drawer .client-email {
-  color: #8292A1 !important;
+body.dark-mode .selected-invoice-drawer .client-label,
+body.dark-mode .mobile-only .selected-invoice-drawer .client-label {
+  color: var(--text-secondary) !important;
 }
 
-body.dark-mode .selected-invoice-drawer .invoice-detail-label {
-  color: #8292A1 !important;
+body.dark-mode .selected-invoice-drawer .client-email,
+body.dark-mode .mobile-only .selected-invoice-drawer .client-email {
+  color: var(--text-secondary) !important;
 }
 
-body.dark-mode .selected-invoice-drawer .invoice-detail-value {
-  color: #404040 !important;
+body.dark-mode .selected-invoice-drawer .invoice-detail-label,
+body.dark-mode .mobile-only .selected-invoice-drawer .invoice-detail-label {
+  color: var(--text-secondary) !important;
 }
 
-body.dark-mode .selected-invoice-drawer .total-due-label {
-  color: #404040 !important;
+body.dark-mode .selected-invoice-drawer .invoice-detail-value,
+body.dark-mode .mobile-only .selected-invoice-drawer .invoice-detail-value {
+  color: #FFFFFF !important;
 }
 
-body.dark-mode .selected-invoice-drawer .btn-download-pdf {
-  background-color: #FFFFFF !important;
-  color: #404040 !important;
-  border-color: #E8EEF3 !important;
+body.dark-mode .selected-invoice-drawer .invoice-total-row,
+body.dark-mode .mobile-only .selected-invoice-drawer .invoice-total-row {
+  border-top-color: var(--border-subtle) !important;
+}
+
+body.dark-mode .selected-invoice-drawer .total-due-label,
+body.dark-mode .mobile-only .selected-invoice-drawer .total-due-label {
+  color: #FFFFFF !important;
+}
+
+body.dark-mode .selected-invoice-drawer .btn-download-pdf,
+body.dark-mode .mobile-only .selected-invoice-drawer .btn-download-pdf {
+  background-color: var(--bg-subtle) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-subtle) !important;
 }
 
 /* 5. Overview Goals Cards (Dark Card Background -> Light Text) */
 body.dark-mode .mini-goal-card .mini-goal-amount {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 body.dark-mode .mini-goal-card .mini-goal-title {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 body.dark-mode .mini-goal-card .mini-goal-date {
-  color: #94A3B8 !important;
+  color: #94A3B8;
 }
 
 /* --------------------------------------------------------------------------
@@ -357,16 +370,8 @@ body {
   opacity: 0.82;
 }
 
-/* Stable containers without excessive jittery hover effects */
-.tactile-card {
-  /* Kept clean, crisp, and stable */
-}
-
 /* Tactile Elastic Switch */
-.tactile-switch .slider {
-  transition: all var(--transition-spring);
-}
-
+.tactile-switch .slider,
 .tactile-switch .slider:before {
   transition: all var(--transition-spring);
 }
@@ -386,7 +391,7 @@ body {
 .drag-scrollable.is-dragging {
   cursor: grabbing;
   scroll-behavior: auto !important;
-  scroll-snap-type: none !important;
+  scroll-snap-type: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -451,11 +456,11 @@ body {
 .btn-card-action.active-action {
   background-color: var(--primary-accent) !important;
   color: #FFFFFF !important;
-  border-color: var(--primary-accent) !important;
+  border-color: var(--primary-accent);
 }
 
 .virtual-credit-card.card-frozen {
-  filter: grayscale(0.8) brightness(0.95) !important;
+  filter: grayscale(0.8) brightness(0.95);
   position: relative;
 }
 
@@ -479,7 +484,7 @@ body {
 }
 
 .virtual-credit-card.card-blocked {
-  filter: grayscale(1) brightness(0.65) !important;
+  filter: grayscale(1) brightness(0.65);
   position: relative;
 }
 
@@ -522,14 +527,14 @@ body {
 .card-face-front,
 .card-face-back {
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
+  top: 0;
+  left: 0;
   width: 100% !important;
   height: 100% !important;
-  margin: 0 !important;
+  margin: 0;
   border-radius: var(--radius-xl) !important;
-  -webkit-backface-visibility: hidden !important;
-  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   overflow: hidden;
   box-shadow: var(--shadow-card);
 }
@@ -664,28 +669,6 @@ body {
   z-index: 5;
 }
 
-/* 3D Stack Rear Peek Card */
-.card-deck-rear {
-  position: absolute;
-  top: 0;
-  right: -24px;
-  width: 290px;
-  height: 172px;
-  z-index: 4;
-  transform: translate3d(0, 4px, -35px) scale(0.92) rotateY(-6deg);
-  opacity: 0.82;
-  filter: brightness(0.85);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  transition: all 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.card-deck-rear:hover {
-  transform: translate3d(-6px, 2px, -20px) scale(0.95) rotateY(-3deg);
-  opacity: 0.95;
-  filter: brightness(0.95);
-}
-
 /* Card Pagination Indicator with Morphing Pill */
 .card-deck-indicator {
   display: flex;
@@ -724,15 +707,6 @@ body {
 }
 
 /* EMV Chip & Contactless Visuals */
-.card-chip-contactless-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 2;
-  margin: 2px 0 4px;
-}
-
 .card-chip-svg {
   display: flex;
   align-items: center;
@@ -1167,23 +1141,6 @@ body {
   font-weight: 500;
 }
 
-.btn-upgrade {
-  background-color: var(--primary-accent);
-  color: #FFFFFF;
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
-  font-size: 11.5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color var(--transition-fast), transform var(--transition-spring);
-  width: 100%;
-}
-
-.btn-upgrade:hover {
-  background-color: var(--primary-hover);
-}
-
 /* --------------------------------------------------------------------------
    7. Main Content Area & Headers (Fluid Proportional Layout)
    -------------------------------------------------------------------------- */
@@ -1213,7 +1170,7 @@ body {
 .mobile-status-bar,
 .mobile-top-bar,
 .mobile-page-header {
-  display: none !important;
+  display: none;
 }
 
 .status-time {
@@ -1493,10 +1450,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1554,13 +1508,14 @@ body {
 .stat-item-row {
   background-color: var(--bg-subtle);
   border-radius: 12px;
-  padding: 8px 12px;
+  padding: 6px 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2px;
   transition: transform var(--transition-smooth);
   flex: 1;
+  min-height: 0;
   box-sizing: border-box;
 }
 
@@ -1568,7 +1523,9 @@ body {
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
+  display: block;
+  flex-shrink: 0;
 }
 
 .stat-item-row .stat-label {
@@ -1576,6 +1533,9 @@ body {
   font-size: 11px;
   font-weight: 400;
   color: var(--text-secondary);
+  line-height: 1.2;
+  display: block;
+  flex-shrink: 0;
 }
 
 .stat-primary .stat-amount {
@@ -1741,10 +1701,7 @@ input:checked+.slider:before {
   border: 1px solid var(--border-subtle);
   border-radius: 28px;
   padding: 18px 20px 14px;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   width: 100%;
   max-width: 597px;
   height: 322.38px;
@@ -1755,8 +1712,7 @@ input:checked+.slider:before {
   box-sizing: border-box;
 }
 
-.transactions-table-card,
-.invoices-table-card {
+.transactions-table-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
@@ -1770,13 +1726,11 @@ input:checked+.slider:before {
   overflow-x: auto;
 }
 
-.custom-table,
 .data-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.custom-table th,
 .data-table th {
   font-family: var(--font-body);
   font-size: 12px;
@@ -1789,7 +1743,6 @@ input:checked+.slider:before {
   letter-spacing: 0;
 }
 
-.custom-table td,
 .data-table td {
   padding: 10px;
   border-bottom: 1px solid var(--border-subtle);
@@ -1810,13 +1763,7 @@ input:checked+.slider:before {
   color: var(--text-primary);
 }
 
-.table-cat-text {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--text-secondary);
-}
-
+.table-cat-text,
 .table-date-text {
   font-family: var(--font-body);
   font-size: 12px;
@@ -1848,27 +1795,27 @@ input:checked+.slider:before {
 }
 
 .text-green {
-  color: var(--color-green) !important;
+  color: var(--color-green);
 }
 
 .text-red {
-  color: var(--color-red) !important;
+  color: var(--color-red);
 }
 
 .text-blue {
-  color: var(--primary-accent) !important;
+  color: var(--primary-accent);
 }
 
 .text-orange {
-  color: var(--color-orange) !important;
+  color: var(--color-orange);
 }
 
 .text-amber {
-  color: var(--color-amber) !important;
+  color: var(--color-amber);
 }
 
 .text-cyan {
-  color: var(--color-cyan) !important;
+  color: var(--color-cyan);
 }
 
 .bg-orange-light {
@@ -1881,10 +1828,6 @@ input:checked+.slider:before {
 
 .bg-amber-light {
   background-color: var(--color-amber-light);
-}
-
-.bg-cyan-light {
-  background-color: var(--color-cyan-light);
 }
 
 .bg-green-light {
@@ -1958,10 +1901,7 @@ input:checked+.slider:before {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   box-sizing: border-box;
 }
 
@@ -1992,7 +1932,7 @@ input:checked+.slider:before {
 }
 
 .mini-goal-amount {
-  font-family: 'Suprema', var(--font-heading);
+  font-family: var(--font-heading);
   font-weight: 600;
   font-size: 26px;
   color: #404040;
@@ -2001,7 +1941,7 @@ input:checked+.slider:before {
 }
 
 .mini-goal-date {
-  font-family: 'Suprema', var(--font-body);
+  font-family: var(--font-body);
   color: #AEAEAE;
   font-weight: 400;
   font-size: 14px;
@@ -2023,7 +1963,7 @@ input:checked+.slider:before {
 }
 
 .mini-goal-title {
-  font-family: 'Suprema', var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 20px;
   font-weight: 400;
   color: #404040;
@@ -2048,10 +1988,7 @@ input:checked+.slider:before {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   width: 100%;
   box-sizing: border-box;
 }
@@ -2131,10 +2068,7 @@ input:checked+.slider:before {
   justify-content: space-between;
   height: 183.03px;
   min-height: 183.03px;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   box-sizing: border-box;
 }
 
@@ -2145,6 +2079,7 @@ input:checked+.slider:before {
   gap: 6px;
   padding: 2px 0;
   width: 100%;
+  overflow-x: auto;
 }
 
 .contact-avatar-pill {
@@ -2198,7 +2133,7 @@ input:checked+.slider:before {
 }
 
 .btn-add-contact-solid:active {
-  transform: scale(0.92) !important;
+  transform: scale(0.92);
 }
 
 .btn-add-circle {
@@ -2222,7 +2157,7 @@ input:checked+.slider:before {
 }
 
 .btn-add-circle:active {
-  transform: scale(0.92) !important;
+  transform: scale(0.92);
 }
 
 .transfer-action-row {
@@ -2292,7 +2227,7 @@ input:checked+.slider:before {
 }
 
 .loan-promo-card:active {
-  transform: scale(0.96) !important;
+  transform: scale(0.96);
 }
 
 .loan-vector-bg {
@@ -2791,10 +2726,10 @@ input:checked+.slider:before {
   min-height: 80px;
   margin-bottom: 24px;
   box-sizing: border-box;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  overflow: visible !important;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  overflow: visible;
 }
 
 .invoice-kpi-card {
@@ -2809,11 +2744,7 @@ input:checked+.slider:before {
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 1px 2px rgba(0, 0, 0, 0.02);
   box-sizing: border-box;
 }
 
@@ -2829,12 +2760,12 @@ input:checked+.slider:before {
 .invoice-kpi-label,
 .invoice-kpi-count,
 .invoice-kpi-top span {
-  font-family: 'Lato', 'Suprema', var(--font-body), sans-serif;
+  font-family: 'Lato', var(--font-body), sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 13px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .invoice-kpi-label {
@@ -2847,12 +2778,12 @@ input:checked+.slider:before {
 }
 
 .invoice-kpi-val {
-  font-family: 'Suprema', var(--font-heading), sans-serif;
+  font-family: var(--font-heading), sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .invoices-body-grid {
@@ -2870,7 +2801,7 @@ input:checked+.slider:before {
 .invoices-table-card {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 0 !important;
+  border-radius: 0;
   padding: 0;
   box-shadow: var(--shadow-sm);
   width: 100%;
@@ -2942,7 +2873,7 @@ input:checked+.slider:before {
 }
 
 .invoice-table-row.selected-row {
-  background-color: var(--primary-light) !important;
+  background-color: var(--primary-light);
 }
 
 /* Columns */
@@ -2963,7 +2894,7 @@ input:checked+.slider:before {
 }
 
 .inv-id-text {
-  font-family: 'Lato', 'Suprema', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: #197BBD;
@@ -2971,7 +2902,7 @@ input:checked+.slider:before {
 }
 
 .cell-client {
-  font-family: 'Lato', 'Suprema', var(--font-body), sans-serif;
+  font-family: 'Lato', var(--font-body), sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: #404040;
@@ -2983,7 +2914,7 @@ input:checked+.slider:before {
 }
 
 .cell-amount {
-  font-family: 'Lato', 'Suprema', var(--font-heading), sans-serif;
+  font-family: 'Lato', var(--font-heading), sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: #404040;
@@ -3035,7 +2966,7 @@ input:checked+.slider:before {
 
 .invoices-table-card .badge-status.status-paid {
   background-color: #D9F2E5 !important;
-  color: #22A447 !important;
+  color: #22A447;
 }
 
 .invoices-table-card .badge-status.status-pending {
@@ -3045,7 +2976,7 @@ input:checked+.slider:before {
 
 .invoices-table-card .badge-status.status-overdue {
   background-color: #FFE5E5 !important;
-  color: #DC2626 !important;
+  color: #DC2626;
 }
 
 /* ==========================================================================
@@ -3081,7 +3012,7 @@ input:checked+.slider:before {
 
 .preview-title,
 .selected-invoice-drawer .summary-sidebar-title {
-  font-family: 'Lato', 'Suprema', var(--font-heading), sans-serif;
+  font-family: 'Lato', var(--font-heading), sans-serif;
   font-size: 14px;
   font-weight: 700;
   color: #404040;
@@ -3110,7 +3041,7 @@ input:checked+.slider:before {
 
 .selected-invoice-drawer .badge-status.status-paid {
   background-color: #D9F2E5 !important;
-  color: #22A447 !important;
+  color: #22A447;
 }
 
 .selected-invoice-drawer .badge-status.status-pending {
@@ -3120,7 +3051,7 @@ input:checked+.slider:before {
 
 .selected-invoice-drawer .badge-status.status-overdue {
   background-color: #FFE5E5 !important;
-  color: #DC2626 !important;
+  color: #DC2626;
 }
 
 .client-meta-card {
@@ -3147,7 +3078,7 @@ input:checked+.slider:before {
 }
 
 .client-company {
-  font-family: 'Lato', 'Suprema', var(--font-heading), sans-serif;
+  font-family: 'Lato', var(--font-heading), sans-serif;
   font-size: 14px;
   font-weight: 700;
   color: #404040;
@@ -3190,7 +3121,7 @@ input:checked+.slider:before {
 }
 
 .invoice-detail-value {
-  font-family: 'Lato', 'Suprema', var(--font-heading), sans-serif;
+  font-family: 'Lato', var(--font-heading), sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: #404040;
@@ -3210,7 +3141,7 @@ input:checked+.slider:before {
 }
 
 .total-due-label {
-  font-family: 'Lato', 'Suprema', var(--font-heading), sans-serif;
+  font-family: 'Lato', var(--font-heading), sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: #404040;
@@ -3218,7 +3149,7 @@ input:checked+.slider:before {
 }
 
 .total-due-val {
-  font-family: 'Lato', 'Suprema', var(--font-heading), sans-serif;
+  font-family: 'Lato', var(--font-heading), sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #1F78D1;
@@ -3226,8 +3157,7 @@ input:checked+.slider:before {
   text-align: right;
 }
 
-.drawer-actions-row,
-.drawer-actions-stack {
+.drawer-actions-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -3283,21 +3213,11 @@ input:checked+.slider:before {
 /* --------------------------------------------------------------------------
    12. Screen 5: Goals Desktop Layout (Figma Measurements: 1060px Width)
    -------------------------------------------------------------------------- */
-/* Goals Screen Heading Typography (Figma Spec: Inter 600 SemiBold 28px, Line-height 100%, Letter-spacing 0%) */
-body[data-current-view="goals"] .page-title,
-.goals-view-active .page-title {
-  font-family: 'Inter', sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 28px !important;
-  line-height: 100% !important;
-  letter-spacing: 0% !important;
-}
-
 .goals-desktop-container {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 1060px;
+  width: 100%;
   max-width: 1060px;
   box-sizing: border-box;
 }
@@ -3318,30 +3238,21 @@ body[data-current-view="goals"] .page-title,
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   min-height: 95px;
   box-sizing: border-box;
 }
 
 .goal-hero-card.hero-solid-blue {
-  background: #197BBD !important;
+  background: #197BBD;
   color: #FFFFFF;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
 }
 
 .goal-hero-card.hero-white {
   background-color: var(--bg-card);
   border: 1px solid #E8EEF3;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
 }
 
 .hero-card-title {
@@ -3420,10 +3331,7 @@ body[data-current-view="goals"] .page-title,
   flex-direction: column;
   justify-content: space-between;
   gap: 12px;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   box-sizing: border-box;
 }
 
@@ -3568,7 +3476,7 @@ body[data-current-view="goals"] .page-title,
   justify-content: center;
   text-align: center;
   gap: 8px;
-  box-shadow: 0px 0px 1px 0px #0000000A, 0px 2px 6px 0px #0000000A, 0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -3612,7 +3520,7 @@ body[data-current-view="goals"] .page-title,
   min-width: 0;
   max-width: 100%;
   min-height: 245px;
-  box-shadow: 0px 0px 1px 0px #0000000A, 0px 2px 6px 0px #0000000A, 0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma);
   box-sizing: border-box;
 }
 
@@ -3641,38 +3549,25 @@ body[data-current-view="goals"] .page-title,
    13. Screen 6: Settings Desktop Layout (Fluid Proportional Layout)
    -------------------------------------------------------------------------- */
 .settings-layout-grid {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
-  gap: clamp(16px, 2vw, 24px) !important;
-  align-items: start !important;
-  opacity: 1 !important;
-  box-sizing: border-box !important;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
+  min-height: auto;
+  max-height: none;
+  gap: clamp(16px, 2vw, 24px);
+  align-items: start;
+  opacity: 1;
+  box-sizing: border-box;
 }
 
-/* Left Column */
-.settings-layout-grid .settings-left-col {
-  display: flex !important;
-  flex-direction: column !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
-  gap: 24px !important;
-  box-sizing: border-box !important;
-}
-
-/* Right Column */
+/* Left & Right Columns */
+.settings-layout-grid .settings-left-col,
 .settings-layout-grid .settings-right-col {
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: column;
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -3683,8 +3578,13 @@ body[data-current-view="goals"] .page-title,
   box-sizing: border-box !important;
 }
 
-/* Left Column - Card 1: Profile Information */
-.settings-layout-grid .settings-left-col > .settings-card:nth-child(1) {
+/* The five settings cards: Profile, Notifications | Security, Payment, Theme.
+   Explicit BEM classes used instead of :nth-child so order in HTML can change freely. */
+.settings-layout-grid .settings-left-col>.settings-card--profile,
+.settings-layout-grid .settings-left-col>.settings-card--notifications,
+.settings-layout-grid .settings-right-col>.settings-card--security,
+.settings-layout-grid .settings-right-col>.settings-card--payment,
+.settings-layout-grid .settings-right-col>.settings-card--theme {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -3697,90 +3597,12 @@ body[data-current-view="goals"] .page-title,
   box-sizing: border-box !important;
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma) !important;
 }
 
-/* Left Column - Card 2: Notification Preferences */
-.settings-layout-grid .settings-left-col > .settings-card:nth-child(2) {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
-  padding: 24px !important;
+/* Notification Preferences card uses 20px gap instead of 16px. */
+.settings-layout-grid .settings-left-col>.settings-card--notifications {
   gap: 20px !important;
-  border-radius: 24px !important;
-  box-sizing: border-box !important;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
-}
-
-/* Right Column - Card 1: Security & Login */
-.settings-layout-grid .settings-right-col > .settings-card:nth-child(1) {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
-  padding: 24px !important;
-  gap: 16px !important;
-  border-radius: 24px !important;
-  box-sizing: border-box !important;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
-}
-
-/* Right Column - Card 2: Payment & Localization */
-.settings-layout-grid .settings-right-col > .settings-card:nth-child(2) {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
-  padding: 24px !important;
-  gap: 16px !important;
-  border-radius: 24px !important;
-  box-sizing: border-box !important;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
-}
-
-/* Right Column - Card 3: Theme */
-.settings-layout-grid .settings-right-col > .settings-card:nth-child(3) {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
-  padding: 24px !important;
-  gap: 16px !important;
-  border-radius: 24px !important;
-  box-sizing: border-box !important;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
 }
 
 .settings-card {
@@ -4205,33 +4027,32 @@ body[data-current-view="goals"] .page-title,
   html,
   body {
     padding: 0 !important;
-    margin: 0 !important;
+    margin: 0;
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
-    background-color: #F2F5F8 !important;
+    background-color: var(--bg-page) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
   }
 
-  .viewport-floating-dock,
-  .device-toggle-toolbar {
+  .viewport-floating-dock {
     display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .mobile-phone-shell {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: column;
     align-items: center !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    background: transparent !important;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
     border: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
@@ -4240,7 +4061,7 @@ body[data-current-view="goals"] .page-title,
   .app-container {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: center;
     margin: 0 auto !important;
     padding: 0 !important;
     border-radius: 0 !important;
@@ -4250,7 +4071,7 @@ body[data-current-view="goals"] .page-title,
     max-width: 100% !important;
     width: 100% !important;
     overflow-x: hidden !important;
-    background-color: #F2F5F8 !important;
+    background-color: var(--bg-page) !important;
     box-sizing: border-box !important;
   }
 
@@ -4273,37 +4094,8 @@ body[data-current-view="goals"] .page-title,
     padding: 0 16px !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
-    background-color: #F2F5F8 !important;
+    background-color: var(--bg-page) !important;
     flex-shrink: 0 !important;
-  }
-
-  .status-time {
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    font-family: var(--font-heading) !important;
-    color: var(--text-primary) !important;
-    line-height: 1 !important;
-    flex-shrink: 0 !important;
-  }
-
-  .status-notch {
-    display: none !important;
-  }
-
-  .status-icons {
-    width: 69px !important;
-    min-width: 69px !important;
-    max-width: 69px !important;
-    height: 12px !important;
-    min-height: 12px !important;
-    max-height: 12px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 6px !important;
-    flex-shrink: 0 !important;
-    box-sizing: border-box !important;
-    transform: none !important;
   }
 
   .mobile-top-bar {
@@ -4318,61 +4110,9 @@ body[data-current-view="goals"] .page-title,
     padding: 12px 16px 0 16px !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
-    background-color: #F2F5F8 !important;
+    background-color: var(--bg-page) !important;
     flex-shrink: 0 !important;
     position: relative !important;
-  }
-
-  .mobile-top-bar .brand-logo {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    width: 92px !important;
-    height: 18px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-decoration: none !important;
-  }
-
-  .mobile-top-bar .logo-icon-svg-wrap {
-    width: 24px !important;
-    height: 16px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: visible !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .mobile-top-bar .logo-icon-svg-wrap svg {
-    width: 24px !important;
-    height: 16px !important;
-    max-height: 16px !important;
-    display: block !important;
-  }
-
-  .mobile-top-bar .brand-text {
-    font-family: var(--font-heading) !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    color: #0F4264 !important;
-    letter-spacing: -0.3px !important;
-    line-height: 18px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .mobile-top-bar .mobile-user-avatar {
-    position: absolute !important;
-    right: 24px !important;
-    top: 28px !important;
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
   }
 
   .mobile-page-header {
@@ -4388,7 +4128,7 @@ body[data-current-view="goals"] .page-title,
     padding: 4px 16px 12px 16px !important;
     margin: 0 auto !important;
     box-sizing: border-box !important;
-    background-color: #F2F5F8 !important;
+    background-color: var(--bg-page) !important;
     flex-shrink: 0 !important;
   }
 
@@ -4397,14 +4137,14 @@ body[data-current-view="goals"] .page-title,
     position: fixed !important;
     bottom: 0 !important;
     left: 50% !important;
-    transform: translateX(-50%) !important;
+    transform: translateX(-50%);
     width: 100% !important;
     max-width: 100% !important;
     height: 73px !important;
     min-height: 73px !important;
     max-height: 73px !important;
-    background-color: #FFFFFF !important;
-    border-top: 1px solid #E8EEF3 !important;
+    background-color: var(--bg-card) !important;
+    border-top: 1px solid var(--border-subtle) !important;
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.03) !important;
@@ -4431,8 +4171,8 @@ body[data-current-view="goals"] .page-title,
   .app-main {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    margin: 0 auto !important;
+    align-items: center;
+    margin: 0 auto;
     padding: 0 0 84px 0 !important;
     gap: 0 !important;
     max-height: none !important;
@@ -4441,7 +4181,7 @@ body[data-current-view="goals"] .page-title,
     min-width: 0 !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
-    background-color: #F2F5F8 !important;
+    background-color: var(--bg-page) !important;
     box-sizing: border-box !important;
   }
 }
@@ -4459,6 +4199,11 @@ body.mobile-preview-mode {
   position: relative !important;
 }
 
+/* The 8 rules below were byte-identical in @media (max-width: 860px) and under
+   body.mobile-preview-mode, so they are declared once, unconditionally. Safe on desktop:
+   .mobile-status-bar / .mobile-top-bar are display:none !important there, so these
+   descendants never paint, and no JS measures them. */
+
 /* OUTER PHONE — single visual layer: owns background, rounded corners, clipping boundary */
 body.mobile-preview-mode .mobile-phone-shell {
   position: relative !important;
@@ -4475,7 +4220,7 @@ body.mobile-preview-mode .mobile-phone-shell {
     0px 24px 60px rgba(0, 0, 0, 0.40),
     0px 0px 0px 1px rgba(255, 255, 255, 0.08) inset !important;
   /* Phone owns the screen background — inner screen is transparent */
-  background-color: #F2F5F8 !important;
+  background-color: var(--bg-page) !important;
   box-sizing: border-box !important;
   /* Phone is the clipping boundary — rounds the top/bottom corners of the content */
   overflow: hidden !important;
@@ -4534,37 +4279,37 @@ body.mobile-preview-mode .mobile-status-bar {
   padding: 0 16px !important;
   margin: 0 !important;
   box-sizing: border-box !important;
-  background-color: #F2F5F8 !important;
+  background-color: var(--bg-page) !important;
   flex-shrink: 0 !important;
 }
 
-body.mobile-preview-mode .status-time {
+.status-time {
   font-size: 14px !important;
   font-weight: 700 !important;
   font-family: var(--font-heading) !important;
-  color: var(--text-primary) !important;
-  line-height: 1 !important;
-  flex-shrink: 0 !important;
+  color: var(--text-primary);
+  line-height: 1;
+  flex-shrink: 0;
 }
 
-body.mobile-preview-mode .status-notch {
-  display: none !important;
+.status-notch {
+  display: none;
 }
 
-body.mobile-preview-mode .status-icons {
-  width: 69px !important;
-  min-width: 69px !important;
-  max-width: 69px !important;
-  height: 12px !important;
-  min-height: 12px !important;
-  max-height: 12px !important;
+.status-icons {
+  width: 69px;
+  min-width: 69px;
+  max-width: 69px;
+  height: 12px;
+  min-height: 12px;
+  max-height: 12px;
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-end !important;
+  justify-content: flex-end;
   gap: 6px !important;
-  flex-shrink: 0 !important;
-  box-sizing: border-box !important;
-  transform: none !important;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transform: none;
 }
 
 body.mobile-preview-mode .mobile-top-bar {
@@ -4579,61 +4324,61 @@ body.mobile-preview-mode .mobile-top-bar {
   padding: 12px 16px 0 16px !important;
   margin: 0 !important;
   box-sizing: border-box !important;
-  background-color: #F2F5F8 !important;
+  background-color: var(--bg-page) !important;
   flex-shrink: 0 !important;
   position: relative !important;
 }
 
-body.mobile-preview-mode .mobile-top-bar .brand-logo {
+.mobile-top-bar .brand-logo {
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
-  width: 92px !important;
-  height: 18px !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  width: 92px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
   text-decoration: none !important;
 }
 
-body.mobile-preview-mode .mobile-top-bar .logo-icon-svg-wrap {
+.mobile-top-bar .logo-icon-svg-wrap {
   width: 24px !important;
   height: 16px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  overflow: visible !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
 }
 
-body.mobile-preview-mode .mobile-top-bar .logo-icon-svg-wrap svg {
+.mobile-top-bar .logo-icon-svg-wrap svg {
   width: 24px !important;
   height: 16px !important;
-  max-height: 16px !important;
+  max-height: 16px;
   display: block !important;
 }
 
-body.mobile-preview-mode .mobile-top-bar .brand-text {
+.mobile-top-bar .brand-text {
   font-family: var(--font-heading) !important;
   font-size: 15px !important;
   font-weight: 700 !important;
   color: #0F4264 !important;
   letter-spacing: -0.3px !important;
-  line-height: 18px !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
 }
 
-body.mobile-preview-mode .mobile-top-bar .mobile-user-avatar {
-  position: absolute !important;
-  right: 24px !important;
-  top: 28px !important;
+.mobile-top-bar .mobile-user-avatar {
+  position: absolute;
+  right: 24px;
+  top: 28px;
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   cursor: pointer !important;
-  z-index: 10 !important;
+  z-index: 10;
 }
 
 body.mobile-preview-mode .mobile-page-header {
@@ -4649,7 +4394,7 @@ body.mobile-preview-mode .mobile-page-header {
   padding: 4px 16px 12px 16px !important;
   margin: 0 !important;
   box-sizing: border-box !important;
-  background-color: #F2F5F8 !important;
+  background-color: var(--bg-page) !important;
   flex-shrink: 0 !important;
 }
 
@@ -4664,8 +4409,8 @@ body.mobile-preview-mode .mobile-bottom-nav {
   height: 73px !important;
   min-height: 73px !important;
   max-height: 73px !important;
-  background-color: #FFFFFF !important;
-  border-top: 1px solid #E8EEF3 !important;
+  background-color: var(--bg-card) !important;
+  border-top: 1px solid var(--border-subtle) !important;
   border-bottom-left-radius: 34px !important;
   border-bottom-right-radius: 34px !important;
   box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.03) !important;
@@ -4691,30 +4436,36 @@ body.mobile-preview-mode .app-main {
 .mobile-page-title {
   font-family: 'Lato', sans-serif !important;
   font-weight: 700 !important;
-  font-style: normal !important;
+  font-style: normal;
   font-size: 28px !important;
-  line-height: 100% !important;
-  letter-spacing: -0.5px !important;
+  line-height: 100%;
+  letter-spacing: -0.5px;
   color: #1F2C3F !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 29px !important;
-  min-height: 29px !important;
-  max-height: 29px !important;
-  display: flex !important;
-  align-items: center !important;
+  margin: 0;
+  padding: 0;
+  height: 29px;
+  min-height: 29px;
+  max-height: 29px;
+  display: flex;
+  align-items: center;
 }
 
 .mobile-page-subtitle {
-  font-family: var(--font-body) !important;
+  font-family: var(--font-body);
   font-size: 12px !important;
   color: var(--text-secondary) !important;
-  line-height: 14px !important;
-  min-height: 14px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
+  line-height: 14px;
+  min-height: 14px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* .mobile-page-title hardcodes the light heading colour; mirror the desktop rule
+   body.dark-mode .main-header .page-title so the mobile header follows the theme. */
+body.dark-mode .mobile-page-title {
+  color: #FFFFFF !important;
 }
 
 /* Mobile Balance Card & Metric Layouts (Fluid Width, Flexible Min-Height) */
@@ -4726,8 +4477,8 @@ body.mobile-preview-mode .app-main {
   height: auto !important;
   min-height: 112px !important;
   max-height: none !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
   border-radius: 16px !important;
   padding: 16px !important;
   display: flex !important;
@@ -4741,15 +4492,15 @@ body.mobile-preview-mode .app-main {
 }
 
 .mobile-balance-top {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 24px !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  width: 100%;
+  max-width: 100%;
+  min-height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .mobile-balance-label {
@@ -4768,20 +4519,20 @@ body.mobile-preview-mode .app-main {
 }
 
 .mobile-balance-stats {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 32px !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  gap: 8px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  width: 100%;
+  max-width: 100%;
+  min-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .mobile-stat-pill {
-  background-color: transparent !important;
+  background-color: transparent;
   border-radius: 0;
   padding: 0;
   display: flex;
@@ -4810,23 +4561,23 @@ body.mobile-preview-mode .app-main {
 /* Active Goals (Fluid Section with Horizontal Swipe Track) */
 .mobile-goals-section-block {
   width: 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  height: auto !important;
-  min-height: auto !important;
-  max-height: none !important;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  min-height: auto;
+  max-height: none;
   margin: 0 auto !important;
   padding: 0 !important;
-  gap: 10px !important;
-  border-radius: 0 !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
-  box-sizing: border-box !important;
+  gap: 10px;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  opacity: 1;
+  box-sizing: border-box;
   display: flex !important;
-  flex-direction: column !important;
-  overflow: visible !important;
+  flex-direction: column;
+  overflow: visible;
 }
 
 .mobile-goals-section-block .section-header-row {
@@ -4836,7 +4587,7 @@ body.mobile-preview-mode .app-main {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  flex-shrink: 0 !important;
+  flex-shrink: 0;
 }
 
 .mobile-goals-section-block .section-title {
@@ -4849,46 +4600,43 @@ body.mobile-preview-mode .app-main {
 
 /* Goals Track (Horizontal Swipe Rail Preserved) */
 .mobile-goals-scroll-row {
-  display: flex !important;
-  gap: 12px !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: 79px !important;
-  min-height: 79px !important;
-  max-height: 79px !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  -webkit-overflow-scrolling: touch !important;
-  padding: 0 0 2px 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-  flex-shrink: 0 !important;
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 79px;
+  min-height: 79px;
+  max-height: 79px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 2px 0;
+  margin: 0;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 /* Individual Goal Cards inside Rail (Fixed flex-basis for smooth horizontal swiping) */
 .mobile-mini-goal-chip {
-  flex: 0 0 138px !important;
-  width: 138px !important;
-  min-width: 138px !important;
-  max-width: 138px !important;
-  height: 79px !important;
-  min-height: 79px !important;
-  max-height: 79px !important;
-  padding: 12px !important;
-  gap: 8px !important;
-  border-radius: 12px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  box-sizing: border-box !important;
-  flex-shrink: 0 !important;
+  flex: 0 0 138px;
+  width: 138px;
+  min-width: 138px;
+  max-width: 138px;
+  height: 79px;
+  min-height: 79px;
+  max-height: 79px;
+  padding: 12px;
+  gap: 8px;
+  border-radius: 12px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-figma) !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .chip-top {
@@ -4928,15 +4676,15 @@ body.mobile-preview-mode .app-main {
 }
 
 .chip-progress-fill.fill-blue {
-  background-color: var(--primary-accent) !important;
+  background-color: var(--primary-accent);
 }
 
 .chip-progress-fill.fill-orange {
-  background-color: #F79042 !important;
+  background-color: #F79042;
 }
 
 .chip-progress-fill.fill-cyan {
-  background-color: var(--color-cyan, #22C4D0) !important;
+  background-color: var(--color-cyan, #22C4D0);
 }
 
 /* Quick Transfer (Fluid Card) */
@@ -4947,17 +4695,14 @@ body.mobile-preview-mode .app-main {
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  opacity: 1 !important;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle) !important;
+  opacity: 1;
   box-sizing: border-box !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma) !important;
   margin: 0 !important;
 }
 
@@ -4990,11 +4735,11 @@ body.mobile-preview-mode .app-main {
 
 .mobile-quick-transfer-card .contact-avatar-pill {
   width: 56px !important;
-  min-width: 56px !important;
+  min-width: 56px;
   max-width: 56px !important;
   height: 52px !important;
   min-height: 52px !important;
-  max-height: 52px !important;
+  max-height: 52px;
   gap: 4px !important;
   display: flex !important;
   flex-direction: column !important;
@@ -5003,18 +4748,18 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
   padding: 0 !important;
   border: none !important;
-  background: transparent !important;
+  background: transparent;
   flex-shrink: 0 !important;
 }
 
 .mobile-quick-transfer-card .contact-avatar,
 .mobile-quick-transfer-card .btn-add-contact-solid {
   width: 36px !important;
-  min-width: 36px !important;
+  min-width: 36px;
   max-width: 36px !important;
   height: 36px !important;
   min-height: 36px !important;
-  max-height: 36px !important;
+  max-height: 36px;
   border-radius: 50% !important;
 }
 
@@ -5028,12 +4773,12 @@ body.mobile-preview-mode .app-main {
 /* Recent Transactions (Fluid Section) */
 .mobile-recent-tx-section {
   width: 100% !important;
-  max-width: 100% !important;
-  min-height: 193px !important;
-  gap: 12px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  box-sizing: border-box !important;
+  max-width: 100%;
+  min-height: 193px;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -5053,32 +4798,33 @@ body.mobile-preview-mode .app-main {
 }
 
 .mobile-tx-card-list {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 164px !important;
-  padding: 12px !important;
-  gap: 10px !important;
-  border-radius: 16px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  box-sizing: border-box !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03) !important;
-  margin: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  min-height: 164px;
+  padding: 12px;
+  gap: 10px;
+  border-radius: 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  margin: 0;
 }
 
 .mobile-tx-item-row {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 40px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 4px 0 !important;
+  width: 100%;
+  max-width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 0;
   border-bottom: 1px solid var(--border-subtle) !important;
-  box-sizing: border-box !important;
+  box-sizing: border-box;
 }
 
 .mobile-tx-item-row:last-child {
@@ -5086,42 +4832,42 @@ body.mobile-preview-mode .app-main {
 }
 
 .mobile-tx-icon-box {
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 8px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .mobile-tx-info {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1px !important;
-  flex: 1 !important;
-  min-width: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
 }
 
 .mobile-tx-merchant {
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  color: var(--text-primary) !important;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mobile-tx-meta {
-  font-size: 10.5px !important;
-  color: var(--text-secondary) !important;
+  font-size: 10.5px;
+  color: var(--text-secondary);
 }
 
 .mobile-tx-amount {
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  color: var(--text-primary) !important;
-  flex-shrink: 0 !important;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex-shrink: 0;
 }
 
 /* Screen 2 Mobile Elements */
@@ -5303,15 +5049,6 @@ body.mobile-preview-mode .app-main {
   font-weight: 700;
 }
 
-.badge-status-pill {
-  font-size: 10.5px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 6px;
-  background-color: var(--color-green-light);
-  color: var(--color-green);
-}
-
 /* Screen 3 Mobile Elements */
 .mobile-card-actions-grid {
   display: grid;
@@ -5331,8 +5068,7 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Screen 4 Mobile Elements: Fluid Invoices Stats Cards */
-.mobile-only .invoices-metrics-grid,
-.mobile-invoices-wrapper .invoices-metrics-grid {
+.mobile-only .invoices-metrics-grid {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
@@ -5352,8 +5088,7 @@ body.mobile-preview-mode .app-main {
   flex-shrink: 0 !important;
 }
 
-.mobile-only .invoices-metrics-grid .invoice-kpi-card,
-.mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-card {
+.mobile-only .invoices-metrics-grid .invoice-kpi-card {
   flex: 1 1 0 !important;
   min-width: 100px !important;
   width: auto !important;
@@ -5362,12 +5097,9 @@ body.mobile-preview-mode .app-main {
   padding: 12px !important;
   gap: 4px !important;
   border-radius: 12px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 1px 2px rgba(0, 0, 0, 0.02) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -5376,13 +5108,11 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Hide 4th card on mobile so only first 3 cards fit cleanly */
-.mobile-only .invoices-metrics-grid .invoice-kpi-card:nth-child(n+4),
-.mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-card:nth-child(n+4) {
+.mobile-only .invoices-metrics-grid .invoice-kpi-card:nth-child(n+4) {
   display: none !important;
 }
 
-.mobile-only .invoices-metrics-grid .invoice-kpi-top,
-.mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-top {
+.mobile-only .invoices-metrics-grid .invoice-kpi-top {
   width: 100% !important;
   height: auto !important;
   display: flex !important;
@@ -5391,8 +5121,7 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-.mobile-only .invoices-metrics-grid .invoice-kpi-label,
-.mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-label {
+.mobile-only .invoices-metrics-grid .invoice-kpi-label {
   font-size: 11px !important;
   color: var(--text-secondary) !important;
   line-height: 1.1 !important;
@@ -5401,16 +5130,14 @@ body.mobile-preview-mode .app-main {
   text-overflow: ellipsis !important;
 }
 
-.mobile-only .invoices-metrics-grid .invoice-kpi-count,
-.mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-count {
+.mobile-only .invoices-metrics-grid .invoice-kpi-count {
   font-size: 11px !important;
   color: var(--text-secondary) !important;
   line-height: 1.1 !important;
   flex-shrink: 0 !important;
 }
 
-.mobile-only .invoices-metrics-grid .invoice-kpi-val,
-.mobile-invoices-wrapper .invoices-metrics-grid .invoice-kpi-val {
+.mobile-only .invoices-metrics-grid .invoice-kpi-val {
   font-size: 15px !important;
   font-weight: 700 !important;
   color: var(--text-primary) !important;
@@ -5427,19 +5154,15 @@ body.mobile-preview-mode .app-main {
 .mobile-only .mobile-balance-card,
 .mobile-only .mobile-quick-transfer-card,
 .mobile-only .mobile-mini-goal-chip,
-.mobile-only .mobile-recent-tx-card,
 .mobile-only .mobile-recent-tx-section {
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma) !important;
 }
 
 .mobile-invoices-card {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  min-height: 0 !important;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 0;
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
@@ -5448,12 +5171,11 @@ body.mobile-preview-mode .app-main {
   flex-direction: column;
   gap: 12px;
   box-shadow: var(--shadow-sm);
-  box-sizing: border-box !important;
+  box-sizing: border-box;
 }
 
 /* Fluid Mobile Selected Invoice Card */
-.mobile-only .selected-invoice-drawer,
-.mobile-invoices-wrapper .selected-invoice-drawer {
+.mobile-only .selected-invoice-drawer {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5462,12 +5184,9 @@ body.mobile-preview-mode .app-main {
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
-  border: 1px solid #E8EEF3 !important;
-  background-color: #FFFFFF !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  border: 1px solid var(--border-subtle) !important;
+  background-color: var(--bg-card) !important;
+  box-shadow: var(--shadow-figma) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -5476,8 +5195,7 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Heading Row */
-.mobile-only .selected-invoice-drawer .section-header-row,
-.mobile-invoices-wrapper .selected-invoice-drawer .section-header-row {
+.mobile-only .selected-invoice-drawer .section-header-row {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5490,8 +5208,7 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-.mobile-only .selected-invoice-drawer .summary-sidebar-title,
-.mobile-invoices-wrapper .selected-invoice-drawer .summary-sidebar-title {
+.mobile-only .selected-invoice-drawer .summary-sidebar-title {
   font-family: var(--font-heading);
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -5499,8 +5216,7 @@ body.mobile-preview-mode .app-main {
   margin: 0 !important;
 }
 
-.mobile-only .selected-invoice-drawer .badge-status,
-.mobile-invoices-wrapper .selected-invoice-drawer .badge-status {
+.mobile-only .selected-invoice-drawer .badge-status {
   min-height: 20px !important;
   padding: 2px 8px !important;
   font-size: 11px !important;
@@ -5508,8 +5224,7 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Client Info Container */
-.mobile-only .selected-invoice-drawer .client-meta-card,
-.mobile-invoices-wrapper .selected-invoice-drawer .client-meta-card {
+.mobile-only .selected-invoice-drawer .client-meta-card {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5517,7 +5232,7 @@ body.mobile-preview-mode .app-main {
   padding: 10px !important;
   gap: 4px !important;
   border-radius: 10px !important;
-  background-color: #F2F5F8 !important;
+  background-color: var(--bg-page) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -5525,8 +5240,7 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-.mobile-only .selected-invoice-drawer .client-label,
-.mobile-invoices-wrapper .selected-invoice-drawer .client-label {
+.mobile-only .selected-invoice-drawer .client-label {
   font-size: 10px !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
@@ -5534,16 +5248,14 @@ body.mobile-preview-mode .app-main {
   line-height: 1 !important;
 }
 
-.mobile-only .selected-invoice-drawer .client-company,
-.mobile-invoices-wrapper .selected-invoice-drawer .client-company {
+.mobile-only .selected-invoice-drawer .client-company {
   font-size: 13.5px !important;
   font-weight: 700 !important;
   color: var(--text-primary) !important;
   line-height: 1 !important;
 }
 
-.mobile-only .selected-invoice-drawer .client-email,
-.mobile-invoices-wrapper .selected-invoice-drawer .client-email {
+.mobile-only .selected-invoice-drawer .client-email {
   font-size: 11.5px !important;
   font-weight: 400 !important;
   color: var(--text-secondary) !important;
@@ -5551,8 +5263,7 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Due Date / Total Details Section */
-.mobile-only .selected-invoice-drawer .invoice-details-list,
-.mobile-invoices-wrapper .selected-invoice-drawer .invoice-details-list {
+.mobile-only .selected-invoice-drawer .invoice-details-list {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5566,8 +5277,7 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-.mobile-only .selected-invoice-drawer .invoice-detail-row,
-.mobile-invoices-wrapper .selected-invoice-drawer .invoice-detail-row {
+.mobile-only .selected-invoice-drawer .invoice-detail-row {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5578,23 +5288,20 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-.mobile-only .selected-invoice-drawer .invoice-detail-label,
-.mobile-invoices-wrapper .selected-invoice-drawer .invoice-detail-label {
+.mobile-only .selected-invoice-drawer .invoice-detail-label {
   font-size: 11.5px !important;
   color: var(--text-secondary) !important;
   line-height: 1 !important;
 }
 
-.mobile-only .selected-invoice-drawer .invoice-detail-value,
-.mobile-invoices-wrapper .selected-invoice-drawer .invoice-detail-value {
+.mobile-only .selected-invoice-drawer .invoice-detail-value {
   font-size: 11.5px !important;
   font-weight: 600 !important;
   color: var(--text-primary) !important;
   line-height: 1 !important;
 }
 
-.mobile-only .selected-invoice-drawer .invoice-total-row,
-.mobile-invoices-wrapper .selected-invoice-drawer .invoice-total-row {
+.mobile-only .selected-invoice-drawer .invoice-total-row {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5608,16 +5315,14 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-.mobile-only .selected-invoice-drawer .total-due-label,
-.mobile-invoices-wrapper .selected-invoice-drawer .total-due-label {
+.mobile-only .selected-invoice-drawer .total-due-label {
   font-size: 12px !important;
   font-weight: 600 !important;
   color: var(--text-primary) !important;
   line-height: 1 !important;
 }
 
-.mobile-only .selected-invoice-drawer .total-due-val,
-.mobile-invoices-wrapper .selected-invoice-drawer .total-due-val {
+.mobile-only .selected-invoice-drawer .total-due-val {
   font-size: 14px !important;
   font-weight: 700 !important;
   color: var(--primary-accent) !important;
@@ -5625,8 +5330,7 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Action Button Row */
-.mobile-only .selected-invoice-drawer .mobile-drawer-actions-row,
-.mobile-invoices-wrapper .selected-invoice-drawer .mobile-drawer-actions-row {
+.mobile-only .selected-invoice-drawer .mobile-drawer-actions-row {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5642,9 +5346,7 @@ body.mobile-preview-mode .app-main {
 }
 
 .mobile-only .selected-invoice-drawer .btn-send-reminder,
-.mobile-only .selected-invoice-drawer .btn-download-pdf,
-.mobile-invoices-wrapper .selected-invoice-drawer .btn-send-reminder,
-.mobile-invoices-wrapper .selected-invoice-drawer .btn-download-pdf {
+.mobile-only .selected-invoice-drawer .btn-download-pdf {
   flex: 1 1 0 !important;
   width: auto !important;
   min-height: 34px !important;
@@ -5844,8 +5546,7 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Mobile Savings Trend Card */
-.mobile-only .savings-chart-card,
-.mobile-goals-wrapper .savings-chart-card {
+.mobile-only .savings-chart-card {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5853,12 +5554,9 @@ body.mobile-preview-mode .app-main {
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: var(--shadow-figma) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -5867,8 +5565,7 @@ body.mobile-preview-mode .app-main {
   margin: 0 !important;
 }
 
-.mobile-only .savings-chart-card .chart-header-row,
-.mobile-goals-wrapper .savings-chart-card .chart-header-row {
+.mobile-only .savings-chart-card .chart-header-row {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5881,8 +5578,7 @@ body.mobile-preview-mode .app-main {
   box-sizing: border-box !important;
 }
 
-.mobile-only .savings-chart-card .summary-sidebar-title,
-.mobile-goals-wrapper .savings-chart-card .summary-sidebar-title {
+.mobile-only .savings-chart-card .summary-sidebar-title {
   font-family: var(--font-heading);
   font-size: 13.5px !important;
   font-weight: 700 !important;
@@ -5890,8 +5586,7 @@ body.mobile-preview-mode .app-main {
   margin: 0 !important;
 }
 
-.mobile-only .savings-chart-card .chart-legend-indicator,
-.mobile-goals-wrapper .savings-chart-card .chart-legend-indicator {
+.mobile-only .savings-chart-card .chart-legend-indicator {
   font-size: 11px !important;
   color: var(--text-secondary) !important;
   display: flex !important;
@@ -5899,8 +5594,7 @@ body.mobile-preview-mode .app-main {
   gap: 4px !important;
 }
 
-.mobile-only .savings-chart-card .chart-canvas-wrapper,
-.mobile-goals-wrapper .savings-chart-card .chart-canvas-wrapper {
+.mobile-only .savings-chart-card .chart-canvas-wrapper {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5914,8 +5608,7 @@ body.mobile-preview-mode .app-main {
   overflow: hidden !important;
 }
 
-.mobile-only .savings-chart-card .chart-canvas-wrapper canvas,
-.mobile-goals-wrapper .savings-chart-card .chart-canvas-wrapper canvas {
+.mobile-only .savings-chart-card .chart-canvas-wrapper canvas {
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
@@ -5930,8 +5623,7 @@ body.mobile-preview-mode .app-main {
 }
 
 /* Mobile Transactions Monthly Summary Card */
-.mobile-only .mobile-monthly-summary-card,
-.mobile-transactions-wrapper .mobile-monthly-summary-card {
+.mobile-only .mobile-monthly-summary-card {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
@@ -5939,13 +5631,10 @@ body.mobile-preview-mode .app-main {
   padding: 16px !important;
   gap: 12px !important;
   border-radius: 16px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
   opacity: 1 !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  box-shadow: var(--shadow-figma) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -5958,6 +5647,7 @@ body.mobile-preview-mode .app-main {
    Desktop Isolation Rule: Keep Mobile Wrappers Strictly Hidden on Desktop
    ========================================================================== */
 @media (min-width: 861px) {
+
   body:not(.mobile-preview-mode) .mobile-only,
   body:not(.mobile-preview-mode) .mobile-settings-wrapper,
   body:not(.mobile-preview-mode) .mobile-transactions-wrapper,
@@ -5972,7 +5662,9 @@ body.mobile-preview-mode .app-main {
    Mobile Settings Screen (Scoped strictly to Mobile / Mobile-Preview Mode)
    ========================================================================== */
 
-/* Settings Content Container: Fluid Width, Flexible Height */
+/* Settings Content Container. Kept as two scoped copies on purpose: unscoping drops
+   specificity to (0,1,0), where it loses max-width/padding to
+   `body.mobile-preview-mode .mobile-only` (0,2,1). */
 @media (max-width: 860px) {
   .mobile-settings-wrapper {
     width: 100% !important;
@@ -6002,51 +5694,47 @@ body.mobile-preview-mode .mobile-settings-wrapper {
 }
 
 /* Card 1: Profile Info Card */
-.mobile-only .mobile-settings-wrapper .settings-card:nth-of-type(1),
 .mobile-settings-wrapper .settings-card:nth-of-type(1) {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  min-height: 180px !important;
-  height: auto !important;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 180px;
+  height: auto;
   padding: 16px !important;
-  gap: 12px !important;
+  gap: 12px;
   border-radius: 16px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  opacity: 1 !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  opacity: 1;
+  box-shadow: var(--shadow-figma) !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-start !important;
+  justify-content: flex-start;
   box-sizing: border-box !important;
-  margin: 0 auto !important;
-  overflow: hidden !important;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Profile Row */
 .mobile-settings-wrapper .profile-header-meta {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 48px !important;
+  width: 100%;
+  max-width: 100%;
+  min-height: 48px;
   gap: 12px !important;
   display: flex !important;
   align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .mobile-settings-wrapper .profile-avatar-large {
   width: 48px !important;
   height: 48px !important;
-  min-width: 48px !important;
-  max-width: 48px !important;
-  min-height: 48px !important;
-  max-height: 48px !important;
+  min-width: 48px;
+  max-width: 48px;
+  min-height: 48px;
+  max-height: 48px;
   border-radius: 50% !important;
   overflow: hidden !important;
   flex-shrink: 0 !important;
@@ -6056,115 +5744,107 @@ body.mobile-preview-mode .mobile-settings-wrapper {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  display: block !important;
+  display: block;
 }
 
 .mobile-settings-wrapper .profile-text-group {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
+  justify-content: center;
   gap: 2px !important;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 /* Phone / Billing Info Rows */
 .mobile-settings-wrapper .settings-field-row {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 31px !important;
+  width: 100%;
+  max-width: 100%;
+  min-height: 31px;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Card 2: Notification Preferences Card */
-.mobile-only .mobile-settings-wrapper .settings-card:nth-of-type(2),
 .mobile-settings-wrapper .settings-card:nth-of-type(2) {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  min-height: 140px !important;
-  height: auto !important;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 140px;
+  height: auto;
   padding: 16px !important;
-  gap: 12px !important;
+  gap: 12px;
   border-radius: 16px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  opacity: 1 !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  opacity: 1;
+  box-shadow: var(--shadow-figma) !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-start !important;
+  justify-content: flex-start;
   box-sizing: border-box !important;
-  margin: 0 auto !important;
-  overflow: hidden !important;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .mobile-settings-wrapper .settings-toggle-row {
-  width: 100% !important;
-  max-width: 100% !important;
+  width: 100%;
+  max-width: 100%;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Card 3: Localization Card */
-.mobile-only .mobile-settings-wrapper .settings-card:nth-of-type(3),
 .mobile-settings-wrapper .settings-card:nth-of-type(3) {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  min-height: 180px !important;
-  height: auto !important;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 180px;
+  height: auto;
   padding: 16px !important;
-  gap: 12px !important;
+  gap: 12px;
   border-radius: 16px !important;
-  background-color: #FFFFFF !important;
-  border: 1px solid #E8EEF3 !important;
-  opacity: 1 !important;
-  box-shadow:
-    0px 0px 1px 0px #0000000A,
-    0px 2px 6px 0px #0000000A,
-    0px 16px 24px 0px #0000000F !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  opacity: 1;
+  box-shadow: var(--shadow-figma) !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-start !important;
+  justify-content: flex-start;
   box-sizing: border-box !important;
-  margin: 0 auto !important;
-  overflow: hidden !important;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Currency & Language Selectors */
 .mobile-settings-wrapper .settings-select-group {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .mobile-settings-wrapper .settings-select-control {
   width: 100% !important;
-  max-width: 100% !important;
-  min-height: 40px !important;
+  max-width: 100%;
+  min-height: 40px;
   border-radius: 12px !important;
   padding: 0 12px !important;
   border: 1px solid var(--border-subtle) !important;
-  border-width: 1px !important;
-  box-sizing: border-box !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  background-color: #FFFFFF !important;
+  border-width: 1px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-card) !important;
   font-size: 13px !important;
   color: var(--text-primary) !important;
 }

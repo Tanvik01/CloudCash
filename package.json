@@ -2,12 +2,12 @@
   "name": "cloudcash-fintech-suite",
   "version": "1.0.0",
   "description": "CloudCash - Modern Fintech Dashboard Suite with 3D Gestures and Chart.js Analytics",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node -c app.js"
+    "test": "node -c src/app.js"
   },
   "keywords": [
     "fintech",

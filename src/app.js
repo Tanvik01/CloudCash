@@ -1202,10 +1202,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-add-new-goal-card')?.addEventListener('click', () => openModal('modal-new-goal'));
   document.getElementById('mobile-btn-add-goal')?.addEventListener('click', () => openModal('modal-new-goal'));
 
-  document.getElementById('btn-upgrade-modal-trigger')?.addEventListener('click', () => {
-    showToast('Upgrade to CloudCash Premium submitted! Concierge service activated.');
-  });
-
   document.getElementById('form-new-invoice')?.addEventListener('submit', (e) => {
     e.preventDefault();
     const client = document.getElementById('input-client-name')?.value;
