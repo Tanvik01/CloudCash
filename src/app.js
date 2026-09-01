@@ -174,42 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-view-all-card-history')?.addEventListener('click', () => switchView('transactions'));
 
   // --------------------------------------------------------------------------
-  // 2. Collapsible Floating Viewport Dock Controller (Bottom-Right)
-  // --------------------------------------------------------------------------
-  const viewportDock = document.getElementById('viewport-floating-dock');
-  const btnDockTrigger = document.getElementById('btn-dock-trigger');
-  const btnDockCollapse = document.getElementById('btn-dock-collapse');
-  const dockBadge = document.getElementById('dock-active-mode-badge');
-  const btnDeviceDesktop = document.getElementById('btn-device-desktop');
-  const btnDeviceMobile = document.getElementById('btn-device-mobile');
-
-  btnDockTrigger?.addEventListener('click', () => {
-    viewportDock?.classList.add('expanded');
-  });
-
-  btnDockCollapse?.addEventListener('click', () => {
-    viewportDock?.classList.remove('expanded');
-  });
-
-  btnDeviceDesktop?.addEventListener('click', () => {
-    btnDeviceDesktop.classList.add('active');
-    btnDeviceMobile?.classList.remove('active');
-    document.body.classList.remove('mobile-preview-mode');
-    if (dockBadge) dockBadge.textContent = 'Desktop';
-    showToast('Switched to Full Desktop Layout View');
-    setTimeout(initSavingsCharts, 100);
-  });
-
-  btnDeviceMobile?.addEventListener('click', () => {
-    btnDeviceMobile.classList.add('active');
-    btnDeviceDesktop?.classList.remove('active');
-    document.body.classList.add('mobile-preview-mode');
-    if (dockBadge) dockBadge.textContent = 'Mobile View';
-    showToast('Switched to Mobile Smartphone View (390px frame with bottom nav)');
-    setTimeout(initSavingsCharts, 100);
-  });
-
-  // --------------------------------------------------------------------------
   // 3. Dark / Light Theme Controller
   // --------------------------------------------------------------------------
   const btnThemeLight = document.getElementById('btn-theme-light');
@@ -643,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 6. Fully Functional Card Controls (Freeze, Limits, PIN, Block)
+  // 6. Fully Functional Card Controls (Freeze, Limits, PIN)
   // --------------------------------------------------------------------------
   let currentCardControlAction = null;
   let currentCardControlNum = '2847';
@@ -690,19 +654,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         showToast(isFrozen ? `Card (•••• ${cardNum}) is now frozen.` : `Card (•••• ${cardNum}) is now unfrozen.`);
-      } else if (action === 'block') {
-        const parentCardDeck = btn.closest('.card-deck-item');
-        if (parentCardDeck) {
-          const cardEl = parentCardDeck.querySelector('.virtual-credit-card');
-          cardEl?.classList.add('card-blocked');
-        } else {
-          document.getElementById('overview-virtual-card')?.classList.add('card-blocked');
-          document.getElementById(`overview-card-${currentCardIdx}`)?.querySelector('.virtual-credit-card')?.classList.add('card-blocked');
-          document.getElementById(`cards-card-${currentCardIdx}`)?.querySelector('.virtual-credit-card')?.classList.add('card-blocked');
-        }
-        btn.disabled = true;
-        btn.style.opacity = '0.5';
-        showToast(`Card (•••• ${cardNum}) has been reported and blocked permanently.`);
       } else if (action === 'limits') {
         const title = document.getElementById('card-modal-title');
         const label = document.getElementById('card-modal-input-label');
